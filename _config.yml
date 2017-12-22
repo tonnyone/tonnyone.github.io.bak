@@ -3,7 +3,7 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 迭代 
+title: 进化 
 subtitle: liushaoqing的blog
 description:
 author: liushaoqing 
@@ -77,6 +77,6 @@ theme: maupassant
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type: git
-  repo: https://github.com/tonnyone/tonnyone.github.io.git
-  branch: master
+  type:  git
+  repo:  git@github.com:tonnyone/tonnyone.github.io.git 
+  branch:  master
