@@ -13,7 +13,7 @@ $ hexo new "My New Post"
 
 More info: [Writing](https://hexo.io/docs/writing.html)
 
-### Run server
+### 裕兴阿斯顿发放的
 
 ``` bash
 $ hexo server
@@ -25,12 +25,15 @@ More info: [Server](https://hexo.io/docs/server.html)
 
 ``` bash
 $ hexo generate
+asfa
 ```
 
 More info: [Generating](https://hexo.io/docs/generating.html)
 
 ### Deploy to remote sites
-> asdfasfd
+
+> asdfasfd你阿凡达是打发
+  > afdafd
 
 ``` bash
 $ hexo deploy
