@@ -124,7 +124,7 @@ scheme: Mist
 # Value after `||` delimeter is the name of FontAwesome icon. If icon (with or without delimeter) is not specified, globe icon will be loaded.
 social:
   GitHub: https://github.com/tonnyone || github
-  #E-Mail: mailto:yourname@gmail.com || envelope
+  E-Mail: mailto:liushaoqing1@qq.com || envelope
   #Google: https://plus.google.com/yourname || google
   #Twitter: https://twitter.com/yourname || twitter
   #FB Page: https://www.facebook.com/yourname || facebook
@@ -710,7 +710,7 @@ pace_theme: pace-theme-minimal
 
 # Canvas-nest
 # Dependencies: https://github.com/theme-next/theme-next-canvas-nest
-canvas_nest: false
+canvas_nest: true
 
 # JavaScript 3D library.
 # Dependencies: https://github.com/theme-next/theme-next-three
