@@ -109,8 +109,8 @@ menu_icons:
 # Schemes
 # scheme: Muse
 scheme: Mist
-#scheme: Pisces
-#scheme: Gemini
+# scheme: Pisces
+# scheme: Gemini
 
 
 # ---------------------------------------------------------------
@@ -646,7 +646,7 @@ tabs:
 
 # Reading progress bar
 reading_progress:
-  enable: true
+  enable: false
   color: "#37c6c0"
   height: 2px
 
