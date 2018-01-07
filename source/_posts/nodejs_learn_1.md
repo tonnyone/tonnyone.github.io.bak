@@ -3,11 +3,9 @@ title: nodejs 学习(一)
 category: js 
 tag: nodejs
 ---
-
 ## 介绍
 
 [nodejs 中文网](http://nodejs.cn)
-
 2009 年Ryan Dahl 柏林宣布nodeJs 技术
 优点: 基于事件轮询(event loop)的技术,构建于V8之上
 
@@ -21,7 +19,6 @@ server.listen(80)
 ```
 
 上面这段代码并不是一个玩具,相反,它是一个高性能的服务器.甚至在某些场景之下，比现在的Apach和nginx这样的服务器都性能优越.
-
 <!-- more -->
 
 ## 服务器端js和客户端js的区别
