@@ -31,7 +31,7 @@ favicon:
   #ms_browserconfig: /images/browserconfig.xml
 
 # Set default keywords (Use a comma to separate)
-keywords: "Hexo, NexT"
+keywords: "liushaoqing , blog"
 
 # Set rss to false to disable feed link.
 # Leave rss as empty to use site's feed link.
@@ -50,13 +50,13 @@ footer:
   copyright:
   # -------------------------------------------------------------
   # Hexo link (Powered by Hexo).
-  powered: true
+  # powered: true
 
   theme:
     # Theme & scheme info link (Theme - NexT.scheme).
     enable: true
     # Version info of NexT after scheme info (vX.X.X).
-    version: true
+    # version: true
   # -------------------------------------------------------------
   # Any custom text can be defined here.
   #custom_text: Hosted by <a target="_blank" href="https://pages.github.com">GitHub Pages</a>
@@ -95,7 +95,7 @@ menu:
   archives: /archives/ || archive
   #schedule: /schedule/ || calendar
   sitemap: /sitemap.xml || sitemap
-  #commonweal: /404/ || heartbeat
+  # commonweal: /404/ || heartbeat
 
 # Enable/Disable menu icons.
 menu_icons:
@@ -144,8 +144,8 @@ links_icon: link
 links_title: Links
 links_layout: block
 #links_layout: inline
-#links:
-  #Title: http://example.com/
+links:
+  我的gitbook : https://www.gitbook.com/@tonnyone
 
 # Sidebar Avatar
 # in theme directory(source/images): /images/avatar.gif
@@ -462,7 +462,7 @@ needmoreshare2:
 #google_site_verification:
 
 # Google Analytics
-#google_analytics:
+google_analytics: UA-111552399-1
 
 # Bing Webmaster tools verification setting
 # See: https://www.bing.com/webmaster/

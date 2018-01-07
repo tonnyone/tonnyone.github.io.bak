@@ -80,26 +80,27 @@ global
 
 ### 模块&包管理
 
-nodejs 采用```npm```作为包管理机制,类似java中的maven
+nodejs 采用`npm`作为包管理机制,类似java中的maven
 主要是这三个核心全局对象的用法: require,module,和export
-
 **绝对模块**: 指Node通过其内部node_modules查找模块或者内置的例如fs这样的模块
 
-```require('color')``` 指的是安装路径为```./node_modules/colors```的模块
+`require('color')` 指的是安装路径为 `./node_modules/colors` 的模块
 
 **相对模块**: 指的是相对于工作目录中的JavaScript文件,一般是自己写的模块。
 
 module_a.js
+
 ```javascript
 exports.name = '我是A模块'
 exports.changeByThis = function(){
   this.name = 'A模块自己被自己的方法改变了this';
 }
 exports.changeByExport = function(){
-  exports.name = 'A模块自己被自己的方法改变了exports';
+exports.name = 'A模块自己被自己的方法改变了exports';
 ```
 
 module_b.js
+
 ```javascript
 var a = require('./module_a');
 exports.name='我是b模块';
@@ -109,6 +110,7 @@ exports.changeA = function(){
 ```
 
 module_test.js
+
 ```javascript
 var a  = require('./module_a')
 var b  = require('./module_b')
@@ -127,6 +129,7 @@ console.log('aname:',a.name)
 // aname: A模块自己被自己的方法改变了this
 // aname: A模块自己被自己的方法改变了exports
 // aname: b 模块改变了a模
+
 ```
 
 **注意:**
@@ -134,17 +137,16 @@ console.log('aname:',a.name)
 
 ### 事件
 
-浏览器端的js依赖DOM的api, 比如: ```addEventListener```,```removeEventListener```,```dispathEvent```
+浏览器端的js依赖DOM的api, 比如: `addEventListener`,`removeEventListener`,`dispathEvent`
 
 Nodejs 中事件的基础是EventEmitter对象,事件是Nodejs非阻塞异步事件驱动重要体现.
+
 > 所有能触发事件的对象都是 EventEmitter 类的实例。 这些对象开放了一个 eventEmitter.on() 函数，允许将一个或多个函数绑定到会被对象触发的命名事件上。 事件名称通常是驼峰式的字符串，但也可以使用任何有效的 JavaScript 属性名。
 > 如: net.Server 对象会在每次有新连接时触发事件；fs.ReadStream 会在文件被打开时触发事件；流对象 会在数据可读时触发事件。
 
 ```javascript
 const EventEmitter = require('events');
-
 class MyEmitter extends EventEmitter {}
-
 const myEmitter = new MyEmitter();
 myEmitter.on('event', () => {
   console.log('触发了一个事件！');
@@ -162,7 +164,6 @@ myEmitter.emit('connection');
 所有关于Nodejs的讨论都使人们把关注点在了起高并发的能力上面,但是Node是如何给开发这提供一个构建高性能网络应用的能力的呢
 
 ```javascript
-
 console.log('Hello')
 setTimeout(function(){
   console.log('World')
@@ -173,13 +174,16 @@ console.log('Bye')
 // World
 
 ```
+
 > 采用事件轮询意味着什么呢? 从本质上说, Node 会显注册事件，随后不断的询问内核这些事件有没有分发，当事件分发时，对应的回调函数就会被触发。如果没有事件触发，则继续执行其他代码，直到有新事件的时候，再去执行的对应的回调函数
 
-其他语言的代码如下: 
+其他语言的代码如下:
+
 ```php
 print('Hello');
 sleep(5);
 print('World');
+
 ```
 
 sleep一旦执行，执行会被阻塞一段指定的时间，并且会在阻塞时间未到设定时间之前不做任何操作，所以sleep是同步的。而Nodejs 的setTimeout只是注册了一个事件,程序继续执行,所以这个是异步的。
@@ -189,7 +193,6 @@ sleep一旦执行，执行会被阻塞一段指定的时间，并且会在阻塞
 ### 单线程
 
 ```javascript
-
 var start = Date.now();
 setTimeout(function(){
   console.log(Date.now()-start);
@@ -202,25 +205,24 @@ setTimeout(function(){
   console.log(Date.now() - start);
 },2000)
 // 10436
-
 ```
 
 为什么会这样, 事件轮询被JavaScript代码阻塞了。由于回调函数需要执行很长一段事件. 所以下一个事件轮询执行的事件就远远超过了2s
 关键在于，在V8调用堆栈非常快的情况下，同一时刻无需处理多个请求.而Nodejs不会因为有数据库访问或者硬盘访问而挂起。
 
 ```javascript
-
 http.createServer(function(req,res){
   database.getInformation(function(data){
     res.writeHead(200);
     res.end(data);
   });
 })
+```
 
 当请求到达的时候,调用堆栈只有数据库调用。由于调用时非阻塞的。当数据库IO完成时。就完全取决于事件轮询合适在初始化新的调用堆栈。
 当数据库响应时,内核会通知NodeJs事件轮询。Nodejs 现在可以继续处理其他事情了。
 
-EventLoop 比较复杂,作为初学者就不敢在这里板门弄斧了,大家看之前两位大神的讨论: 
+EventLoop 比较复杂,作为初学者就不敢在这里板门弄斧了,大家看之前两位大神的讨论:
 
 [JavaScript 运行机制详解：再谈Event Loop](http://www.ruanyifeng.com/blog/2014/10/event-loop.html)
 [【朴灵评注】JavaScript 运行机制详解：再谈Event Loop](http://blog.csdn.net/lin_credible/article/details/40143961)
