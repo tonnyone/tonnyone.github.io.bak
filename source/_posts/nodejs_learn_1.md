@@ -3,7 +3,6 @@ title: nodejs 学习(一)
 category: js 
 tag: nodejs
 ---
-# nodejs 学习(一)
 
 ## 介绍
 
@@ -22,6 +21,8 @@ server.listen(80)
 ```
 
 上面这段代码并不是一个玩具,相反,它是一个高性能的服务器.甚至在某些场景之下，比现在的Apach和nginx这样的服务器都性能优越.
+
+<!-- more -->
 
 ## 服务器端js和客户端js的区别
 
@@ -218,6 +219,8 @@ http.createServer(function(req,res){
 
 当请求到达的时候,调用堆栈只有数据库调用。由于调用时非阻塞的。当数据库IO完成时。就完全取决于事件轮询合适在初始化新的调用堆栈。
 当数据库响应时,内核会通知NodeJs事件轮询。Nodejs 现在可以继续处理其他事情了。
+
+EventLoop 比较复杂,作为初学者就不敢在这里板门弄斧了,大家看之前两位大神的讨论: 
 
 [JavaScript 运行机制详解：再谈Event Loop](http://www.ruanyifeng.com/blog/2014/10/event-loop.html)
 [【朴灵评注】JavaScript 运行机制详解：再谈Event Loop](http://blog.csdn.net/lin_credible/article/details/40143961)
