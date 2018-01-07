@@ -149,8 +149,8 @@ links:
 
 # Sidebar Avatar
 # in theme directory(source/images): /images/avatar.gif
-# in site  directory(source/uploads): /uploads/avatar.gif
-#avatar: /images/avatar.gif
+# in site  directory(source/uploads): /uploads/me.jpg.
+avatar: /uploads/me.jpg
 
 # Table Of Contents in the Sidebar
 toc:
@@ -160,7 +160,7 @@ toc:
   number: true
 
   # If true, all words will placed on next lines if header width longer then sidebar width.
-  wrap: true
+  wrap: false
 
 # Creative Commons 4.0 International License.
 # http://creativecommons.org/
@@ -190,7 +190,7 @@ sidebar:
   b2t: false
 
   # Scroll percent label in b2t button.
-  scrollpercent: false
+  scrollpercent: true
 
   # Enable sidebar on narrow view (only for Muse | Mist).
   onmobile: false
@@ -626,7 +626,7 @@ note:
   #  - modern    bs-callout new (v2-v3) alert style.
   #  - flat      flat callout style with background, like on Mozilla or StackOverflow.
   #  - disabled  disable all CSS styles import of note tag.
-  style: simple
+  style: flat
   icons: false
   border_radius: 3
   # Offset lighter of background in % for modern and flat styles (modern: -12 | 12; flat: -18 | 6).
@@ -710,7 +710,7 @@ pace_theme: pace-theme-minimal
 
 # Canvas-nest
 # Dependencies: https://github.com/theme-next/theme-next-canvas-nest
-canvas_nest: true
+canvas_nest: false
 
 # JavaScript 3D library.
 # Dependencies: https://github.com/theme-next/theme-next-three
