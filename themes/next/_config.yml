@@ -125,6 +125,7 @@ scheme: Gemini
 social:
   GitHub: https://github.com/tonnyone || github
   E-Mail: mailto:liushaoqing1@qq.com || envelope
+  # zhihu: https://zhihu.com/tonnyone || zhihu
   #Google: https://plus.google.com/yourname || google
   #Twitter: https://twitter.com/yourname || twitter
   #FB Page: https://www.facebook.com/yourname || facebook
@@ -626,7 +627,7 @@ note:
   #  - modern    bs-callout new (v2-v3) alert style.
   #  - flat      flat callout style with background, like on Mozilla or StackOverflow.
   #  - disabled  disable all CSS styles import of note tag.
-  style: flat
+  style: modern
   icons: false
   border_radius: 3
   # Offset lighter of background in % for modern and flat styles (modern: -12 | 12; flat: -18 | 6).
