@@ -5,7 +5,8 @@ tag: nodejs
 ---
 
 用nodejs实现一个命令行的文件系统查看工具。
-![图片地址](https://note.youdao.com/yws/public/resource/7fb2090db7599db51497656dacc314de/xmlnote/BB7325F9803144E5A9D938400F0C8ECC/1141)
+![](/uploads/test_filesystem.gif)
+<!-- ![](https://note.youdao.com/yws/public/resource/7fb2090db7599db51497656dacc314de/xmlnote/BB7325F9803144E5A9D938400F0C8ECC/1141) -->
 
 <!-- more -->
 为了练习nodejs cli 以及 少量的文件操作api.
