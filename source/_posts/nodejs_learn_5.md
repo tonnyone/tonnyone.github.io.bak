@@ -1,13 +1,16 @@
 ---
-title: 一起学nodejs(写一个基于TCP/IP的聊天系统)
+title: 一起学nodejs(写一个基于TCP/IP终端聊天系统)
 category: js
 tag: nodejs
 ---
 
+![test](/uploads/tcpip.gif)
+[源码地址](https://github.com/tonnyone/nodejs_practise/tree/master/tcp-ip)
+<!--more-->
+
 ## TCP/IP 协议回顾
 
 ![三次握手四次挥手](/uploads/tcp-ip-process.png)
-<!--more-->
 
 ### TCP
 
@@ -63,3 +66,86 @@ tag: nodejs
 ## nodejs 中 tcp/ip
 
 Node HTTP 服务器是构建于NODE TCP服务器之上的 , 即 [http.Server](http://nodejs.cn/api/http.html)继承至 [net.Server](http://nodejs.cn/api/net.html) 模块
+
+### server基本代码
+
+```javascript
+var net = require('net');
+var fs = require('fs');
+
+var HOST = '127.0.0.1';
+var PORT = 9999;
+
+net.createServer(function (sock) {
+
+  console.log('connected: ' + sock.remoteAddress + ':' + sock.remotePort);
+
+  sock.on('data', function (data) {
+    console.log('DATA ' + sock.remoteAddress + ': ' + data);
+    // sock.write('Hey client, You said "' + data + '"');
+    sock.pipe(process.stdout)
+    sock.end()
+  });
+
+  sock.on('close', function (data) {
+    console.log('CLOSED: ' + sock.remoteAddress + ' ' + sock.remotePort);
+  });
+
+}).listen(PORT, HOST);
+
+console.log('Server listening on ' + HOST + ':' + PORT);
+```
+
+### client 基础代码
+
+```javascript
+var net = require("net");
+stdin = process.stdin;
+stdout = process.stdout;
+
+var HOST = "127.0.0.1";
+var PORT = 9999;
+
+var client = new net.Socket();
+client.connect(PORT, HOST, function() {
+  console.log('CONNECTED TO SERVER: ' + HOST + ':' + PORT);
+  stdout.write('>> ')
+  stdin.resume(); // 等待输入
+  stdin.setEncoding("utf-8");
+  stdin.on("data", function(input){
+    if ("quit" == input.trim()) {
+      client.destroy();
+      stdin.destroy();
+    } else {
+      client.write(input);
+    }
+  });
+});
+
+client.on("data", function(data) {
+  console.log("server: " + data);
+  stdout.write('>> ')
+});
+
+client.on("close", function() {
+  console.log("Connection closed");
+});
+
+```
+
+### server端维护所有的客户client
+
+```javascript
+ var userkey = conn.remoteAddress+':'+conn.remotePort;
+  if(!users[userkey]){
+    users[userkey] = {name: '匿名',conn:conn};
+  }
+  for (const userKey in users ) {
+    if (users.hasOwnProperty(userKey)){
+      const user = users[userKey];
+      conn.write('\033[92m '+ user.name +': '+user.conn.remoteAddress+':'+user.conn.remotePort+'\033[39m \n');
+    }
+  }
+```
+
+### [完整代码请查看](https://github.com/tonnyone/nodejs_practise/tree/master/tcp-ip)
