@@ -133,7 +133,7 @@ client.on("close", function() {
 
 ```
 
-### server端维护所有的客户client
+### server端维护所有的客户client的关键代码
 
 ```javascript
  var userkey = conn.remoteAddress+':'+conn.remotePort;
@@ -148,4 +148,4 @@ client.on("close", function() {
   }
 ```
 
-### [完整代码请查看](https://github.com/tonnyone/nodejs_practise/tree/master/tcp-ip)
+### [完整代码请点击](https://github.com/tonnyone/nodejs_practise/tree/master/tcp-ip)
