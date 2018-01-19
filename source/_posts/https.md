@@ -1,38 +1,42 @@
 ---
-title: 一文理解HTTPS
+title: 一文完全理解HTTPS
 category: protocal
 tag: http 
 ---
+
+![](/uploads/https/https.jpg)
 ## http通信有什么问题呢
 
-### 可能被窃听
+### 1. 可能被窃听
 
 - HTTP 本身不具备加密的功能,HTTP 报文使用明文方式发送
 - 由于互联网是由联通世界各个地方的网络设施组成,所有发送和接收经过某些设备的数据都可能被截获或窥视。(例如大家都熟悉的抓包工具:Wireshark),即使经过加密处理,也会被窥视是通信内容,只是可能很难或者无法破解出报文的信息而已
 
-### 认证问题
+<!--more-->
+
+### 2. 认证问题
 
 - 无法确认你发送到的服务器就是真正的目标服务器(可能服务器是伪装的)
 - 无法确定返回的客户端是否是按照真实意图接收的客户端(可能是伪装的客户端)
 - 无法确定正在通信的对方是否具备访问权限,Web 服务器上某些重要的信息，只想发给特定用户
 - 即使是无意义的请求也会照单全收。无法阻止海量请求下的 DoS 攻击（Denial of Service，拒绝服务攻击）。
 
-### 可能被篡改
+### 3. 可能被篡改
 
 请求或响应在传输途中，遭攻击者拦截并篡改内容的攻击被称为中间人攻击（Man-in-the-Middle attack，MITM）。
 
-### HTTPS如何解决上述三个问题
+## HTTPS如何解决上述三个问题
 
 HTTPS 只是在通信接口部分用 TLS（Transport Layer Security）协议代替而已。
-![](/uploads/https1.png)
+![](/uploads/https/https1.png)
 
 SSL 和 TLS 的区别:
-> 传输层安全性协议（英语：Transport Layer Security，缩写作 TLS），及其前身安全套接层（Secure Sockets Layer，缩写作 SSL）是一种安全协议，目的是为互联网通信，提供安全及数据完整性保障。网景公司（Netscape）在1994年推出首版网页浏览器，网景导航者时，推出HTTPS协议，以SSL进行加密，这是SSL的起源。IETF将SSL进行标准化，1999年公布第一版TLS标准文件。随后又公布RFC 5246 （2008年8月）与 RFC 6176 （2011年3月）。
+> 传输层安全性协议（英语：Transport Layer Security，缩写作 TLS），及其前身安全套接层（Secure Sockets Layer，缩写作 SSL）是一种安全协议，目的是为互联网通信，提供安全及数据完整性保障。网景公司（Netscape）在1994年推出首版网页浏览器，网景导航者时，推出HTTPS协议，以SSL进行加密，这是SSL的起源。IETF将SSL进行标准化，1999年公布第一版TLS标准文件。随后又公布RFC 5246 （2008年8月）与 RFC 6176 （2011年3月）。以下就简称SSL
 
 **TLS是SSL的标准**. **HTTPS** 就是 **HTTP + SSL**
-![](/uploads/https_http.png)
+![](/uploads/https/https_http.png)
 
-下面我们就要详细了解一下SSL
+### SSL 协议
 
 #### SSL 协议的实现需要用到的几类算法
 
@@ -41,7 +45,7 @@ SSL 和 TLS 的区别:
 常用的加密算法:`DES`、`AES` ,`RC2`,`RC4`
 优点：算法公开、计算量小、加密速度快、加密效率高。
 缺点：交易双方都使用同样钥匙，安全性得不到保证。
-![](/uploads/https2.png)
+![](/uploads/https/https2.png)
 
 ##### 非对称加密技术
 
@@ -49,41 +53,29 @@ SSL 和 TLS 的区别:
 优点:安全性高
 缺点:速度慢
 
-![](/uploads/https3.png)
+![](/uploads/https/https3.png)
 
 ##### 完整性验证算法
 
 HASH算法：`MD5`，`SHA1`，`SHA256`
 用作校验消息的完整性
-![](/uploads/tls_ssl.png)
+![](/uploads/https/tls_ssl.png)
 
-### HTTPS连接过程
-
-https 通信全过程,
-
-1. 首先建立tcp 握手连接
-1. 进行ssl 协议的握手密钥交换(Handshake protocal)
-1. 然后通过共同约定的密钥开始通信
-
-![](/uploads/https_protocal.png)
-
-### SSL协议
-
-SSL协议分为两部分：
+#### SSL协议构成
 
 1. 第一层是Record Protocol, 用于定义传输格式。
 1. 第二层Handshake Protocol,它建立在SSL记录协议之上,用于在实际的数据传输开始前，通讯双方进行身份认证、协商加密算法、交换加密密钥等。
 
-![](/uploads/ssl_layout.png)
+![](/uploads/https/ssl_layout.png)
 
 > 工作方式:
 > - 客户端使用非对称加密与服务器进行通信，实现身份验证并协商对称加密使用的密钥，
 > - 然后采用协商密钥对信息进行加密通信，不同的节点之间采用的对称密钥不同，从而可以保证对称密钥的安全。
 
-#### 密钥协商的过程如下
+### SSL密钥协商的过程如下
 
-[点击查看大图](/uploads/https_ssl.svg)
-![](/uploads/https_ssl.svg)
+[点击查看大图](/uploads/https/https_ssl.svg)
+![](/uploads/https/https_ssl.svg)
 [来源](https://upload.wikimedia.org/wikipedia/commons/a/ae/SSL_handshake_with_two_way_authentication_with_certificates.svg)
 
 详细描述下流程,主要分为**四大步骤**(此处略繁琐,不关注细节的可以先略过):
@@ -115,23 +107,72 @@ a. 客户端验证服务端证书的合法性，如果验证通过才会进行�
 
 b. 客户端发送客户端证书,公钥服务端验证(过程同客户端验证)
 c. 客户端hash所有之前的消息,发送hash值和摘要,用客户端的私钥加密发送给服务端,服务端用客户端的公钥解密,验证了服务端获取的客户端的公钥和算法是正确的
-d. 客户端生成pms ,用服务端的公钥加密加密后发送给服务端
-e. 客户端和服务端同时计算出最终会话密钥(MS)
+d. 客户端生成`pms`,用服务端的公钥加密加密后发送给服务端
+e. 客户端和服务端同时计算出最终会话密钥(`MS`)
 
 ##### 4. 验证协商密钥
 
-a. Client发送ChangeCipherSpec，指示Server从现在开始发送的消息都是加密过的
+a. Client发送`ChangeCipherSpec`，指示Server从现在开始发送的消息都是加密过的
 b. Client发送Finishd，包含了前面所有握手消息的hash，可以让server验证握手过程是否被第三方篡改
-c. 服务端发送ChangeCipherSpec，指示Client 从现在开始发送的消息都是加密过的
+c. 服务端发送`ChangeCipherSpec`，指示Client从现在开始发送的消息都是加密过的
 d. Server发送Finishd，包含了前面所有握手消息的hash，可以让client验证握手过程是否被第三方篡改，并且证明自己是Certificate密钥的拥有者，即证明自己的身份
 
-#### 上文说到的证书是个什么玩意儿
+### HTTPS完整建立连接过程,如下图
+
+1. 首先建立tcp 握手连接
+1. 进行ssl 协议的握手密钥交换(Handshake protocal)
+1. 然后通过共同约定的密钥开始通信
+
+![](/uploads/https/https_protocal.png)
+
+### 上文说到的证书是个什么玩意儿
+
+![浏览器证书](/uploads/https/zhengshu_brower.png)
+
+证书的作用就是,我和服务端通信,我怎么知道这个服务端是我要真正通信的服务端呢. 打个不恰当的比方:
+
+ 你在某宝购物,到了结算页面,你消费了100万,输入银行卡账号和密码付款,但是当你付款结束以后,你发现账户少了100万,但是账户页面还是显示未付款,你去打某宝客服,客服说你被别人盗号了100万没支付到我某宝,注意：这里面存在两种可能性
+
+1. 一个是有可能遭到了中间人攻击(用户名和密码被黑客截获)
+1. 某宝收了你的钱，假装不承认,(抵赖)
+
+![](/uploads/https/https_gj.png)
+
+#### 申请和发放证书流程如下：
+
+![](/uploads/https/zhengshu.png)
+
+1. 服务方 Server 向第三方机构CA提交公钥、组织信息、个人信息(域名)等信息并申请认证;
+
+1. CA通过线上、线下等多种手段验证申请者提供信息的真实性，如组织是否存在、企业是否合法，是否拥有域名的所有权等;
+
+1. 如信息审核通过，CA会向申请者签发认证文件-证书。证书包含以下信息：申请者公钥、申请者的组织信息和个人信息、签发机构 CA的信息、有效时间、证书序列号等信息的明文，同时包含一个签名; 签名的产生算法：首先，使用散列函数计算公开的明文信息的信息摘要，然后，采用 CA的私钥对信息摘要进行加密，密文即签名;
+
+1. 客户端 Client 向服务器 Server 发出请求时，Server 返回证书文件;
+
+1. 客户端 Client 读取证书中的相关的明文信息，采用相同的散列函数计算得到信息摘要，然后，利用对应 CA的公钥解密签名数据，对比证书的信息摘要，如果一致，则可以确认证书的合法性，即公钥合法;
+
+1. 客户端还会验证证书相关的域名信息、有效时间等信息; 客户端会内置信任CA的证书信息(包含公钥)，如果CA不被信任，则找不到对应 CA的证书，证书也会被判定非法。
+
+#### 证书链
+
+![](/uploads/https/zhengshulian.png)
+
+1. 服务器证书 server.pem 的签发者为中间证书机构 inter，inter 根据证书 inter.pem 验证 server.pem 确实为自己签发的有效证书
+1. 中间证书 inter.pem 的签发 CA 为 root，root 根据证书 root.pem 验证 inter.pem 为自己签发的合法证书;
+1. 客户端内置信任 CA 的 root.pem 证书，因此服务器证书 server.pem 的被信任。
+
+> 服务器证书、中间证书与根证书在一起组合成一条合法的证书链，证书链的验证是自下而上的信任传递的过程。
+
+证书的详细了解,请详细了解[PKI体系](https://zh.wikipedia.org/wiki/%E5%85%AC%E9%96%8B%E9%87%91%E9%91%B0%E5%9F%BA%E7%A4%8E%E5%BB%BA%E8%A8%AD)
 
 ## 参考资料
 
-- [详解 HTTPS、TLS、SSL、HTTP区别和关系](https://www.wosign.com/info/https_tls_ssl_http.htm)
+- [详解 HTTPS、TLS、SSL、HTTP区别和关系](https://www.wosign.com/info/https_tls_ssl_http.htmj)
 - [https 那些事儿](http://galaxylab.org/https%E9%82%A3%E4%BA%9B%E4%BA%8B/)
 - [WIKI传输层安全性协议](https://zh.wikipedia.org/zh-cn/%E5%82%B3%E8%BC%B8%E5%B1%A4%E5%AE%89%E5%85%A8%E6%80%A7%E5%8D%94%E5%AE%9A)
-- [图解TCP/IP]()
+- [图解TCP/IP](https://book.douban.com/subject/24737674/)
 - [绿盟月刊SSL/TLS/WTLS原理](http://www.nsfocus.net/index.php?act=magazine&do=view&mid=841)
 - [how tls work](http://tianyawy.farbox.com/post/http/how-tls-work)
+- [SSL/TLS原理详解](https://segmentfault.com/a/1190000002554673)
+- [PKI 基础知识](https://www.wosign.com/Basic/aboutPKI.htm)
