@@ -1,18 +1,6 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<!-- 由 Microsoft Visio, SVG Export 生成 htts_ssl.svg Page-1 -->
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events"
-		xmlns:v="http://schemas.microsoft.com/visio/2003/SVGExtensions/" width="11.6929in" height="16.0354in"
-		viewBox="0 0 841.89 1154.55" xml:space="preserve" color-interpolation-filters="sRGB" class="st40">
-	<v:documentProperties v:langID="2052" v:metric="true" v:viewMarkup="false">
-		<v:userDefs>
-			<v:ud v:nameU="msvSubprocessMaster" v:prompt="" v:val="VT4(Rectangle)"/>
-			<v:ud v:nameU="msvNoAutoConnect" v:val="VT0(1):26"/>
-		</v:userDefs>
-	</v:documentProperties>
-
-	<style type="text/css">
-	<![CDATA[
+<svg width="780" height="850" xmlns="http://www.w3.org/2000/svg" class="st45">
+ <style type="text/css">
+  <![CDATA[
 		.st1 {visibility:visible}
 		.st2 {fill:#5b9bd5;fill-opacity:0.22;filter:url(#filter_2);stroke:#5b9bd5;stroke-opacity:0.22}
 		.st3 {fill:#5b9bd5;stroke:#c7c8c8;stroke-width:0.25}
@@ -32,1214 +20,689 @@
 		.st17 {fill:#c00000}
 		.st18 {marker-end:url(#mrkr4-114);stroke:#5b9bd5;stroke-linecap:round;stroke-linejoin:round;stroke-width:1}
 		.st19 {fill:#5b9bd5;fill-opacity:1;stroke:#5b9bd5;stroke-opacity:1;stroke-width:0.23584905660377}
-		.st20 {fill:#ffffff;stroke:none;stroke-linecap:butt;stroke-width:7.2}
+		.st20 {fill:#ffffff;stroke:none;stroke-linecap:butt}
 		.st21 {fill:#4f87bb;font-family:黑体;font-size:0.666664em}
 		.st22 {fill:#003232;font-family:Calibri;font-size:1em}
-		.st23 {fill:#4f87bb;font-family:Calibri;font-size:0.666664em}
-		.st24 {fill:#bdd0e9;fill-opacity:0.22;filter:url(#filter_2);stroke:#bdd0e9;stroke-opacity:0.22}
-		.st25 {fill:#bdd0e9;stroke:#c7c8c8;stroke-width:0.25}
+		.st23 {fill:#ffffff;stroke:none;stroke-linecap:butt;stroke-width:7.2}
+		.st24 {fill:#4f87bb;font-family:Calibri;font-size:0.666664em}
+		.st25 {fill:#ffffff;stroke:#c7c8c8;stroke-width:0.25}
 		.st26 {fill:#0070c0;font-family:黑体;font-size:0.75em}
 		.st27 {font-family:Calibri;font-size:1em}
 		.st28 {font-size:1em}
-		.st29 {fill:#ff0000;font-size:1em}
-		.st30 {fill:#70ad47;font-family:Calibri;font-size:1em;font-weight:bold}
-		.st31 {fill:#2e75b5;font-family:黑体;font-size:0.75em}
-		.st32 {fill:#1e4a73;font-family:Calibri;font-size:0.499992em}
-		.st33 {fill:#ffffff;stroke:none;stroke-linecap:butt}
-		.st34 {fill:#2c4f76;font-family:Calibri;font-size:0.499992em}
-		.st35 {font-family:Calibri;font-size:1em;font-weight:bold}
-		.st36 {font-size:1em;font-weight:bold}
-		.st37 {fill:#feffff;font-family:Calibri;font-size:0.833336em}
-		.st38 {fill:#70ad47;stroke:#c7c8c8;stroke-width:0.25}
-		.st39 {fill:#ffffff;font-family:Calibri;font-size:0.833336em}
-		.st40 {fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3}
+		.st29 {font-family:Calibri;font-size:1em;font-weight:bold}
+		.st30 {fill:#ff0000;font-size:1em}
+		.st31 {fill:#ff0000;font-family:Calibri;font-size:1em}
+		.st32 {fill:#70ad47;font-family:Calibri;font-size:1em;font-weight:bold}
+		.st33 {fill:#bdd0e9;fill-opacity:0.22;filter:url(#filter_2);stroke:#bdd0e9;stroke-opacity:0.22}
+		.st34 {fill:#2e75b5;font-family:黑体;font-size:0.75em}
+		.st35 {fill:#1e4a73;font-family:Calibri;font-size:0.499992em}
+		.st36 {fill:#2c4f76;font-family:Calibri;font-size:0.499992em}
+		.st37 {font-size:1em;font-weight:bold}
+		.st38 {fill:#feffff;font-family:Calibri;font-size:0.833336em}
+		.st39 {fill:#70ad47;stroke:#c7c8c8;stroke-width:0.25}
+		.st40 {fill:#ffffff;font-family:Calibri;font-size:0.833336em}
+		.st41 {fill:#ffffff;stroke:#41719c;stroke-width:0.75}
+		.st42 {fill:#41719c;font-family:黑体;font-size:0.75em}
+		.st43 {fill:#5b9bd5;fill-opacity:0.25;filter:url(#filter_2);stroke:#5b9bd5;stroke-opacity:0.25}
+		.st44 {fill:#4f87bb;stroke:#40709c;stroke-width:0.75}
+		.st45 {fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3}
 	]]>
-	</style>
+ </style>
+ <defs>
+  <g id="lend4">
+   <path id="svg_1" d="m2,1l-2,-1l2,-1l0,2"/>
+  </g>
+ </defs>
 
-	<defs id="Markers">
-		<g id="lend4">
-			<path d="M 2 1 L 0 0 L 2 -1 L 2 1 " style="stroke:none"/>
-		</g>
-		<marker id="mrkr4-114" class="st19" v:arrowType="4" v:arrowSize="3" v:setback="8.48" refX="-8.48" orient="auto"
-				markerUnits="strokeWidth" overflow="visible">
-			<use xlink:href="#lend4" transform="scale(-4.24,-4.24) "/>
-		</marker>
-	</defs>
-	<defs id="Filters">
-		<filter id="filter_2">
-			<feGaussianBlur stdDeviation="2"/>
-		</filter>
-	</defs>
-	<g v:mID="0" v:index="1" v:groupContext="foregroundPage">
-		<v:userDefs>
-			<v:ud v:nameU="msvThemeOrder" v:val="VT0(0):26"/>
-		</v:userDefs>
-		<title>页-1</title>
-		<v:pageProperties v:drawingScale="0.0393701" v:pageScale="0.0393701" v:drawingUnits="24" v:shadowOffsetX="8.50394"
-				v:shadowOffsetY="-8.50394"/>
-		<v:layer v:name="连接线" v:index="0"/>
-		<v:layer v:name="数据图形" v:index="1"/>
-		<g id="group1-1" transform="translate(147.402,-1015.65)" v:mID="1" v:groupContext="group">
-			<v:userDefs>
-				<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
-				<v:ud v:nameU="ShowActor" v:prompt="" v:val="VT0(1):5"/>
-				<v:ud v:nameU="ShowDestruction" v:prompt="" v:val="VT0(0):5"/>
-			</v:userDefs>
-			<title>参与者生命线</title>
-			<desc>ssl_client</desc>
-			<g id="shape2-2" v:mID="2" v:groupContext="shape" transform="translate(14.1732,0)">
-				<title>工作表.2</title>
-				<g id="shadow2-3" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
-						transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1">
-					<rect x="0" y="1129.04" width="51.0236" height="25.5118" class="st2"/>
-				</g>
-				<rect x="0" y="1129.04" width="51.0236" height="25.5118" class="st3"/>
-			</g>
-			<g id="shape3-7" v:mID="3" v:groupContext="shape" transform="translate(31.1811,-29.0551)">
-				<title>工作表.3</title>
-				<g id="shadow3-8" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
-						transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1">
-					<path d="M3.4 1154.55 L3.4 1137.54 L3.4 1144.35 L0 1144.35 L0 1130.74 L1.7 1129.04 L15.31 1129.04 L17.01 1130.74
-								 L17.01 1144.35 L13.61 1144.35 L13.61 1137.54 L13.61 1154.55 L8.5 1154.55 L8.5 1140.94 L8.5 1154.55
-								 L3.4 1154.55 ZM11.91 1123.94 A3.40157 3.40157 -180 1 0 5.1 1123.94 A3.40157 3.40157 -180 1 0 11.91
-								 1123.94 Z" class="st2"/>
-				</g>
-				<path d="M3.4 1154.55 L3.4 1137.54 L3.4 1144.35 L0 1144.35 L0 1130.74 L1.7 1129.04 L15.31 1129.04 L17.01 1130.74
-							 L17.01 1144.35 L13.61 1144.35 L13.61 1137.54 L13.61 1154.55 L8.5 1154.55 L8.5 1140.94 L8.5 1154.55 L3.4
-							 1154.55 ZM11.91 1123.94 A3.40157 3.40157 -180 1 0 5.1 1123.94 A3.40157 3.40157 -180 1 0 11.91 1123.94
-							 Z" class="st3"/>
-			</g>
-			<g id="shape4-12" v:mID="4" v:groupContext="shape" transform="translate(26.4567,672.418)">
-				<title>工作表.4</title>
-				<g id="shadow4-13" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
-						transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1"/>
-			</g>
-			<g id="shape5-17" v:mID="5" v:groupContext="shape" transform="translate(1194.24,1154.55) rotate(90)">
-				<title>工作表.5</title>
-				<path d="M0 1154.55 L654.8 1154.55" class="st4"/>
-			</g>
-			<g id="shape1-20" v:mID="1" v:groupContext="groupContent">
-				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
-				<v:textRect cx="39.685" cy="1141.8" width="79.38" height="25.5118"/>
-				<g id="shadow1-21" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
-						transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1">
-					<rect x="0" y="1129.04" width="79.3701" height="25.5118" class="st2"/>
-				</g>
-				<rect x="0" y="1129.04" width="79.3701" height="25.5118" class="st3"/>
-				<text x="16.66" y="1145.4" class="st5" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>ssl_client</text>			</g>
-		</g>
-		<g id="group6-26" transform="translate(538.583,-1015.65)" v:mID="6" v:groupContext="group">
-			<v:userDefs>
-				<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
-				<v:ud v:nameU="ShowActor" v:prompt="" v:val="VT0(0):5"/>
-				<v:ud v:nameU="ShowDestruction" v:prompt="" v:val="VT0(0):5"/>
-			</v:userDefs>
-			<title>对象生命线</title>
-			<desc>ssl_server</desc>
-			<g id="shape7-27" v:mID="7" v:groupContext="shape" transform="translate(14.1732,0)">
-				<title>工作表.7</title>
-				<g id="shadow7-28" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
-						transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1">
-					<rect x="0" y="1129.04" width="51.0236" height="25.5118" class="st2"/>
-				</g>
-				<rect x="0" y="1129.04" width="51.0236" height="25.5118" class="st3"/>
-			</g>
-			<g id="shape8-32" v:mID="8" v:groupContext="shape" transform="translate(31.1811,-29.0551)">
-				<title>工作表.8</title>
-				<g id="shadow8-33" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
-						transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1">
-					<path d="M8.5 1154.55 a0 0 0 1 1 0 0 a0 0 0 1 1 0 0 Z" class="st2"/>
-				</g>
-				<path d="M8.5 1154.55 a0 0 0 1 1 0 0 a0 0 0 1 1 0 0 Z" class="st3"/>
-			</g>
-			<g id="shape9-37" v:mID="9" v:groupContext="shape" transform="translate(26.4567,672.418)">
-				<title>工作表.9</title>
-				<g id="shadow9-38" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
-						transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1"/>
-			</g>
-			<g id="shape10-42" v:mID="10" v:groupContext="shape" transform="translate(1194.24,1154.55) rotate(90)">
-				<title>工作表.10</title>
-				<path d="M0 1154.55 L654.8 1154.55" class="st4"/>
-			</g>
-			<g id="shape6-45" v:mID="6" v:groupContext="groupContent">
-				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
-				<v:textRect cx="39.685" cy="1141.8" width="79.38" height="25.5118"/>
-				<g id="shadow6-46" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
-						transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1">
-					<rect x="0" y="1129.04" width="79.3701" height="25.5118" class="st2"/>
-				</g>
-				<rect x="0" y="1129.04" width="79.3701" height="25.5118" class="st3"/>
-				<text x="14.9" y="1145.4" class="st5" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>ssl_server</text>			</g>
-		</g>
-		<g id="group12-51" transform="translate(35.4331,-1034.08)" v:mID="12" v:groupContext="group">
-			<v:custProps>
-				<v:cp v:nameU="ShapeClass" v:lbl="ShapeClass" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="true"
-						v:ask="false" v:langID="2052" v:cal="0" v:val="VT4(安全性)"/>
-				<v:cp v:nameU="ShapeType" v:lbl="ShapeType" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="true"
-						v:ask="false" v:langID="2052" v:cal="0" v:val="VT4(概念)"/>
-				<v:cp v:nameU="SubShapeType" v:lbl="SubShapeType" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="true"
-						v:ask="false" v:langID="2052" v:cal="0" v:val="VT4(密钥)"/>
-			</v:custProps>
-			<v:userDefs>
-				<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
-				<v:ud v:nameU="ShapeClass" v:prompt="" v:val="VT0(5):26"/>
-				<v:ud v:nameU="SolSH" v:prompt="" v:val="VT15({BF0433D9-CD73-4EB5-8390-8653BE590246}):41"/>
-				<v:ud v:nameU="visLegendShape" v:prompt="" v:val="VT0(2):26"/>
-			</v:userDefs>
-			<title>密钥</title>
-			<desc>Client 私钥</desc>
-			<g id="shape13-52" v:mID="13" v:groupContext="shape" transform="translate(10.2377,0)">
-				<title>工作表.13</title>
-				<g id="shadow13-53" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
-						transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1">
-					<path d="M14.96 1126.6 C14.96 1122.47 11.61 1119.12 7.48 1119.12 C3.35 1119.12 0 1122.47 0 1126.6 C0 1129.85
-								 2.08 1132.61 4.99 1133.64 L4.99 1152.62 L7.51 1154.55 L9.97 1152.62 L9.97 1150.63 L10.64 1150.63
-								 L10.64 1147.41 L9.92 1146.84 L9.92 1145.54 L10.64 1145.37 L10.64 1143.4 L9.84 1142.52 L10.64 1141.96
-								 L10.64 1140.3 L9.92 1140.06 L9.87 1138.06 L10.64 1137.86 L10.64 1135.74 L9.97 1135.34 L9.97 1133.64
-								 C12.87 1132.61 14.96 1129.85 14.96 1126.6 ZM8.41 1121.51 a0.79782 0.79782 -180 1 0 -1.59564 0 a0.79782
-								 0.79782 -180 1 0 1.59564 0 Z" class="st6"/>
-					<path d="M14.96 1126.6 C14.96 1122.47 11.61 1119.12 7.48 1119.12 C3.35 1119.12 0 1122.47 0 1126.6 C0 1129.85
-								 2.08 1132.61 4.99 1133.64 L4.99 1152.62 L7.51 1154.55 L9.97 1152.62 L9.97 1150.63 L10.64 1150.63
-								 L10.64 1147.41 L9.92 1146.84 L9.92 1145.54 L10.64 1145.37 L10.64 1143.4 L9.84 1142.52 L10.64 1141.96
-								 L10.64 1140.3 L9.92 1140.06 L9.87 1138.06 L10.64 1137.86 L10.64 1135.74 L9.97 1135.34 L9.97 1133.64
-								 C12.87 1132.61 14.96 1129.85 14.96 1126.6" class="st7"/>
-					<path d="M6.52 1133.89 L6.52 1151.92" class="st7"/>
-					<path d="M8.41 1121.51 a0.79782 0.79782 -180 1 0 -1.59564 0 a0.79782 0.79782 -180 1 0 1.59564 0" class="st7"/>
-				</g>
-				<path d="M14.96 1126.6 C14.96 1122.47 11.61 1119.12 7.48 1119.12 C3.35 1119.12 0 1122.47 0 1126.6 C0 1129.85 2.08
-							 1132.61 4.99 1133.64 L4.99 1152.62 L7.51 1154.55 L9.97 1152.62 L9.97 1150.63 L10.64 1150.63 L10.64 1147.41
-							 L9.92 1146.84 L9.92 1145.54 L10.64 1145.37 L10.64 1143.4 L9.84 1142.52 L10.64 1141.96 L10.64 1140.3
-							 L9.92 1140.06 L9.87 1138.06 L10.64 1137.86 L10.64 1135.74 L9.97 1135.34 L9.97 1133.64 C12.87 1132.61
-							 14.96 1129.85 14.96 1126.6 ZM8.41 1121.51 a0.79782 0.79782 -180 1 0 -1.59564 0 a0.79782 0.79782 -180
-							 1 0 1.59564 0 Z" class="st8"/>
-				<path d="M14.96 1126.6 C14.96 1122.47 11.61 1119.12 7.48 1119.12 C3.35 1119.12 0 1122.47 0 1126.6 C0 1129.85 2.08
-							 1132.61 4.99 1133.64 L4.99 1152.62 L7.51 1154.55 L9.97 1152.62 L9.97 1150.63 L10.64 1150.63 L10.64 1147.41
-							 L9.92 1146.84 L9.92 1145.54 L10.64 1145.37 L10.64 1143.4 L9.84 1142.52 L10.64 1141.96 L10.64 1140.3
-							 L9.92 1140.06 L9.87 1138.06 L10.64 1137.86 L10.64 1135.74 L9.97 1135.34 L9.97 1133.64 C12.87 1132.61
-							 14.96 1129.85 14.96 1126.6" class="st9"/>
-				<path d="M6.52 1133.89 L6.52 1151.92" class="st9"/>
-				<path d="M8.41 1121.51 a0.79782 0.79782 -180 1 0 -1.59564 0 a0.79782 0.79782 -180 1 0 1.59564 0" class="st9"/>
-			</g>
-			<g id="shape12-64" v:mID="12" v:groupContext="groupContent">
-				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
-				<v:textRect cx="17.7165" cy="1171.21" width="33.77" height="33.3161"/>
-				<g id="shadow12-65" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
-						transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1"/>
-				<text x="5.97" y="1167.55" class="st10" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Client<v:newlineChar/><tspan
-							x="7.72" dy="1.298em" class="st11">私钥</tspan></text>			</g>
-		</g>
-		<g id="group14-68" transform="translate(70.8661,-1034.08)" v:mID="14" v:groupContext="group">
-			<v:custProps>
-				<v:cp v:nameU="ShapeClass" v:lbl="ShapeClass" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="true"
-						v:ask="false" v:langID="2052" v:cal="0" v:val="VT4(安全性)"/>
-				<v:cp v:nameU="ShapeType" v:lbl="ShapeType" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="true"
-						v:ask="false" v:langID="2052" v:cal="0" v:val="VT4(概念)"/>
-				<v:cp v:nameU="SubShapeType" v:lbl="SubShapeType" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="true"
-						v:ask="false" v:langID="2052" v:cal="0" v:val="VT4(密钥)"/>
-			</v:custProps>
-			<v:userDefs>
-				<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
-				<v:ud v:nameU="ShapeClass" v:prompt="" v:val="VT0(5):26"/>
-				<v:ud v:nameU="SolSH" v:prompt="" v:val="VT15({BF0433D9-CD73-4EB5-8390-8653BE590246}):41"/>
-				<v:ud v:nameU="visLegendShape" v:prompt="" v:val="VT0(2):26"/>
-			</v:userDefs>
-			<title>密钥.14</title>
-			<desc>Client 公钥</desc>
-			<g id="shape15-69" v:mID="15" v:groupContext="shape" transform="translate(10.2377,0)">
-				<title>工作表.15</title>
-				<path d="M14.96 1126.6 C14.96 1122.47 11.61 1119.12 7.48 1119.12 C3.35 1119.12 0 1122.47 0 1126.6 C0 1129.85 2.08
-							 1132.61 4.99 1133.64 L4.99 1152.62 L7.51 1154.55 L9.97 1152.62 L9.97 1150.63 L10.64 1150.63 L10.64 1147.41
-							 L9.92 1146.84 L9.92 1145.54 L10.64 1145.37 L10.64 1143.4 L9.84 1142.52 L10.64 1141.96 L10.64 1140.3
-							 L9.92 1140.06 L9.87 1138.06 L10.64 1137.86 L10.64 1135.74 L9.97 1135.34 L9.97 1133.64 C12.87 1132.61
-							 14.96 1129.85 14.96 1126.6 ZM8.41 1121.51 a0.79782 0.79782 -180 1 0 -1.59564 0 a0.79782 0.79782 -180
-							 1 0 1.59564 0 Z" class="st12"/>
-				<path d="M14.96 1126.6 C14.96 1122.47 11.61 1119.12 7.48 1119.12 C3.35 1119.12 0 1122.47 0 1126.6 C0 1129.85 2.08
-							 1132.61 4.99 1133.64 L4.99 1152.62 L7.51 1154.55 L9.97 1152.62 L9.97 1150.63 L10.64 1150.63 L10.64 1147.41
-							 L9.92 1146.84 L9.92 1145.54 L10.64 1145.37 L10.64 1143.4 L9.84 1142.52 L10.64 1141.96 L10.64 1140.3
-							 L9.92 1140.06 L9.87 1138.06 L10.64 1137.86 L10.64 1135.74 L9.97 1135.34 L9.97 1133.64 C12.87 1132.61
-							 14.96 1129.85 14.96 1126.6" class="st13"/>
-				<path d="M6.52 1133.89 L6.52 1151.92" class="st13"/>
-				<path d="M8.41 1121.51 a0.79782 0.79782 -180 1 0 -1.59564 0 a0.79782 0.79782 -180 1 0 1.59564 0" class="st13"/>
-			</g>
-			<g id="shape14-74" v:mID="14" v:groupContext="groupContent">
-				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
-				<v:textRect cx="17.7165" cy="1171.21" width="33.77" height="33.3161"/>
-				<text x="5.97" y="1167.55" class="st14" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Client<v:newlineChar/><tspan
-							x="7.72" dy="1.298em" class="st11">公钥</tspan></text>			</g>
-		</g>
-		<g id="group16-77" transform="translate(644.882,-1028.41)" v:mID="16" v:groupContext="group">
-			<v:custProps>
-				<v:cp v:nameU="ShapeClass" v:lbl="ShapeClass" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="true"
-						v:ask="false" v:langID="2052" v:cal="0" v:val="VT4(安全性)"/>
-				<v:cp v:nameU="ShapeType" v:lbl="ShapeType" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="true"
-						v:ask="false" v:langID="2052" v:cal="0" v:val="VT4(概念)"/>
-				<v:cp v:nameU="SubShapeType" v:lbl="SubShapeType" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="true"
-						v:ask="false" v:langID="2052" v:cal="0" v:val="VT4(密钥)"/>
-			</v:custProps>
-			<v:userDefs>
-				<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
-				<v:ud v:nameU="ShapeClass" v:prompt="" v:val="VT0(5):26"/>
-				<v:ud v:nameU="SolSH" v:prompt="" v:val="VT15({BF0433D9-CD73-4EB5-8390-8653BE590246}):41"/>
-				<v:ud v:nameU="visLegendShape" v:prompt="" v:val="VT0(2):26"/>
-			</v:userDefs>
-			<title>密钥.16</title>
-			<desc>公钥</desc>
-			<g id="shape17-78" v:mID="17" v:groupContext="shape" transform="translate(10.2377,0)">
-				<title>工作表.17</title>
-				<g id="shadow17-79" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
-						transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1">
-					<path d="M14.96 1126.6 C14.96 1122.47 11.61 1119.12 7.48 1119.12 C3.35 1119.12 0 1122.47 0 1126.6 C0 1129.85
-								 2.08 1132.61 4.99 1133.64 L4.99 1152.62 L7.51 1154.55 L9.97 1152.62 L9.97 1150.63 L10.64 1150.63
-								 L10.64 1147.41 L9.92 1146.84 L9.92 1145.54 L10.64 1145.37 L10.64 1143.4 L9.84 1142.52 L10.64 1141.96
-								 L10.64 1140.3 L9.92 1140.06 L9.87 1138.06 L10.64 1137.86 L10.64 1135.74 L9.97 1135.34 L9.97 1133.64
-								 C12.87 1132.61 14.96 1129.85 14.96 1126.6 ZM8.41 1121.51 a0.79782 0.79782 -180 1 0 -1.59564 0 a0.79782
-								 0.79782 -180 1 0 1.59564 0 Z" class="st6"/>
-					<path d="M14.96 1126.6 C14.96 1122.47 11.61 1119.12 7.48 1119.12 C3.35 1119.12 0 1122.47 0 1126.6 C0 1129.85
-								 2.08 1132.61 4.99 1133.64 L4.99 1152.62 L7.51 1154.55 L9.97 1152.62 L9.97 1150.63 L10.64 1150.63
-								 L10.64 1147.41 L9.92 1146.84 L9.92 1145.54 L10.64 1145.37 L10.64 1143.4 L9.84 1142.52 L10.64 1141.96
-								 L10.64 1140.3 L9.92 1140.06 L9.87 1138.06 L10.64 1137.86 L10.64 1135.74 L9.97 1135.34 L9.97 1133.64
-								 C12.87 1132.61 14.96 1129.85 14.96 1126.6" class="st7"/>
-					<path d="M6.52 1133.89 L6.52 1151.92" class="st7"/>
-					<path d="M8.41 1121.51 a0.79782 0.79782 -180 1 0 -1.59564 0 a0.79782 0.79782 -180 1 0 1.59564 0" class="st7"/>
-				</g>
-				<path d="M14.96 1126.6 C14.96 1122.47 11.61 1119.12 7.48 1119.12 C3.35 1119.12 0 1122.47 0 1126.6 C0 1129.85 2.08
-							 1132.61 4.99 1133.64 L4.99 1152.62 L7.51 1154.55 L9.97 1152.62 L9.97 1150.63 L10.64 1150.63 L10.64 1147.41
-							 L9.92 1146.84 L9.92 1145.54 L10.64 1145.37 L10.64 1143.4 L9.84 1142.52 L10.64 1141.96 L10.64 1140.3
-							 L9.92 1140.06 L9.87 1138.06 L10.64 1137.86 L10.64 1135.74 L9.97 1135.34 L9.97 1133.64 C12.87 1132.61
-							 14.96 1129.85 14.96 1126.6 ZM8.41 1121.51 a0.79782 0.79782 -180 1 0 -1.59564 0 a0.79782 0.79782 -180
-							 1 0 1.59564 0 Z" class="st15"/>
-				<path d="M14.96 1126.6 C14.96 1122.47 11.61 1119.12 7.48 1119.12 C3.35 1119.12 0 1122.47 0 1126.6 C0 1129.85 2.08
-							 1132.61 4.99 1133.64 L4.99 1152.62 L7.51 1154.55 L9.97 1152.62 L9.97 1150.63 L10.64 1150.63 L10.64 1147.41
-							 L9.92 1146.84 L9.92 1145.54 L10.64 1145.37 L10.64 1143.4 L9.84 1142.52 L10.64 1141.96 L10.64 1140.3
-							 L9.92 1140.06 L9.87 1138.06 L10.64 1137.86 L10.64 1135.74 L9.97 1135.34 L9.97 1133.64 C12.87 1132.61
-							 14.96 1129.85 14.96 1126.6" class="st9"/>
-				<path d="M6.52 1133.89 L6.52 1151.92" class="st9"/>
-				<path d="M8.41 1121.51 a0.79782 0.79782 -180 1 0 -1.59564 0 a0.79782 0.79782 -180 1 0 1.59564 0" class="st9"/>
-			</g>
-			<g id="shape16-90" v:mID="16" v:groupContext="groupContent">
-				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
-				<v:textRect cx="17.7165" cy="1165.21" width="30.27" height="21.3161"/>
-				<g id="shadow16-91" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
-						transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1"/>
-				<text x="7.72" y="1168.54" class="st16" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>公钥</text>			</g>
-		</g>
-		<g id="group18-93" transform="translate(686.469,-1028.41)" v:mID="18" v:groupContext="group">
-			<v:custProps>
-				<v:cp v:nameU="ShapeClass" v:lbl="ShapeClass" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="true"
-						v:ask="false" v:langID="2052" v:cal="0" v:val="VT4(安全性)"/>
-				<v:cp v:nameU="ShapeType" v:lbl="ShapeType" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="true"
-						v:ask="false" v:langID="2052" v:cal="0" v:val="VT4(概念)"/>
-				<v:cp v:nameU="SubShapeType" v:lbl="SubShapeType" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="true"
-						v:ask="false" v:langID="2052" v:cal="0" v:val="VT4(密钥)"/>
-			</v:custProps>
-			<v:userDefs>
-				<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
-				<v:ud v:nameU="ShapeClass" v:prompt="" v:val="VT0(5):26"/>
-				<v:ud v:nameU="SolSH" v:prompt="" v:val="VT15({BF0433D9-CD73-4EB5-8390-8653BE590246}):41"/>
-				<v:ud v:nameU="visLegendShape" v:prompt="" v:val="VT0(2):26"/>
-			</v:userDefs>
-			<title>密钥.18</title>
-			<desc>私钥</desc>
-			<g id="shape19-94" v:mID="19" v:groupContext="shape" transform="translate(10.2377,0)">
-				<title>工作表.19</title>
-				<g id="shadow19-95" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
-						transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1">
-					<path d="M14.96 1126.6 C14.96 1122.47 11.61 1119.12 7.48 1119.12 C3.35 1119.12 0 1122.47 0 1126.6 C0 1129.85
-								 2.08 1132.61 4.99 1133.64 L4.99 1152.62 L7.51 1154.55 L9.97 1152.62 L9.97 1150.63 L10.64 1150.63
-								 L10.64 1147.41 L9.92 1146.84 L9.92 1145.54 L10.64 1145.37 L10.64 1143.4 L9.84 1142.52 L10.64 1141.96
-								 L10.64 1140.3 L9.92 1140.06 L9.87 1138.06 L10.64 1137.86 L10.64 1135.74 L9.97 1135.34 L9.97 1133.64
-								 C12.87 1132.61 14.96 1129.85 14.96 1126.6 ZM8.41 1121.51 a0.79782 0.79782 -180 1 0 -1.59564 0 a0.79782
-								 0.79782 -180 1 0 1.59564 0 Z" class="st6"/>
-					<path d="M14.96 1126.6 C14.96 1122.47 11.61 1119.12 7.48 1119.12 C3.35 1119.12 0 1122.47 0 1126.6 C0 1129.85
-								 2.08 1132.61 4.99 1133.64 L4.99 1152.62 L7.51 1154.55 L9.97 1152.62 L9.97 1150.63 L10.64 1150.63
-								 L10.64 1147.41 L9.92 1146.84 L9.92 1145.54 L10.64 1145.37 L10.64 1143.4 L9.84 1142.52 L10.64 1141.96
-								 L10.64 1140.3 L9.92 1140.06 L9.87 1138.06 L10.64 1137.86 L10.64 1135.74 L9.97 1135.34 L9.97 1133.64
-								 C12.87 1132.61 14.96 1129.85 14.96 1126.6" class="st7"/>
-					<path d="M6.52 1133.89 L6.52 1151.92" class="st7"/>
-					<path d="M8.41 1121.51 a0.79782 0.79782 -180 1 0 -1.59564 0 a0.79782 0.79782 -180 1 0 1.59564 0" class="st7"/>
-				</g>
-				<path d="M14.96 1126.6 C14.96 1122.47 11.61 1119.12 7.48 1119.12 C3.35 1119.12 0 1122.47 0 1126.6 C0 1129.85 2.08
-							 1132.61 4.99 1133.64 L4.99 1152.62 L7.51 1154.55 L9.97 1152.62 L9.97 1150.63 L10.64 1150.63 L10.64 1147.41
-							 L9.92 1146.84 L9.92 1145.54 L10.64 1145.37 L10.64 1143.4 L9.84 1142.52 L10.64 1141.96 L10.64 1140.3
-							 L9.92 1140.06 L9.87 1138.06 L10.64 1137.86 L10.64 1135.74 L9.97 1135.34 L9.97 1133.64 C12.87 1132.61
-							 14.96 1129.85 14.96 1126.6 ZM8.41 1121.51 a0.79782 0.79782 -180 1 0 -1.59564 0 a0.79782 0.79782 -180
-							 1 0 1.59564 0 Z" class="st17"/>
-				<path d="M14.96 1126.6 C14.96 1122.47 11.61 1119.12 7.48 1119.12 C3.35 1119.12 0 1122.47 0 1126.6 C0 1129.85 2.08
-							 1132.61 4.99 1133.64 L4.99 1152.62 L7.51 1154.55 L9.97 1152.62 L9.97 1150.63 L10.64 1150.63 L10.64 1147.41
-							 L9.92 1146.84 L9.92 1145.54 L10.64 1145.37 L10.64 1143.4 L9.84 1142.52 L10.64 1141.96 L10.64 1140.3
-							 L9.92 1140.06 L9.87 1138.06 L10.64 1137.86 L10.64 1135.74 L9.97 1135.34 L9.97 1133.64 C12.87 1132.61
-							 14.96 1129.85 14.96 1126.6" class="st9"/>
-				<path d="M6.52 1133.89 L6.52 1151.92" class="st9"/>
-				<path d="M8.41 1121.51 a0.79782 0.79782 -180 1 0 -1.59564 0 a0.79782 0.79782 -180 1 0 1.59564 0" class="st9"/>
-			</g>
-			<g id="shape18-106" v:mID="18" v:groupContext="groupContent">
-				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
-				<v:textRect cx="17.7165" cy="1165.21" width="30.27" height="21.3161"/>
-				<g id="shadow18-107" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
-						transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1"/>
-				<text x="7.72" y="1168.54" class="st16" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>私钥</text>			</g>
-		</g>
-		<g id="shape20-109" v:mID="20" v:groupContext="shape" v:layerMember="0" transform="translate(180,-998.646)">
-			<title>自关联消息</title>
-			<desc>生成随机数 RNc</desc>
-			<v:userDefs>
-				<v:ud v:nameU="IsReturn" v:prompt="" v:val="VT0(0):5"/>
-				<v:ud v:nameU="IsAsync" v:prompt="" v:val="VT0(0):26"/>
-				<v:ud v:nameU="IsSelfMessage" v:prompt="" v:val="VT0(1):5"/>
-				<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
-			</v:userDefs>
-			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
-			<v:textRect cx="46.7717" cy="1168.72" width="64.52" height="18.6536"/>
-			<path d="M7.09 1154.55 L25.09 1154.55 L25.09 1188.57 L15.57 1188.57" class="st18"/>
-			<rect v:rectContext="textBkgnd" x="19.4223" y="1163.4" width="54.699" height="10.6501" class="st20"/>
-			<text x="19.42" y="1171.39" class="st21" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>生成随机数<tspan
-						class="st22"> </tspan><tspan class="st22">RNc</tspan></text>		</g>
-		<g id="shape21-119" v:mID="21" v:groupContext="shape" v:layerMember="0" transform="translate(187.087,-937.701)">
-			<title>消息</title>
-			<desc>client hello</desc>
-			<v:userDefs>
-				<v:ud v:nameU="IsReturn" v:prompt="" v:val="VT0(0):5"/>
-				<v:ud v:nameU="IsAsync" v:prompt="" v:val="VT0(0):26"/>
-				<v:ud v:nameU="IsSelfMessage" v:prompt="" v:val="VT0(0):5"/>
-				<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
-			</v:userDefs>
-			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
-			<v:textRect cx="195.591" cy="1147.46" width="45.62" height="17.6036"/>
-			<path d="M0 1147.46 L382.7 1147.46" class="st18"/>
-			<rect v:rectContext="textBkgnd" x="177.691" y="1142.66" width="35.7998" height="9.59985" class="st20"/>
-			<text x="177.69" y="1149.86" class="st23" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>client hello</text>		</g>
-		<g id="shape23-126" v:mID="23" v:groupContext="shape" transform="translate(317.779,-963.213)">
-			<title>工作表.23</title>
-			<desc>支持的协议版本比如TLS1.0版一个客户端生成的随机数RNc稍后用于生成会话密钥支持的加密算法如RSA公钥加密和支持的压缩算法</desc>
-			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
-			<v:textRect cx="70.7169" cy="1121.95" width="141.44" height="65.1969"/>
-			<g id="shadow23-127" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
-					transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1">
-				<rect x="0" y="1089.35" width="141.434" height="65.1969" class="st24"/>
-			</g>
-			<rect x="0" y="1089.35" width="141.434" height="65.1969" class="st25"/>
-			<text x="4.87" y="1101.58" class="st26" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>支持的协议版本，比如<tspan
-						class="st27" v:langID="1033">TLS</tspan><tspan class="st27" v:langID="1033">1</tspan><tspan class="st27"
-						v:langID="1033">.</tspan><tspan class="st27" v:langID="1033">0</tspan>版，<tspan x="4.97" dy="1.331em"
-						class="st28">一个客户端生成的随机数</tspan><tspan class="st27">RNc</tspan>（稍<tspan x="7.72" dy="1.233em" class="st28">后用于生成</tspan><tspan
-						class="st29">会话密钥</tspan>，支持的加<tspan x="5.1" dy="1.298em" class="st28">密算法</tspan>（如<tspan class="st27"
-						v:langID="1033">RSA</tspan>公钥加密）和支持<tspan x="48.22" dy="1.331em" class="st28">的压缩算法</tspan></text>		</g>
-		<g id="shape33-143" v:mID="33" v:groupContext="shape" v:layerMember="0" transform="translate(571.181,-922.11)">
-			<title>自关联消息.33</title>
-			<desc>生成随机数 RNs</desc>
-			<v:userDefs>
-				<v:ud v:nameU="IsReturn" v:prompt="" v:val="VT0(0):5"/>
-				<v:ud v:nameU="IsAsync" v:prompt="" v:val="VT0(0):26"/>
-				<v:ud v:nameU="IsSelfMessage" v:prompt="" v:val="VT0(1):5"/>
-				<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
-			</v:userDefs>
-			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
-			<v:textRect cx="-18.4252" cy="1171.56" width="64.43" height="18.6536"/>
-			<path d="M7.09 1154.55 L25.09 1154.55 L25.09 1188.57 L15.57 1188.57" class="st18"/>
-			<rect v:rectContext="textBkgnd" x="-45.7317" y="1166.23" width="54.6133" height="10.6501" class="st20"/>
-			<text x="-45.73" y="1174.22" class="st21" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>生成随机数<tspan
-						class="st27"> </tspan><tspan class="st27">R</tspan><tspan class="st30">Ns</tspan></text>		</g>
-		<g id="shape34-153" v:mID="34" v:groupContext="shape" v:layerMember="0" transform="translate(578.268,-840.189)">
-			<title>消息.34</title>
-			<desc>server hello</desc>
-			<v:userDefs>
-				<v:ud v:nameU="IsReturn" v:prompt="" v:val="VT0(0):5"/>
-				<v:ud v:nameU="IsAsync" v:prompt="" v:val="VT0(0):26"/>
-				<v:ud v:nameU="IsSelfMessage" v:prompt="" v:val="VT0(0):5"/>
-				<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
-			</v:userDefs>
-			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
-			<v:textRect cx="-195.591" cy="1147.46" width="47.98" height="17.6036"/>
-			<path d="M0 1147.46 L-382.7 1147.46" class="st18"/>
-			<rect v:rectContext="textBkgnd" x="-214.672" y="1142.66" width="38.1638" height="9.59985" class="st20"/>
-			<text x="-214.67" y="1149.86" class="st23" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>server hello</text>		</g>
-		<g id="shape35-160" v:mID="35" v:groupContext="shape" transform="translate(282.905,-856.913)">
-			<title>工作表.35</title>
-			<desc>确认使用的加密通信协议版本比如TLS 1.0版本如果浏览器与服务器支持的版本不一致服务器关闭加密通信一个服务器生成的随机数...</desc>
-			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
-			<v:textRect cx="105.591" cy="1121.95" width="211.19" height="65.1969"/>
-			<g id="shadow35-161" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
-					transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1">
-				<rect x="0" y="1089.35" width="211.181" height="65.1969" class="st24"/>
-			</g>
-			<rect x="0" y="1089.35" width="211.181" height="65.1969" class="st25"/>
-			<text x="11.72" y="1102.17" class="st31" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>确认使用的加密通信协议版本，比如<tspan
-						class="st27" v:langID="1033">TLS </tspan><tspan class="st27" v:langID="1033">1</tspan><tspan class="st27"
-						v:langID="1033">.</tspan><tspan class="st27" v:langID="1033">0</tspan>版本<tspan x="6.59" dy="1.233em"
-						class="st28">（</tspan>如果浏览器与服务器支持的版本不一致，服务器<tspan x="12.98" dy="1.298em" class="st28">关闭加密通信</tspan>），一个服务器生成的随机数<tspan
-						class="st27">RNs</tspan><tspan x="6.59" dy="1.233em" class="st28">（</tspan>稍后用于生成<tspan class="st29">对话密钥</tspan>），确认使用的加密方法<tspan
-						x="39.98" dy="1.298em" class="st28">（</tspan>如<tspan class="st27" v:langID="1033">RSA</tspan>公钥加密），服务器证书</text>		</g>
-		<g id="shape36-177" v:mID="36" v:groupContext="shape" v:layerMember="0" transform="translate(578.268,-810.142)">
-			<title>消息.36</title>
-			<desc>发送服务端公钥和ca证书</desc>
-			<v:userDefs>
-				<v:ud v:nameU="IsReturn" v:prompt="" v:val="VT0(0):5"/>
-				<v:ud v:nameU="IsAsync" v:prompt="" v:val="VT0(0):26"/>
-				<v:ud v:nameU="IsSelfMessage" v:prompt="" v:val="VT0(0):5"/>
-				<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
-			</v:userDefs>
-			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
-			<v:textRect cx="-195.591" cy="1147.46" width="97.03" height="18.6536"/>
-			<path d="M0 1147.46 L-382.7 1147.46" class="st18"/>
-			<rect v:rectContext="textBkgnd" x="-239.198" y="1142.14" width="87.2144" height="10.6501" class="st20"/>
-			<text x="-239.2" y="1150.13" class="st21" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>发送服务端公钥和<tspan
-						class="st27">ca</tspan>证书</text>		</g>
-		<g id="group37-185" transform="translate(307.335,-808.62)" v:mID="37" v:groupContext="group">
-			<v:custProps>
-				<v:cp v:nameU="ShapeClass" v:lbl="ShapeClass" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="true"
-						v:ask="false" v:langID="2052" v:cal="0" v:val="VT4(安全性)"/>
-				<v:cp v:nameU="ShapeType" v:lbl="ShapeType" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="true"
-						v:ask="false" v:langID="2052" v:cal="0" v:val="VT4(概念)"/>
-				<v:cp v:nameU="SubShapeType" v:lbl="SubShapeType" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="true"
-						v:ask="false" v:langID="2052" v:cal="0" v:val="VT4(密钥)"/>
-			</v:custProps>
-			<v:userDefs>
-				<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
-				<v:ud v:nameU="ShapeClass" v:prompt="" v:val="VT0(5):26"/>
-				<v:ud v:nameU="SolSH" v:prompt="" v:val="VT15({BF0433D9-CD73-4EB5-8390-8653BE590246}):41"/>
-				<v:ud v:nameU="visLegendShape" v:prompt="" v:val="VT0(2):26"/>
-			</v:userDefs>
-			<title>密钥.37</title>
-			<desc>Server公钥</desc>
-			<g id="shape38-186" v:mID="38" v:groupContext="shape" transform="translate(7.37111,0)">
-				<title>工作表.38</title>
-				<g id="shadow38-187" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
-						transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1">
-					<path d="M10.77 1134.42 C10.77 1131.45 8.36 1129.04 5.38 1129.04 C2.41 1129.04 0 1131.45 0 1134.42 C0 1136.77
-								 1.5 1138.76 3.59 1139.5 L3.59 1153.16 L5.41 1154.55 L7.18 1153.16 L7.18 1151.73 L7.66 1151.73 L7.66
-								 1149.41 L7.14 1149 L7.14 1148.06 L7.66 1147.94 L7.66 1146.53 L7.08 1145.89 L7.66 1145.49 L7.66 1144.29
-								 L7.14 1144.12 L7.11 1142.68 L7.66 1142.53 L7.66 1141 L7.18 1140.72 L7.18 1139.49 C9.27 1138.76 10.77
-								 1136.77 10.77 1134.42 ZM6.06 1130.76 a0.57443 0.57443 -180 1 0 -1.14886 0 a0.57443 0.57443 -180
-								 1 0 1.14886 0 Z" class="st6"/>
-					<path d="M10.77 1134.42 C10.77 1131.45 8.36 1129.04 5.38 1129.04 C2.41 1129.04 0 1131.45 0 1134.42 C0 1136.77
-								 1.5 1138.76 3.59 1139.5 L3.59 1153.16 L5.41 1154.55 L7.18 1153.16 L7.18 1151.73 L7.66 1151.73 L7.66
-								 1149.41 L7.14 1149 L7.14 1148.06 L7.66 1147.94 L7.66 1146.53 L7.08 1145.89 L7.66 1145.49 L7.66 1144.29
-								 L7.14 1144.12 L7.11 1142.68 L7.66 1142.53 L7.66 1141 L7.18 1140.72 L7.18 1139.49 C9.27 1138.76 10.77
-								 1136.77 10.77 1134.42" class="st7"/>
-					<path d="M4.7 1139.67 L4.7 1152.66" class="st7"/>
-					<path d="M6.06 1130.76 a0.57443 0.57443 -180 1 0 -1.14886 0 a0.57443 0.57443 -180 1 0 1.14886 0" class="st7"/>
-				</g>
-				<path d="M10.77 1134.42 C10.77 1131.45 8.36 1129.04 5.38 1129.04 C2.41 1129.04 0 1131.45 0 1134.42 C0 1136.77 1.5
-							 1138.76 3.59 1139.5 L3.59 1153.16 L5.41 1154.55 L7.18 1153.16 L7.18 1151.73 L7.66 1151.73 L7.66 1149.41
-							 L7.14 1149 L7.14 1148.06 L7.66 1147.94 L7.66 1146.53 L7.08 1145.89 L7.66 1145.49 L7.66 1144.29 L7.14
-							 1144.12 L7.11 1142.68 L7.66 1142.53 L7.66 1141 L7.18 1140.72 L7.18 1139.49 C9.27 1138.76 10.77 1136.77
-							 10.77 1134.42 ZM6.06 1130.76 a0.57443 0.57443 -180 1 0 -1.14886 0 a0.57443 0.57443 -180 1 0 1.14886
-							 0 Z" class="st15"/>
-				<path d="M10.77 1134.42 C10.77 1131.45 8.36 1129.04 5.38 1129.04 C2.41 1129.04 0 1131.45 0 1134.42 C0 1136.77 1.5
-							 1138.76 3.59 1139.5 L3.59 1153.16 L5.41 1154.55 L7.18 1153.16 L7.18 1151.73 L7.66 1151.73 L7.66 1149.41
-							 L7.14 1149 L7.14 1148.06 L7.66 1147.94 L7.66 1146.53 L7.08 1145.89 L7.66 1145.49 L7.66 1144.29 L7.14
-							 1144.12 L7.11 1142.68 L7.66 1142.53 L7.66 1141 L7.18 1140.72 L7.18 1139.49 C9.27 1138.76 10.77 1136.77
-							 10.77 1134.42" class="st9"/>
-				<path d="M4.7 1139.67 L4.7 1152.66" class="st9"/>
-				<path d="M6.06 1130.76 a0.57443 0.57443 -180 1 0 -1.14886 0 a0.57443 0.57443 -180 1 0 1.14886 0" class="st9"/>
-			</g>
-			<g id="shape37-198" v:mID="37" v:groupContext="groupContent">
-				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
-				<v:textRect cx="12.7559" cy="1162.55" width="36.99" height="15.9909"/>
-				<g id="shadow37-199" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
-						transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1"/>
-				<text x="-1.05" y="1164.54" class="st32" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Server<tspan
-							class="st11">公钥</tspan></text>			</g>
-		</g>
-		<g id="shape39-202" v:mID="39" v:groupContext="shape" v:layerMember="0" transform="translate(578.268,-773.291)">
-			<title>消息.39</title>
-			<desc>请求客户端公钥证书</desc>
-			<v:userDefs>
-				<v:ud v:nameU="IsReturn" v:prompt="" v:val="VT0(0):5"/>
-				<v:ud v:nameU="IsAsync" v:prompt="" v:val="VT0(0):26"/>
-				<v:ud v:nameU="IsSelfMessage" v:prompt="" v:val="VT0(0):5"/>
-				<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
-			</v:userDefs>
-			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
-			<v:textRect cx="-195.591" cy="1147.46" width="81.82" height="18.6536"/>
-			<path d="M0 1147.46 L-382.7 1147.46" class="st18"/>
-			<rect v:rectContext="textBkgnd" x="-231.59" y="1142.14" width="71.9997" height="10.6501" class="st33"/>
-			<text x="-231.59" y="1150.13" class="st21" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>请求客户端公钥证书</text>		</g>
-		<g id="shape40-209" v:mID="40" v:groupContext="shape" v:layerMember="0" transform="translate(180,-760.535)">
-			<title>自关联消息.40</title>
-			<desc>检查服务端ca证书的真实性</desc>
-			<v:userDefs>
-				<v:ud v:nameU="IsReturn" v:prompt="" v:val="VT0(0):5"/>
-				<v:ud v:nameU="IsAsync" v:prompt="" v:val="VT0(0):26"/>
-				<v:ud v:nameU="IsSelfMessage" v:prompt="" v:val="VT0(1):5"/>
-				<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
-			</v:userDefs>
-			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
-			<v:textRect cx="7.08661" cy="1171.56" width="105.03" height="18.6536"/>
-			<path d="M7.09 1154.55 L25.09 1154.55 L25.09 1188.57 L15.57 1188.57" class="st18"/>
-			<rect v:rectContext="textBkgnd" x="-40.5205" y="1166.23" width="95.2144" height="10.6501" class="st33"/>
-			<text x="-40.52" y="1174.22" class="st21" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>检查服务端<tspan
-						class="st27">ca</tspan>证书的真实性</text>		</g>
-		<g id="shape41-217" v:mID="41" v:groupContext="shape" v:layerMember="0" transform="translate(187.087,-702.425)">
-			<title>消息.41</title>
-			<desc>发送客户端ca证书和公钥</desc>
-			<v:userDefs>
-				<v:ud v:nameU="IsReturn" v:prompt="" v:val="VT0(0):5"/>
-				<v:ud v:nameU="IsAsync" v:prompt="" v:val="VT0(0):26"/>
-				<v:ud v:nameU="IsSelfMessage" v:prompt="" v:val="VT0(0):5"/>
-				<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
-			</v:userDefs>
-			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
-			<v:textRect cx="195.591" cy="1147.46" width="97.03" height="18.6536"/>
-			<path d="M0 1147.46 L382.7 1147.46" class="st18"/>
-			<rect v:rectContext="textBkgnd" x="151.983" y="1142.14" width="87.2144" height="10.6501" class="st20"/>
-			<text x="151.98" y="1150.13" class="st21" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>发送客户端<tspan
-						class="st27">ca</tspan>证书和公钥</text>		</g>
-		<g id="group42-225" transform="translate(428.031,-699.516)" v:mID="42" v:groupContext="group">
-			<v:custProps>
-				<v:cp v:nameU="ShapeClass" v:lbl="ShapeClass" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="true"
-						v:ask="false" v:langID="2052" v:cal="0" v:val="VT4(安全性)"/>
-				<v:cp v:nameU="ShapeType" v:lbl="ShapeType" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="true"
-						v:ask="false" v:langID="2052" v:cal="0" v:val="VT4(概念)"/>
-				<v:cp v:nameU="SubShapeType" v:lbl="SubShapeType" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="true"
-						v:ask="false" v:langID="2052" v:cal="0" v:val="VT4(密钥)"/>
-			</v:custProps>
-			<v:userDefs>
-				<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
-				<v:ud v:nameU="ShapeClass" v:prompt="" v:val="VT0(5):26"/>
-				<v:ud v:nameU="SolSH" v:prompt="" v:val="VT15({BF0433D9-CD73-4EB5-8390-8653BE590246}):41"/>
-				<v:ud v:nameU="visLegendShape" v:prompt="" v:val="VT0(2):26"/>
-			</v:userDefs>
-			<title>密钥.42</title>
-			<desc>Client 公钥</desc>
-			<g id="shape43-226" v:mID="43" v:groupContext="shape" transform="translate(7.37111,0)">
-				<title>工作表.43</title>
-				<path d="M10.77 1134.42 C10.77 1131.45 8.36 1129.04 5.38 1129.04 C2.41 1129.04 0 1131.45 0 1134.42 C0 1136.77 1.5
-							 1138.76 3.59 1139.5 L3.59 1153.16 L5.41 1154.55 L7.18 1153.16 L7.18 1151.73 L7.66 1151.73 L7.66 1149.41
-							 L7.14 1149 L7.14 1148.06 L7.66 1147.94 L7.66 1146.53 L7.08 1145.89 L7.66 1145.49 L7.66 1144.29 L7.14
-							 1144.12 L7.11 1142.68 L7.66 1142.53 L7.66 1141 L7.18 1140.72 L7.18 1139.49 C9.27 1138.76 10.77 1136.77
-							 10.77 1134.42 ZM6.06 1130.76 a0.57443 0.57443 -180 1 0 -1.14886 0 a0.57443 0.57443 -180 1 0 1.14886
-							 0 Z" class="st12"/>
-				<path d="M10.77 1134.42 C10.77 1131.45 8.36 1129.04 5.38 1129.04 C2.41 1129.04 0 1131.45 0 1134.42 C0 1136.77 1.5
-							 1138.76 3.59 1139.5 L3.59 1153.16 L5.41 1154.55 L7.18 1153.16 L7.18 1151.73 L7.66 1151.73 L7.66 1149.41
-							 L7.14 1149 L7.14 1148.06 L7.66 1147.94 L7.66 1146.53 L7.08 1145.89 L7.66 1145.49 L7.66 1144.29 L7.14
-							 1144.12 L7.11 1142.68 L7.66 1142.53 L7.66 1141 L7.18 1140.72 L7.18 1139.49 C9.27 1138.76 10.77 1136.77
-							 10.77 1134.42" class="st13"/>
-				<path d="M4.7 1139.67 L4.7 1152.66" class="st13"/>
-				<path d="M6.06 1130.76 a0.57443 0.57443 -180 1 0 -1.14886 0 a0.57443 0.57443 -180 1 0 1.14886 0" class="st13"/>
-			</g>
-			<g id="shape42-231" v:mID="42" v:groupContext="groupContent">
-				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
-				<v:textRect cx="12.7559" cy="1166.15" width="23.47" height="23.1908"/>
-				<text x="5.71" y="1163.95" class="st34" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Client<v:newlineChar/><tspan
-							x="6.76" dy="1.298em" class="st11">公钥</tspan></text>			</g>
-		</g>
-		<g id="shape44-234" v:mID="44" v:groupContext="shape" v:layerMember="0" transform="translate(571.181,-689.669)">
-			<title>自关联消息.44</title>
-			<desc>检查客户端ca证书</desc>
-			<v:userDefs>
-				<v:ud v:nameU="IsReturn" v:prompt="" v:val="VT0(0):5"/>
-				<v:ud v:nameU="IsAsync" v:prompt="" v:val="VT0(0):26"/>
-				<v:ud v:nameU="IsSelfMessage" v:prompt="" v:val="VT0(1):5"/>
-				<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
-			</v:userDefs>
-			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
-			<v:textRect cx="-18.4252" cy="1171.56" width="73.03" height="18.6536"/>
-			<path d="M7.09 1154.55 L25.09 1154.55 L25.09 1182.9 L15.57 1182.9" class="st18"/>
-			<rect v:rectContext="textBkgnd" x="-50.0323" y="1166.23" width="63.2145" height="10.6501" class="st20"/>
-			<text x="-50.03" y="1174.22" class="st21" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>检查客户端<tspan
-						class="st27">ca</tspan>证书</text>		</g>
-		<g id="shape45-242" v:mID="45" v:groupContext="shape" v:layerMember="0" transform="translate(187.087,-631.559)">
-			<title>消息.45</title>
-			<desc>前面所有的消息都用 hash 摘要计算并用 client私钥 加密</desc>
-			<v:userDefs>
-				<v:ud v:nameU="IsReturn" v:prompt="" v:val="VT0(0):5"/>
-				<v:ud v:nameU="IsAsync" v:prompt="" v:val="VT0(0):26"/>
-				<v:ud v:nameU="IsSelfMessage" v:prompt="" v:val="VT0(0):5"/>
-				<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
-			</v:userDefs>
-			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
-			<v:textRect cx="195.591" cy="1147.46" width="210.85" height="18.6536"/>
-			<path d="M0 1147.46 L382.7 1147.46" class="st18"/>
-			<rect v:rectContext="textBkgnd" x="95.0733" y="1142.14" width="201.035" height="10.6501" class="st20"/>
-			<text x="95.07" y="1150.13" class="st21" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>前面所有的消息都用<tspan
-						class="st27"> </tspan><tspan class="st27">hash </tspan>摘要计算，并用<tspan class="st27"> </tspan><tspan
-						class="st35">client</tspan><tspan class="st36">私钥</tspan><tspan class="st35"> </tspan>加密</text>		</g>
-		<g id="group46-255" transform="translate(80.7874,-800.22)" v:mID="46" v:groupContext="group">
-			<v:custProps>
-				<v:cp v:nameU="ShapeClass" v:lbl="ShapeClass" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="true"
-						v:ask="false" v:langID="2052" v:cal="0" v:val="VT4(安全性)"/>
-				<v:cp v:nameU="ShapeType" v:lbl="ShapeType" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="true"
-						v:ask="false" v:langID="2052" v:cal="0" v:val="VT4(概念)"/>
-				<v:cp v:nameU="SubShapeType" v:lbl="SubShapeType" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="true"
-						v:ask="false" v:langID="2052" v:cal="0" v:val="VT4(密钥)"/>
-			</v:custProps>
-			<v:userDefs>
-				<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
-				<v:ud v:nameU="ShapeClass" v:prompt="" v:val="VT0(5):26"/>
-				<v:ud v:nameU="SolSH" v:prompt="" v:val="VT15({BF0433D9-CD73-4EB5-8390-8653BE590246}):41"/>
-				<v:ud v:nameU="visLegendShape" v:prompt="" v:val="VT0(2):26"/>
-			</v:userDefs>
-			<title>密钥.46</title>
-			<desc>Client 公钥</desc>
-			<g id="shape47-256" v:mID="47" v:groupContext="shape" transform="translate(7.37111,0)">
-				<title>工作表.47</title>
-				<path d="M10.77 1134.42 C10.77 1131.45 8.36 1129.04 5.38 1129.04 C2.41 1129.04 0 1131.45 0 1134.42 C0 1136.77 1.5
-							 1138.76 3.59 1139.5 L3.59 1153.16 L5.41 1154.55 L7.18 1153.16 L7.18 1151.73 L7.66 1151.73 L7.66 1149.41
-							 L7.14 1149 L7.14 1148.06 L7.66 1147.94 L7.66 1146.53 L7.08 1145.89 L7.66 1145.49 L7.66 1144.29 L7.14
-							 1144.12 L7.11 1142.68 L7.66 1142.53 L7.66 1141 L7.18 1140.72 L7.18 1139.49 C9.27 1138.76 10.77 1136.77
-							 10.77 1134.42 ZM6.06 1130.76 a0.57443 0.57443 -180 1 0 -1.14886 0 a0.57443 0.57443 -180 1 0 1.14886
-							 0 Z" class="st12"/>
-				<path d="M10.77 1134.42 C10.77 1131.45 8.36 1129.04 5.38 1129.04 C2.41 1129.04 0 1131.45 0 1134.42 C0 1136.77 1.5
-							 1138.76 3.59 1139.5 L3.59 1153.16 L5.41 1154.55 L7.18 1153.16 L7.18 1151.73 L7.66 1151.73 L7.66 1149.41
-							 L7.14 1149 L7.14 1148.06 L7.66 1147.94 L7.66 1146.53 L7.08 1145.89 L7.66 1145.49 L7.66 1144.29 L7.14
-							 1144.12 L7.11 1142.68 L7.66 1142.53 L7.66 1141 L7.18 1140.72 L7.18 1139.49 C9.27 1138.76 10.77 1136.77
-							 10.77 1134.42" class="st13"/>
-				<path d="M4.7 1139.67 L4.7 1152.66" class="st13"/>
-				<path d="M6.06 1130.76 a0.57443 0.57443 -180 1 0 -1.14886 0 a0.57443 0.57443 -180 1 0 1.14886 0" class="st13"/>
-			</g>
-			<g id="shape46-261" v:mID="46" v:groupContext="groupContent">
-				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
-				<v:textRect cx="12.7559" cy="1171.21" width="33.77" height="33.3161"/>
-				<text x="1.01" y="1167.55" class="st14" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Client<v:newlineChar/><tspan
-							x="2.76" dy="1.298em" class="st11">公钥</tspan></text>			</g>
-		</g>
-		<g id="group48-264" transform="translate(55.7978,-800.22)" v:mID="48" v:groupContext="group">
-			<v:custProps>
-				<v:cp v:nameU="ShapeClass" v:lbl="ShapeClass" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="true"
-						v:ask="false" v:langID="2052" v:cal="0" v:val="VT4(安全性)"/>
-				<v:cp v:nameU="ShapeType" v:lbl="ShapeType" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="true"
-						v:ask="false" v:langID="2052" v:cal="0" v:val="VT4(概念)"/>
-				<v:cp v:nameU="SubShapeType" v:lbl="SubShapeType" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="true"
-						v:ask="false" v:langID="2052" v:cal="0" v:val="VT4(密钥)"/>
-			</v:custProps>
-			<v:userDefs>
-				<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
-				<v:ud v:nameU="ShapeClass" v:prompt="" v:val="VT0(5):26"/>
-				<v:ud v:nameU="SolSH" v:prompt="" v:val="VT15({BF0433D9-CD73-4EB5-8390-8653BE590246}):41"/>
-				<v:ud v:nameU="visLegendShape" v:prompt="" v:val="VT0(2):26"/>
-			</v:userDefs>
-			<title>密钥.48</title>
-			<desc>Client 私钥</desc>
-			<g id="shape49-265" v:mID="49" v:groupContext="shape" transform="translate(7.37111,0)">
-				<title>工作表.49</title>
-				<g id="shadow49-266" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
-						transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1">
-					<path d="M10.77 1134.42 C10.77 1131.45 8.36 1129.04 5.38 1129.04 C2.41 1129.04 0 1131.45 0 1134.42 C0 1136.77
-								 1.5 1138.76 3.59 1139.5 L3.59 1153.16 L5.41 1154.55 L7.18 1153.16 L7.18 1151.73 L7.66 1151.73 L7.66
-								 1149.41 L7.14 1149 L7.14 1148.06 L7.66 1147.94 L7.66 1146.53 L7.08 1145.89 L7.66 1145.49 L7.66 1144.29
-								 L7.14 1144.12 L7.11 1142.68 L7.66 1142.53 L7.66 1141 L7.18 1140.72 L7.18 1139.49 C9.27 1138.76 10.77
-								 1136.77 10.77 1134.42 ZM6.06 1130.76 a0.57443 0.57443 -180 1 0 -1.14886 0 a0.57443 0.57443 -180
-								 1 0 1.14886 0 Z" class="st6"/>
-					<path d="M10.77 1134.42 C10.77 1131.45 8.36 1129.04 5.38 1129.04 C2.41 1129.04 0 1131.45 0 1134.42 C0 1136.77
-								 1.5 1138.76 3.59 1139.5 L3.59 1153.16 L5.41 1154.55 L7.18 1153.16 L7.18 1151.73 L7.66 1151.73 L7.66
-								 1149.41 L7.14 1149 L7.14 1148.06 L7.66 1147.94 L7.66 1146.53 L7.08 1145.89 L7.66 1145.49 L7.66 1144.29
-								 L7.14 1144.12 L7.11 1142.68 L7.66 1142.53 L7.66 1141 L7.18 1140.72 L7.18 1139.49 C9.27 1138.76 10.77
-								 1136.77 10.77 1134.42" class="st7"/>
-					<path d="M4.7 1139.67 L4.7 1152.66" class="st7"/>
-					<path d="M6.06 1130.76 a0.57443 0.57443 -180 1 0 -1.14886 0 a0.57443 0.57443 -180 1 0 1.14886 0" class="st7"/>
-				</g>
-				<path d="M10.77 1134.42 C10.77 1131.45 8.36 1129.04 5.38 1129.04 C2.41 1129.04 0 1131.45 0 1134.42 C0 1136.77 1.5
-							 1138.76 3.59 1139.5 L3.59 1153.16 L5.41 1154.55 L7.18 1153.16 L7.18 1151.73 L7.66 1151.73 L7.66 1149.41
-							 L7.14 1149 L7.14 1148.06 L7.66 1147.94 L7.66 1146.53 L7.08 1145.89 L7.66 1145.49 L7.66 1144.29 L7.14
-							 1144.12 L7.11 1142.68 L7.66 1142.53 L7.66 1141 L7.18 1140.72 L7.18 1139.49 C9.27 1138.76 10.77 1136.77
-							 10.77 1134.42 ZM6.06 1130.76 a0.57443 0.57443 -180 1 0 -1.14886 0 a0.57443 0.57443 -180 1 0 1.14886
-							 0 Z" class="st8"/>
-				<path d="M10.77 1134.42 C10.77 1131.45 8.36 1129.04 5.38 1129.04 C2.41 1129.04 0 1131.45 0 1134.42 C0 1136.77 1.5
-							 1138.76 3.59 1139.5 L3.59 1153.16 L5.41 1154.55 L7.18 1153.16 L7.18 1151.73 L7.66 1151.73 L7.66 1149.41
-							 L7.14 1149 L7.14 1148.06 L7.66 1147.94 L7.66 1146.53 L7.08 1145.89 L7.66 1145.49 L7.66 1144.29 L7.14
-							 1144.12 L7.11 1142.68 L7.66 1142.53 L7.66 1141 L7.18 1140.72 L7.18 1139.49 C9.27 1138.76 10.77 1136.77
-							 10.77 1134.42" class="st9"/>
-				<path d="M4.7 1139.67 L4.7 1152.66" class="st9"/>
-				<path d="M6.06 1130.76 a0.57443 0.57443 -180 1 0 -1.14886 0 a0.57443 0.57443 -180 1 0 1.14886 0" class="st9"/>
-			</g>
-			<g id="shape48-277" v:mID="48" v:groupContext="groupContent">
-				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
-				<v:textRect cx="12.7559" cy="1171.21" width="33.77" height="33.3161"/>
-				<g id="shadow48-278" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
-						transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1"/>
-				<text x="1.01" y="1167.55" class="st10" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Client<v:newlineChar/><tspan
-							x="2.76" dy="1.298em" class="st11">私钥</tspan></text>			</g>
-		</g>
-		<g id="group50-281" transform="translate(110.999,-800.22)" v:mID="50" v:groupContext="group">
-			<v:custProps>
-				<v:cp v:nameU="ShapeClass" v:lbl="ShapeClass" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="true"
-						v:ask="false" v:langID="2052" v:cal="0" v:val="VT4(安全性)"/>
-				<v:cp v:nameU="ShapeType" v:lbl="ShapeType" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="true"
-						v:ask="false" v:langID="2052" v:cal="0" v:val="VT4(概念)"/>
-				<v:cp v:nameU="SubShapeType" v:lbl="SubShapeType" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="true"
-						v:ask="false" v:langID="2052" v:cal="0" v:val="VT4(密钥)"/>
-			</v:custProps>
-			<v:userDefs>
-				<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
-				<v:ud v:nameU="ShapeClass" v:prompt="" v:val="VT0(5):26"/>
-				<v:ud v:nameU="SolSH" v:prompt="" v:val="VT15({BF0433D9-CD73-4EB5-8390-8653BE590246}):41"/>
-				<v:ud v:nameU="visLegendShape" v:prompt="" v:val="VT0(2):26"/>
-			</v:userDefs>
-			<title>密钥.50</title>
-			<desc>Server 公钥</desc>
-			<g id="shape51-282" v:mID="51" v:groupContext="shape" transform="translate(7.37111,0)">
-				<title>工作表.51</title>
-				<g id="shadow51-283" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
-						transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1">
-					<path d="M10.77 1134.42 C10.77 1131.45 8.36 1129.04 5.38 1129.04 C2.41 1129.04 0 1131.45 0 1134.42 C0 1136.77
-								 1.5 1138.76 3.59 1139.5 L3.59 1153.16 L5.41 1154.55 L7.18 1153.16 L7.18 1151.73 L7.66 1151.73 L7.66
-								 1149.41 L7.14 1149 L7.14 1148.06 L7.66 1147.94 L7.66 1146.53 L7.08 1145.89 L7.66 1145.49 L7.66 1144.29
-								 L7.14 1144.12 L7.11 1142.68 L7.66 1142.53 L7.66 1141 L7.18 1140.72 L7.18 1139.49 C9.27 1138.76 10.77
-								 1136.77 10.77 1134.42 ZM6.06 1130.76 a0.57443 0.57443 -180 1 0 -1.14886 0 a0.57443 0.57443 -180
-								 1 0 1.14886 0 Z" class="st6"/>
-					<path d="M10.77 1134.42 C10.77 1131.45 8.36 1129.04 5.38 1129.04 C2.41 1129.04 0 1131.45 0 1134.42 C0 1136.77
-								 1.5 1138.76 3.59 1139.5 L3.59 1153.16 L5.41 1154.55 L7.18 1153.16 L7.18 1151.73 L7.66 1151.73 L7.66
-								 1149.41 L7.14 1149 L7.14 1148.06 L7.66 1147.94 L7.66 1146.53 L7.08 1145.89 L7.66 1145.49 L7.66 1144.29
-								 L7.14 1144.12 L7.11 1142.68 L7.66 1142.53 L7.66 1141 L7.18 1140.72 L7.18 1139.49 C9.27 1138.76 10.77
-								 1136.77 10.77 1134.42" class="st7"/>
-					<path d="M4.7 1139.67 L4.7 1152.66" class="st7"/>
-					<path d="M6.06 1130.76 a0.57443 0.57443 -180 1 0 -1.14886 0 a0.57443 0.57443 -180 1 0 1.14886 0" class="st7"/>
-				</g>
-				<path d="M10.77 1134.42 C10.77 1131.45 8.36 1129.04 5.38 1129.04 C2.41 1129.04 0 1131.45 0 1134.42 C0 1136.77 1.5
-							 1138.76 3.59 1139.5 L3.59 1153.16 L5.41 1154.55 L7.18 1153.16 L7.18 1151.73 L7.66 1151.73 L7.66 1149.41
-							 L7.14 1149 L7.14 1148.06 L7.66 1147.94 L7.66 1146.53 L7.08 1145.89 L7.66 1145.49 L7.66 1144.29 L7.14
-							 1144.12 L7.11 1142.68 L7.66 1142.53 L7.66 1141 L7.18 1140.72 L7.18 1139.49 C9.27 1138.76 10.77 1136.77
-							 10.77 1134.42 ZM6.06 1130.76 a0.57443 0.57443 -180 1 0 -1.14886 0 a0.57443 0.57443 -180 1 0 1.14886
-							 0 Z" class="st15"/>
-				<path d="M10.77 1134.42 C10.77 1131.45 8.36 1129.04 5.38 1129.04 C2.41 1129.04 0 1131.45 0 1134.42 C0 1136.77 1.5
-							 1138.76 3.59 1139.5 L3.59 1153.16 L5.41 1154.55 L7.18 1153.16 L7.18 1151.73 L7.66 1151.73 L7.66 1149.41
-							 L7.14 1149 L7.14 1148.06 L7.66 1147.94 L7.66 1146.53 L7.08 1145.89 L7.66 1145.49 L7.66 1144.29 L7.14
-							 1144.12 L7.11 1142.68 L7.66 1142.53 L7.66 1141 L7.18 1140.72 L7.18 1139.49 C9.27 1138.76 10.77 1136.77
-							 10.77 1134.42" class="st9"/>
-				<path d="M4.7 1139.67 L4.7 1152.66" class="st9"/>
-				<path d="M6.06 1130.76 a0.57443 0.57443 -180 1 0 -1.14886 0 a0.57443 0.57443 -180 1 0 1.14886 0" class="st9"/>
-			</g>
-			<g id="shape50-294" v:mID="50" v:groupContext="groupContent">
-				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
-				<v:textRect cx="12.7559" cy="1171.21" width="36.3" height="33.3161"/>
-				<g id="shadow50-295" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
-						transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1"/>
-				<text x="-0.26" y="1167.55" class="st10" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Server<v:newlineChar/><tspan
-							x="2.76" dy="1.298em" class="st11">公钥</tspan></text>			</g>
-		</g>
-		<g id="group58-298" transform="translate(655.736,-693.921)" v:mID="58" v:groupContext="group">
-			<v:custProps>
-				<v:cp v:nameU="ShapeClass" v:lbl="ShapeClass" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="true"
-						v:ask="false" v:langID="2052" v:cal="0" v:val="VT4(安全性)"/>
-				<v:cp v:nameU="ShapeType" v:lbl="ShapeType" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="true"
-						v:ask="false" v:langID="2052" v:cal="0" v:val="VT4(概念)"/>
-				<v:cp v:nameU="SubShapeType" v:lbl="SubShapeType" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="true"
-						v:ask="false" v:langID="2052" v:cal="0" v:val="VT4(密钥)"/>
-			</v:custProps>
-			<v:userDefs>
-				<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
-				<v:ud v:nameU="ShapeClass" v:prompt="" v:val="VT0(5):26"/>
-				<v:ud v:nameU="SolSH" v:prompt="" v:val="VT15({BF0433D9-CD73-4EB5-8390-8653BE590246}):41"/>
-				<v:ud v:nameU="visLegendShape" v:prompt="" v:val="VT0(2):26"/>
-			</v:userDefs>
-			<title>密钥.58</title>
-			<desc>Server 公钥</desc>
-			<g id="shape59-299" v:mID="59" v:groupContext="shape" transform="translate(7.37111,0)">
-				<title>工作表.59</title>
-				<g id="shadow59-300" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
-						transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1">
-					<path d="M10.77 1134.42 C10.77 1131.45 8.36 1129.04 5.38 1129.04 C2.41 1129.04 0 1131.45 0 1134.42 C0 1136.77
-								 1.5 1138.76 3.59 1139.5 L3.59 1153.16 L5.41 1154.55 L7.18 1153.16 L7.18 1151.73 L7.66 1151.73 L7.66
-								 1149.41 L7.14 1149 L7.14 1148.06 L7.66 1147.94 L7.66 1146.53 L7.08 1145.89 L7.66 1145.49 L7.66 1144.29
-								 L7.14 1144.12 L7.11 1142.68 L7.66 1142.53 L7.66 1141 L7.18 1140.72 L7.18 1139.49 C9.27 1138.76 10.77
-								 1136.77 10.77 1134.42 ZM6.06 1130.76 a0.57443 0.57443 -180 1 0 -1.14886 0 a0.57443 0.57443 -180
-								 1 0 1.14886 0 Z" class="st6"/>
-					<path d="M10.77 1134.42 C10.77 1131.45 8.36 1129.04 5.38 1129.04 C2.41 1129.04 0 1131.45 0 1134.42 C0 1136.77
-								 1.5 1138.76 3.59 1139.5 L3.59 1153.16 L5.41 1154.55 L7.18 1153.16 L7.18 1151.73 L7.66 1151.73 L7.66
-								 1149.41 L7.14 1149 L7.14 1148.06 L7.66 1147.94 L7.66 1146.53 L7.08 1145.89 L7.66 1145.49 L7.66 1144.29
-								 L7.14 1144.12 L7.11 1142.68 L7.66 1142.53 L7.66 1141 L7.18 1140.72 L7.18 1139.49 C9.27 1138.76 10.77
-								 1136.77 10.77 1134.42" class="st7"/>
-					<path d="M4.7 1139.67 L4.7 1152.66" class="st7"/>
-					<path d="M6.06 1130.76 a0.57443 0.57443 -180 1 0 -1.14886 0 a0.57443 0.57443 -180 1 0 1.14886 0" class="st7"/>
-				</g>
-				<path d="M10.77 1134.42 C10.77 1131.45 8.36 1129.04 5.38 1129.04 C2.41 1129.04 0 1131.45 0 1134.42 C0 1136.77 1.5
-							 1138.76 3.59 1139.5 L3.59 1153.16 L5.41 1154.55 L7.18 1153.16 L7.18 1151.73 L7.66 1151.73 L7.66 1149.41
-							 L7.14 1149 L7.14 1148.06 L7.66 1147.94 L7.66 1146.53 L7.08 1145.89 L7.66 1145.49 L7.66 1144.29 L7.14
-							 1144.12 L7.11 1142.68 L7.66 1142.53 L7.66 1141 L7.18 1140.72 L7.18 1139.49 C9.27 1138.76 10.77 1136.77
-							 10.77 1134.42 ZM6.06 1130.76 a0.57443 0.57443 -180 1 0 -1.14886 0 a0.57443 0.57443 -180 1 0 1.14886
-							 0 Z" class="st15"/>
-				<path d="M10.77 1134.42 C10.77 1131.45 8.36 1129.04 5.38 1129.04 C2.41 1129.04 0 1131.45 0 1134.42 C0 1136.77 1.5
-							 1138.76 3.59 1139.5 L3.59 1153.16 L5.41 1154.55 L7.18 1153.16 L7.18 1151.73 L7.66 1151.73 L7.66 1149.41
-							 L7.14 1149 L7.14 1148.06 L7.66 1147.94 L7.66 1146.53 L7.08 1145.89 L7.66 1145.49 L7.66 1144.29 L7.14
-							 1144.12 L7.11 1142.68 L7.66 1142.53 L7.66 1141 L7.18 1140.72 L7.18 1139.49 C9.27 1138.76 10.77 1136.77
-							 10.77 1134.42" class="st9"/>
-				<path d="M4.7 1139.67 L4.7 1152.66" class="st9"/>
-				<path d="M6.06 1130.76 a0.57443 0.57443 -180 1 0 -1.14886 0 a0.57443 0.57443 -180 1 0 1.14886 0" class="st9"/>
-			</g>
-			<g id="shape58-311" v:mID="58" v:groupContext="groupContent">
-				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
-				<v:textRect cx="12.7559" cy="1171.21" width="36.3" height="33.3161"/>
-				<g id="shadow58-312" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
-						transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1"/>
-				<text x="-0.26" y="1167.55" class="st10" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Server<v:newlineChar/><tspan
-							x="2.76" dy="1.298em" class="st11">公钥</tspan></text>			</g>
-		</g>
-		<g id="group60-315" transform="translate(686.133,-693.921)" v:mID="60" v:groupContext="group">
-			<v:custProps>
-				<v:cp v:nameU="ShapeClass" v:lbl="ShapeClass" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="true"
-						v:ask="false" v:langID="2052" v:cal="0" v:val="VT4(安全性)"/>
-				<v:cp v:nameU="ShapeType" v:lbl="ShapeType" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="true"
-						v:ask="false" v:langID="2052" v:cal="0" v:val="VT4(概念)"/>
-				<v:cp v:nameU="SubShapeType" v:lbl="SubShapeType" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="true"
-						v:ask="false" v:langID="2052" v:cal="0" v:val="VT4(密钥)"/>
-			</v:custProps>
-			<v:userDefs>
-				<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
-				<v:ud v:nameU="ShapeClass" v:prompt="" v:val="VT0(5):26"/>
-				<v:ud v:nameU="SolSH" v:prompt="" v:val="VT15({BF0433D9-CD73-4EB5-8390-8653BE590246}):41"/>
-				<v:ud v:nameU="visLegendShape" v:prompt="" v:val="VT0(2):26"/>
-			</v:userDefs>
-			<title>密钥.60</title>
-			<desc>Server 私钥</desc>
-			<g id="shape61-316" v:mID="61" v:groupContext="shape" transform="translate(7.37111,0)">
-				<title>工作表.61</title>
-				<g id="shadow61-317" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
-						transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1">
-					<path d="M10.77 1134.42 C10.77 1131.45 8.36 1129.04 5.38 1129.04 C2.41 1129.04 0 1131.45 0 1134.42 C0 1136.77
-								 1.5 1138.76 3.59 1139.5 L3.59 1153.16 L5.41 1154.55 L7.18 1153.16 L7.18 1151.73 L7.66 1151.73 L7.66
-								 1149.41 L7.14 1149 L7.14 1148.06 L7.66 1147.94 L7.66 1146.53 L7.08 1145.89 L7.66 1145.49 L7.66 1144.29
-								 L7.14 1144.12 L7.11 1142.68 L7.66 1142.53 L7.66 1141 L7.18 1140.72 L7.18 1139.49 C9.27 1138.76 10.77
-								 1136.77 10.77 1134.42 ZM6.06 1130.76 a0.57443 0.57443 -180 1 0 -1.14886 0 a0.57443 0.57443 -180
-								 1 0 1.14886 0 Z" class="st6"/>
-					<path d="M10.77 1134.42 C10.77 1131.45 8.36 1129.04 5.38 1129.04 C2.41 1129.04 0 1131.45 0 1134.42 C0 1136.77
-								 1.5 1138.76 3.59 1139.5 L3.59 1153.16 L5.41 1154.55 L7.18 1153.16 L7.18 1151.73 L7.66 1151.73 L7.66
-								 1149.41 L7.14 1149 L7.14 1148.06 L7.66 1147.94 L7.66 1146.53 L7.08 1145.89 L7.66 1145.49 L7.66 1144.29
-								 L7.14 1144.12 L7.11 1142.68 L7.66 1142.53 L7.66 1141 L7.18 1140.72 L7.18 1139.49 C9.27 1138.76 10.77
-								 1136.77 10.77 1134.42" class="st7"/>
-					<path d="M4.7 1139.67 L4.7 1152.66" class="st7"/>
-					<path d="M6.06 1130.76 a0.57443 0.57443 -180 1 0 -1.14886 0 a0.57443 0.57443 -180 1 0 1.14886 0" class="st7"/>
-				</g>
-				<path d="M10.77 1134.42 C10.77 1131.45 8.36 1129.04 5.38 1129.04 C2.41 1129.04 0 1131.45 0 1134.42 C0 1136.77 1.5
-							 1138.76 3.59 1139.5 L3.59 1153.16 L5.41 1154.55 L7.18 1153.16 L7.18 1151.73 L7.66 1151.73 L7.66 1149.41
-							 L7.14 1149 L7.14 1148.06 L7.66 1147.94 L7.66 1146.53 L7.08 1145.89 L7.66 1145.49 L7.66 1144.29 L7.14
-							 1144.12 L7.11 1142.68 L7.66 1142.53 L7.66 1141 L7.18 1140.72 L7.18 1139.49 C9.27 1138.76 10.77 1136.77
-							 10.77 1134.42 ZM6.06 1130.76 a0.57443 0.57443 -180 1 0 -1.14886 0 a0.57443 0.57443 -180 1 0 1.14886
-							 0 Z" class="st17"/>
-				<path d="M10.77 1134.42 C10.77 1131.45 8.36 1129.04 5.38 1129.04 C2.41 1129.04 0 1131.45 0 1134.42 C0 1136.77 1.5
-							 1138.76 3.59 1139.5 L3.59 1153.16 L5.41 1154.55 L7.18 1153.16 L7.18 1151.73 L7.66 1151.73 L7.66 1149.41
-							 L7.14 1149 L7.14 1148.06 L7.66 1147.94 L7.66 1146.53 L7.08 1145.89 L7.66 1145.49 L7.66 1144.29 L7.14
-							 1144.12 L7.11 1142.68 L7.66 1142.53 L7.66 1141 L7.18 1140.72 L7.18 1139.49 C9.27 1138.76 10.77 1136.77
-							 10.77 1134.42" class="st9"/>
-				<path d="M4.7 1139.67 L4.7 1152.66" class="st9"/>
-				<path d="M6.06 1130.76 a0.57443 0.57443 -180 1 0 -1.14886 0 a0.57443 0.57443 -180 1 0 1.14886 0" class="st9"/>
-			</g>
-			<g id="shape60-328" v:mID="60" v:groupContext="groupContent">
-				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
-				<v:textRect cx="12.7559" cy="1171.21" width="36.3" height="33.3161"/>
-				<g id="shadow60-329" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
-						transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1"/>
-				<text x="-0.26" y="1167.55" class="st10" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Server<v:newlineChar/><tspan
-							x="2.76" dy="1.298em" class="st11">私钥</tspan></text>			</g>
-		</g>
-		<g id="group62-332" transform="translate(626.83,-693.921)" v:mID="62" v:groupContext="group">
-			<v:custProps>
-				<v:cp v:nameU="ShapeClass" v:lbl="ShapeClass" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="true"
-						v:ask="false" v:langID="2052" v:cal="0" v:val="VT4(安全性)"/>
-				<v:cp v:nameU="ShapeType" v:lbl="ShapeType" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="true"
-						v:ask="false" v:langID="2052" v:cal="0" v:val="VT4(概念)"/>
-				<v:cp v:nameU="SubShapeType" v:lbl="SubShapeType" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="true"
-						v:ask="false" v:langID="2052" v:cal="0" v:val="VT4(密钥)"/>
-			</v:custProps>
-			<v:userDefs>
-				<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
-				<v:ud v:nameU="ShapeClass" v:prompt="" v:val="VT0(5):26"/>
-				<v:ud v:nameU="SolSH" v:prompt="" v:val="VT15({BF0433D9-CD73-4EB5-8390-8653BE590246}):41"/>
-				<v:ud v:nameU="visLegendShape" v:prompt="" v:val="VT0(2):26"/>
-			</v:userDefs>
-			<title>密钥.62</title>
-			<desc>Client 公钥</desc>
-			<g id="shape63-333" v:mID="63" v:groupContext="shape" transform="translate(7.37111,0)">
-				<title>工作表.63</title>
-				<path d="M10.77 1134.42 C10.77 1131.45 8.36 1129.04 5.38 1129.04 C2.41 1129.04 0 1131.45 0 1134.42 C0 1136.77 1.5
-							 1138.76 3.59 1139.5 L3.59 1153.16 L5.41 1154.55 L7.18 1153.16 L7.18 1151.73 L7.66 1151.73 L7.66 1149.41
-							 L7.14 1149 L7.14 1148.06 L7.66 1147.94 L7.66 1146.53 L7.08 1145.89 L7.66 1145.49 L7.66 1144.29 L7.14
-							 1144.12 L7.11 1142.68 L7.66 1142.53 L7.66 1141 L7.18 1140.72 L7.18 1139.49 C9.27 1138.76 10.77 1136.77
-							 10.77 1134.42 ZM6.06 1130.76 a0.57443 0.57443 -180 1 0 -1.14886 0 a0.57443 0.57443 -180 1 0 1.14886
-							 0 Z" class="st12"/>
-				<path d="M10.77 1134.42 C10.77 1131.45 8.36 1129.04 5.38 1129.04 C2.41 1129.04 0 1131.45 0 1134.42 C0 1136.77 1.5
-							 1138.76 3.59 1139.5 L3.59 1153.16 L5.41 1154.55 L7.18 1153.16 L7.18 1151.73 L7.66 1151.73 L7.66 1149.41
-							 L7.14 1149 L7.14 1148.06 L7.66 1147.94 L7.66 1146.53 L7.08 1145.89 L7.66 1145.49 L7.66 1144.29 L7.14
-							 1144.12 L7.11 1142.68 L7.66 1142.53 L7.66 1141 L7.18 1140.72 L7.18 1139.49 C9.27 1138.76 10.77 1136.77
-							 10.77 1134.42" class="st13"/>
-				<path d="M4.7 1139.67 L4.7 1152.66" class="st13"/>
-				<path d="M6.06 1130.76 a0.57443 0.57443 -180 1 0 -1.14886 0 a0.57443 0.57443 -180 1 0 1.14886 0" class="st13"/>
-			</g>
-			<g id="shape62-338" v:mID="62" v:groupContext="groupContent">
-				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
-				<v:textRect cx="12.7559" cy="1171.21" width="33.77" height="33.3161"/>
-				<text x="1.01" y="1167.55" class="st14" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Client<v:newlineChar/><tspan
-							x="2.76" dy="1.298em" class="st11">公钥</tspan></text>			</g>
-		</g>
-		<g id="shape64-341" v:mID="64" v:groupContext="shape" v:layerMember="0" transform="translate(571.181,-618.803)">
-			<title>自关联消息.64</title>
-			<desc>解密,检查hash和摘要</desc>
-			<v:userDefs>
-				<v:ud v:nameU="IsReturn" v:prompt="" v:val="VT0(0):5"/>
-				<v:ud v:nameU="IsAsync" v:prompt="" v:val="VT0(0):26"/>
-				<v:ud v:nameU="IsSelfMessage" v:prompt="" v:val="VT0(1):5"/>
-				<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
-			</v:userDefs>
-			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
-			<v:textRect cx="-38.2677" cy="1171.56" width="83.18" height="18.6536"/>
-			<path d="M7.09 1154.55 L25.09 1154.55 L25.09 1182.9 L15.57 1182.9" class="st18"/>
-			<rect v:rectContext="textBkgnd" x="-74.9492" y="1166.23" width="73.3631" height="10.6501" class="st20"/>
-			<text x="-74.95" y="1174.22" class="st21" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>解密<tspan
-						class="st27">,</tspan>检查<tspan class="st27">hash</tspan>和摘要</text>		</g>
-		<g id="shape65-350" v:mID="65" v:groupContext="shape" v:layerMember="0" transform="translate(180,-618.803)">
-			<title>自关联消息.65</title>
-			<desc>生成一个随机数PMS(pre-master-secret)</desc>
-			<v:userDefs>
-				<v:ud v:nameU="IsReturn" v:prompt="" v:val="VT0(0):5"/>
-				<v:ud v:nameU="IsAsync" v:prompt="" v:val="VT0(0):26"/>
-				<v:ud v:nameU="IsSelfMessage" v:prompt="" v:val="VT0(1):5"/>
-				<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
-			</v:userDefs>
-			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
-			<v:textRect cx="75.1181" cy="1171.56" width="143.93" height="18.6536"/>
-			<path d="M7.09 1154.55 L25.09 1154.55 L25.09 1188.57 L15.57 1188.57" class="st18"/>
-			<rect v:rectContext="textBkgnd" x="8.0622" y="1166.23" width="134.112" height="10.6501" class="st20"/>
-			<text x="8.06" y="1174.22" class="st21" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>生成一个随机数<tspan
-						class="st27">PMS</tspan><tspan class="st27">(</tspan><tspan class="st27" v:langID="1033">pre</tspan><tspan
-						class="st27" v:langID="1033">-</tspan><tspan class="st27" v:langID="1033">master</tspan><tspan class="st27"
-						v:langID="1033">-</tspan><tspan class="st27" v:langID="1033">secret</tspan><tspan class="st27">)</tspan></text>		</g>
-		<g id="shape66-365" v:mID="66" v:groupContext="shape" v:layerMember="0" transform="translate(187.087,-540.85)">
-			<title>消息.66</title>
-			<desc>用 server的公钥 加密发送(pms)</desc>
-			<v:userDefs>
-				<v:ud v:nameU="IsReturn" v:prompt="" v:val="VT0(0):5"/>
-				<v:ud v:nameU="IsAsync" v:prompt="" v:val="VT0(0):26"/>
-				<v:ud v:nameU="IsSelfMessage" v:prompt="" v:val="VT0(0):5"/>
-				<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
-			</v:userDefs>
-			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
-			<v:textRect cx="195.591" cy="1147.46" width="116.82" height="18.6536"/>
-			<path d="M0 1147.46 L382.7 1147.46" class="st18"/>
-			<rect v:rectContext="textBkgnd" x="142.089" y="1142.14" width="107.004" height="10.6501" class="st20"/>
-			<text x="142.09" y="1150.13" class="st21" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>用<tspan
-						class="st27"> </tspan><tspan class="st35">server</tspan><tspan class="st36">的公钥</tspan><tspan class="st35"> </tspan>加密发送<tspan
-						class="st27">(</tspan><tspan class="st27">pms</tspan><tspan class="st27">)</tspan></text>		</g>
-		<g id="shape67-379" v:mID="67" v:groupContext="shape" v:layerMember="0" transform="translate(180,-530.929)">
-			<title>自关联消息.67</title>
-			<desc>计算MasterSecrept 从pms,RNc,RNs</desc>
-			<v:userDefs>
-				<v:ud v:nameU="IsReturn" v:prompt="" v:val="VT0(0):5"/>
-				<v:ud v:nameU="IsAsync" v:prompt="" v:val="VT0(0):26"/>
-				<v:ud v:nameU="IsSelfMessage" v:prompt="" v:val="VT0(1):5"/>
-				<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
-			</v:userDefs>
-			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
-			<v:textRect cx="7.08661" cy="1172.98" width="126.81" height="18.6536"/>
-			<path d="M7.09 1154.55 L25.09 1154.55 L25.09 1191.4 L15.57 1191.4" class="st18"/>
-			<rect v:rectContext="textBkgnd" x="-51.409" y="1167.65" width="116.991" height="10.6501" class="st20"/>
-			<text x="-51.41" y="1175.64" class="st21" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>计算<tspan
-						class="st27">MasterSecrept </tspan>从<tspan class="st27">pms</tspan><tspan class="st27">,</tspan><tspan
-						class="st27">RNc</tspan><tspan class="st27">,</tspan><tspan class="st27">RNs</tspan></text>		</g>
-		<g id="shape69-392" v:mID="69" v:groupContext="shape" v:layerMember="0" transform="translate(571.181,-530.929)">
-			<title>自关联消息.69</title>
-			<desc>计算MasterSecrept 从pms,RNc,RNs</desc>
-			<v:userDefs>
-				<v:ud v:nameU="IsReturn" v:prompt="" v:val="VT0(0):5"/>
-				<v:ud v:nameU="IsAsync" v:prompt="" v:val="VT0(0):26"/>
-				<v:ud v:nameU="IsSelfMessage" v:prompt="" v:val="VT0(1):5"/>
-				<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
-			</v:userDefs>
-			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
-			<v:textRect cx="7.08661" cy="1172.98" width="126.81" height="18.6536"/>
-			<path d="M7.09 1154.55 L25.09 1154.55 L25.09 1191.4 L15.57 1191.4" class="st18"/>
-			<rect v:rectContext="textBkgnd" x="-51.409" y="1167.65" width="116.991" height="10.6501" class="st20"/>
-			<text x="-51.41" y="1175.64" class="st21" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>计算<tspan
-						class="st27">MasterSecrept </tspan>从<tspan class="st27">pms</tspan><tspan class="st27">,</tspan><tspan
-						class="st27">RNc</tspan><tspan class="st27">,</tspan><tspan class="st27">RNs</tspan></text>		</g>
-		<g id="shape70-405" v:mID="70" v:groupContext="shape" v:layerMember="0" transform="translate(187.087,-450.142)">
-			<title>消息.70</title>
-			<desc>改用MS作为key加密连接,此时切换到对称加密技术</desc>
-			<v:userDefs>
-				<v:ud v:nameU="IsReturn" v:prompt="" v:val="VT0(0):5"/>
-				<v:ud v:nameU="IsAsync" v:prompt="" v:val="VT0(0):26"/>
-				<v:ud v:nameU="IsSelfMessage" v:prompt="" v:val="VT0(0):5"/>
-				<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
-			</v:userDefs>
-			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
-			<v:textRect cx="195.591" cy="1147.46" width="185.57" height="18.6536"/>
-			<path d="M0 1147.46 L382.7 1147.46" class="st18"/>
-			<rect v:rectContext="textBkgnd" x="107.716" y="1142.14" width="175.749" height="10.6501" class="st20"/>
-			<text x="107.72" y="1150.13" class="st21" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>改用<tspan
-						class="st27">MS</tspan>作为<tspan class="st27">key</tspan>加密连接<tspan class="st27">,</tspan>此时切换到对称加密技术</text>		</g>
-		<g id="shape71-415" v:mID="71" v:groupContext="shape" v:layerMember="0" transform="translate(187.087,-433.134)">
-			<title>消息.71</title>
-			<desc>结束SSL握手</desc>
-			<v:userDefs>
-				<v:ud v:nameU="IsReturn" v:prompt="" v:val="VT0(0):5"/>
-				<v:ud v:nameU="IsAsync" v:prompt="" v:val="VT0(0):26"/>
-				<v:ud v:nameU="IsSelfMessage" v:prompt="" v:val="VT0(0):5"/>
-				<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
-			</v:userDefs>
-			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
-			<v:textRect cx="195.591" cy="1147.46" width="52.53" height="18.6536"/>
-			<path d="M0 1147.46 L382.7 1147.46" class="st18"/>
-			<rect v:rectContext="textBkgnd" x="174.233" y="1142.14" width="42.7146" height="10.6501" class="st20"/>
-			<text x="174.23" y="1150.13" class="st21" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>结束<tspan
-						class="st27">SSL</tspan>握手</text>		</g>
-		<g id="shape72-423" v:mID="72" v:groupContext="shape" v:layerMember="0" transform="translate(578.268,-413.291)">
-			<title>消息.72</title>
-			<desc>改用MS作为key加密连接,此时切换到对称加密技术</desc>
-			<v:userDefs>
-				<v:ud v:nameU="IsReturn" v:prompt="" v:val="VT0(0):5"/>
-				<v:ud v:nameU="IsAsync" v:prompt="" v:val="VT0(0):26"/>
-				<v:ud v:nameU="IsSelfMessage" v:prompt="" v:val="VT0(0):5"/>
-				<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
-			</v:userDefs>
-			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
-			<v:textRect cx="-195.591" cy="1147.46" width="185.57" height="18.6536"/>
-			<path d="M0 1147.46 L-382.7 1147.46" class="st18"/>
-			<rect v:rectContext="textBkgnd" x="-283.465" y="1142.14" width="175.749" height="10.6501" class="st20"/>
-			<text x="-283.47" y="1150.13" class="st21" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>改用<tspan
-						class="st27">MS</tspan>作为<tspan class="st27">key</tspan>加密连接<tspan class="st27">,</tspan>此时切换到对称加密技术</text>		</g>
-		<g id="shape73-433" v:mID="73" v:groupContext="shape" v:layerMember="0" transform="translate(578.268,-396.283)">
-			<title>消息.73</title>
-			<desc>结束SSL握手</desc>
-			<v:userDefs>
-				<v:ud v:nameU="IsReturn" v:prompt="" v:val="VT0(0):5"/>
-				<v:ud v:nameU="IsAsync" v:prompt="" v:val="VT0(0):26"/>
-				<v:ud v:nameU="IsSelfMessage" v:prompt="" v:val="VT0(0):5"/>
-				<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
-			</v:userDefs>
-			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
-			<v:textRect cx="-195.591" cy="1147.46" width="52.53" height="18.6536"/>
-			<path d="M0 1147.46 L-382.7 1147.46" class="st18"/>
-			<rect v:rectContext="textBkgnd" x="-216.948" y="1142.14" width="42.7146" height="10.6501" class="st20"/>
-			<text x="-216.95" y="1150.13" class="st21" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>结束<tspan
-						class="st27">SSL</tspan>握手</text>		</g>
-		<g id="shape76-441" v:mID="76" v:groupContext="shape" transform="translate(650.439,-535.535)">
-			<title>矩形</title>
-			<desc>RNc</desc>
-			<v:userDefs>
-				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
-			</v:userDefs>
-			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
-			<v:textRect cx="12.7559" cy="1144.98" width="25.52" height="19.1339"/>
-			<g id="shadow76-442" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
-					transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1">
-				<rect x="0" y="1135.42" width="25.5118" height="19.1339" class="st2"/>
-			</g>
-			<rect x="0" y="1135.42" width="25.5118" height="19.1339" class="st3"/>
-			<text x="4.7" y="1147.98" class="st37" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>RNc</text>		</g>
-		<g id="shape77-447" v:mID="77" v:groupContext="shape" transform="translate(626.233,-535.535)">
-			<title>矩形.77</title>
-			<desc>RNs</desc>
-			<v:userDefs>
-				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
-			</v:userDefs>
-			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
-			<v:textRect cx="12.7559" cy="1144.98" width="25.52" height="19.1339"/>
-			<g id="shadow77-448" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
-					transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1">
-				<rect x="0" y="1135.42" width="25.5118" height="19.1339" class="st2"/>
-			</g>
-			<rect x="0" y="1135.42" width="25.5118" height="19.1339" class="st3"/>
-			<text x="4.86" y="1147.98" class="st37" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>RNs</text>		</g>
-		<g id="shape78-453" v:mID="78" v:groupContext="shape" transform="translate(587.107,-535.535)">
-			<title>矩形.78</title>
-			<desc>PMS</desc>
-			<v:userDefs>
-				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
-			</v:userDefs>
-			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
-			<v:textRect cx="18.9101" cy="1144.98" width="37.83" height="19.1339"/>
-			<g id="shadow78-454" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
-					transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1">
-				<rect x="0" y="1135.42" width="37.8201" height="19.1339" class="st2"/>
-			</g>
-			<rect x="0" y="1135.42" width="37.8201" height="19.1339" class="st3"/>
-			<text x="9.75" y="1147.98" class="st37" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>PMS</text>		</g>
-		<g id="shape79-459" v:mID="79" v:groupContext="shape" transform="translate(70.8661,-535.535)">
-			<title>矩形.79</title>
-			<desc>RNc</desc>
-			<v:userDefs>
-				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
-			</v:userDefs>
-			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
-			<v:textRect cx="12.7559" cy="1144.98" width="25.52" height="19.1339"/>
-			<g id="shadow79-460" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
-					transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1">
-				<rect x="0" y="1135.42" width="25.5118" height="19.1339" class="st2"/>
-			</g>
-			<rect x="0" y="1135.42" width="25.5118" height="19.1339" class="st3"/>
-			<text x="4.7" y="1147.98" class="st37" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>RNc</text>		</g>
-		<g id="shape80-465" v:mID="80" v:groupContext="shape" transform="translate(96.6017,-535.535)">
-			<title>矩形.80</title>
-			<desc>RNs</desc>
-			<v:userDefs>
-				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
-			</v:userDefs>
-			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
-			<v:textRect cx="12.7559" cy="1144.98" width="25.52" height="19.1339"/>
-			<g id="shadow80-466" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
-					transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1">
-				<rect x="0" y="1135.42" width="25.5118" height="19.1339" class="st2"/>
-			</g>
-			<rect x="0" y="1135.42" width="25.5118" height="19.1339" class="st3"/>
-			<text x="4.86" y="1147.98" class="st37" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>RNs</text>		</g>
-		<g id="shape81-471" v:mID="81" v:groupContext="shape" transform="translate(122.337,-535.535)">
-			<title>矩形.81</title>
-			<desc>PMS</desc>
-			<v:userDefs>
-				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
-			</v:userDefs>
-			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
-			<v:textRect cx="18.9101" cy="1144.98" width="37.83" height="19.1339"/>
-			<g id="shadow81-472" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
-					transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1">
-				<rect x="0" y="1135.42" width="37.8201" height="19.1339" class="st2"/>
-			</g>
-			<rect x="0" y="1135.42" width="37.8201" height="19.1339" class="st3"/>
-			<text x="9.75" y="1147.98" class="st37" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>PMS</text>		</g>
-		<g id="shape83-477" v:mID="83" v:groupContext="shape" transform="translate(134.646,-445.89)">
-			<title>圆形</title>
-			<desc>MS</desc>
-			<v:userDefs>
-				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
-			</v:userDefs>
-			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
-			<v:textRect cx="12.7559" cy="1141.8" width="22.33" height="19.1339"/>
-			<g id="shadow83-478" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
-					transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1">
-				<path d="M0 1141.8 A12.7559 12.7559 0 0 1 25.51 1141.8 A12.7559 12.7559 0 1 1 0 1141.8 Z" class="st2"/>
-			</g>
-			<path d="M0 1141.8 A12.7559 12.7559 0 0 1 25.51 1141.8 A12.7559 12.7559 0 1 1 0 1141.8 Z" class="st38"/>
-			<text x="6.18" y="1144.8" class="st39" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>MS</text>		</g>
-		<g id="shape84-483" v:mID="84" v:groupContext="shape" transform="translate(599.416,-441.608)">
-			<title>圆形.84</title>
-			<desc>MS</desc>
-			<v:userDefs>
-				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
-			</v:userDefs>
-			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
-			<v:textRect cx="12.7559" cy="1141.8" width="22.33" height="19.1339"/>
-			<g id="shadow84-484" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
-					transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1">
-				<path d="M0 1141.8 A12.7559 12.7559 0 0 1 25.51 1141.8 A12.7559 12.7559 0 1 1 0 1141.8 Z" class="st2"/>
-			</g>
-			<path d="M0 1141.8 A12.7559 12.7559 0 0 1 25.51 1141.8 A12.7559 12.7559 0 1 1 0 1141.8 Z" class="st38"/>
-			<text x="6.18" y="1144.8" class="st39" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>MS</text>		</g>
-		<g id="shape85-489" v:mID="85" v:groupContext="shape" transform="translate(147.402,-975.26)">
-			<title>矩形.85</title>
-			<desc>RNc</desc>
-			<v:userDefs>
-				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
-			</v:userDefs>
-			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
-			<v:textRect cx="12.7559" cy="1144.98" width="25.52" height="19.1339"/>
-			<g id="shadow85-490" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
-					transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1">
-				<rect x="0" y="1135.42" width="25.5118" height="19.1339" class="st2"/>
-			</g>
-			<rect x="0" y="1135.42" width="25.5118" height="19.1339" class="st3"/>
-			<text x="4.7" y="1147.98" class="st37" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>RNc</text>		</g>
-		<g id="shape86-495" v:mID="86" v:groupContext="shape" transform="translate(610.866,-894.472)">
-			<title>矩形.86</title>
-			<desc>RNs</desc>
-			<v:userDefs>
-				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
-			</v:userDefs>
-			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
-			<v:textRect cx="12.7559" cy="1144.98" width="25.52" height="19.1339"/>
-			<g id="shadow86-496" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
-					transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1">
-				<rect x="0" y="1135.42" width="25.5118" height="19.1339" class="st2"/>
-			</g>
-			<rect x="0" y="1135.42" width="25.5118" height="19.1339" class="st3"/>
-			<text x="4.86" y="1147.98" class="st37" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>RNs</text>		</g>
-	</g>
+ <g>
+  <title>页-1</title>
+  <g id="group1-1">
+   <title transform="translate(147.40199279785156,-1015.6500244140625) ">参与者生命线</title>
+   <desc transform="translate(147.40199279785156,-1015.6500244140625) ">ssl_client</desc>
+   <g id="shape2-2">
+    <title transform="translate(14.173199653625488,0) translate(147.40199279785156,-1015.6500244140625) ">工作表.2</title>
+    <g class="st1" transform="matrix(1,0,0,1,0.345598,1.97279) " id="shadow2-3">
+     <rect id="svg_3" class="st2" height="25.5118" width="51.0236" y="113.389976" x="161.575192"/>
+    </g>
+    <rect id="svg_4" class="st3" height="25.5118" width="51.0236" y="113.389976" x="161.575192"/>
+   </g>
+   <g id="shape3-7">
+    <title transform="translate(31.181100845336914,-29.055099487304688) translate(147.40199279785156,-1015.6500244140625) ">工作表.3</title>
+    <g class="st1" transform="matrix(1,0,0,1,0.345598,1.97279) " id="shadow3-8">
+     <path id="svg_5" class="st2" d="m181.983094,109.844876l0,-17.01l0,6.81l-3.4,0l0,-13.61l1.7,-1.7l13.61,0l1.7,1.7l0,13.61l-3.4,0l0,-6.81l0,17.01l-5.11,0l0,-13.61l0,13.61l-5.1,0zm8.51,-30.61a3.40157,3.40157 -180 1 0 -6.81,0a3.40157,3.40157 -180 1 0 6.81,0z"/>
+    </g>
+    <path id="svg_6" class="st3" d="m181.983094,109.844876l0,-17.01l0,6.81l-3.4,0l0,-13.61l1.7,-1.7l13.61,0l1.7,1.7l0,13.61l-3.4,0l0,-6.81l0,17.01l-5.11,0l0,-13.61l0,13.61l-5.1,0zm8.51,-30.61a3.40157,3.40157 -180 1 0 -6.81,0a3.40157,3.40157 -180 1 0 6.81,0z"/>
+   </g>
+   <g id="shape4-12">
+    <title transform="translate(26.45669937133789,714.93798828125) translate(147.40199279785156,-1015.6500244140625) ">工作表.4</title>
+    <g class="st1" transform="matrix(1,0,0,1,0.345598,1.97279) " id="shadow4-13"/>
+   </g>
+   <g transform="rotate(90 1341.6419677734375,138.90002441406264) " id="shape5-17">
+    <title transform="translate(1194.239990234375,1154.550048828125) translate(147.40199279785156,-1015.6500244140625) ">工作表.5</title>
+    <path id="svg_7" class="st4" d="m1341.641983,1293.450024l697.32,0"/>
+   </g>
+   <g id="shape1-20">
+    <g class="st1" transform="matrix(1,0,0,1,0.345598,1.97279) " id="shadow1-21">
+     <rect id="svg_8" class="st2" height="25.5118" width="79.3701" y="113.389976" x="147.401993"/>
+    </g>
+    <rect id="svg_9" class="st3" height="25.5118" width="79.3701" y="113.389976" x="147.401993"/>
+    <text id="svg_10" class="st5" y="129.749976" x="164.061993">ssl_client</text>
+   </g>
+  </g>
+  <g id="group6-26">
+   <title transform="translate(538.5830078125,-1015.6500244140625) ">对象生命线</title>
+   <desc transform="translate(538.5830078125,-1015.6500244140625) ">ssl_server</desc>
+   <g id="shape7-27">
+    <title transform="translate(14.173199653625488,0) translate(538.5830078125,-1015.6500244140625) ">工作表.7</title>
+    <g class="st1" transform="matrix(1,0,0,1,0.345598,1.97279) " id="shadow7-28">
+     <rect id="svg_11" class="st2" height="25.5118" width="51.0236" y="113.389976" x="552.756207"/>
+    </g>
+    <rect id="svg_12" class="st3" height="25.5118" width="51.0236" y="113.389976" x="552.756207"/>
+   </g>
+   <g id="shape8-32">
+    <title transform="translate(31.181100845336914,-29.055099487304688) translate(538.5830078125,-1015.6500244140625) ">工作表.8</title>
+    <g class="st1" transform="matrix(1,0,0,1,0.345598,1.97279) " id="shadow8-33">
+     <path id="svg_13" class="st2" d="m578.264109,109.844876a0,0 0 1 1 0,0a0,0 0 1 1 0,0z"/>
+    </g>
+    <path id="svg_14" class="st3" d="m578.264109,109.844876a0,0 0 1 1 0,0a0,0 0 1 1 0,0z"/>
+   </g>
+   <g id="shape9-37">
+    <title transform="translate(26.45669937133789,714.93798828125) translate(538.5830078125,-1015.6500244140625) ">工作表.9</title>
+    <g class="st1" transform="matrix(1,0,0,1,0.345598,1.97279) " id="shadow9-38"/>
+   </g>
+   <g transform="rotate(90 1732.822998046875,138.90002441406264) " id="shape10-42">
+    <title transform="translate(1194.239990234375,1154.550048828125) translate(538.5830078125,-1015.6500244140625) ">工作表.10</title>
+    <path id="svg_15" class="st4" d="m1732.822998,1293.450024l697.32,0"/>
+   </g>
+   <g id="shape6-45">
+    <g class="st1" transform="matrix(1,0,0,1,0.345598,1.97279) " id="shadow6-46">
+     <rect id="svg_16" class="st2" height="25.5118" width="79.3701" y="113.389976" x="538.583008"/>
+    </g>
+    <rect id="svg_17" class="st3" height="25.5118" width="79.3701" y="113.389976" x="538.583008"/>
+    <text id="svg_18" class="st5" y="129.749976" x="553.483008">ssl_server</text>
+   </g>
+  </g>
+  <g id="group12-51">
+   <title transform="translate(35.433101654052734,-1034.0799560546875) ">密钥</title>
+   <desc transform="translate(35.433101654052734,-1034.0799560546875) ">Client 私钥</desc>
+   <g id="shape13-52">
+    <title transform="translate(10.237700462341309,0) translate(35.433101654052734,-1034.0799560546875) ">工作表.13</title>
+    <g class="st1" transform="matrix(1,0,0,1,0.345598,1.97279) " id="shadow13-53">
+     <path id="svg_19" class="st6" d="m60.630802,92.520044c0,-4.13 -3.35,-7.48 -7.48,-7.48c-4.13,0 -7.48,3.35 -7.48,7.48c0,3.25 2.08,6.01 4.99,7.04l0,18.98l2.52,1.93l2.46,-1.93l0,-1.99l0.67,0l0,-3.22l-0.72,-0.57l0,-1.3l0.72,-0.17l0,-1.97l-0.8,-0.88l0.8,-0.56l0,-1.66l-0.72,-0.24l-0.05,-2l0.77,-0.2l0,-2.12l-0.67,-0.4l0,-1.7c2.9,-1.03 4.99,-3.79 4.99,-7.04zm-6.55,-5.09a0.79782,0.79782 -180 1 0 -1.59564,0a0.79782,0.79782 -180 1 0 1.59564,0z"/>
+     <path id="svg_20" class="st7" d="m60.630802,92.520044c0,-4.13 -3.35,-7.48 -7.48,-7.48c-4.13,0 -7.48,3.35 -7.48,7.48c0,3.25 2.08,6.01 4.99,7.04l0,18.98l2.52,1.93l2.46,-1.93l0,-1.99l0.67,0l0,-3.22l-0.72,-0.57l0,-1.3l0.72,-0.17l0,-1.97l-0.8,-0.88l0.8,-0.56l0,-1.66l-0.72,-0.24l-0.05,-2l0.77,-0.2l0,-2.12l-0.67,-0.4l0,-1.7c2.9,-1.03 4.99,-3.79 4.99,-7.04"/>
+     <path id="svg_21" class="st7" d="m52.190802,99.810044l0,18.03"/>
+     <path id="svg_22" class="st7" d="m54.080802,87.430044a0.79782,0.79782 -180 1 0 -1.59564,0a0.79782,0.79782 -180 1 0 1.59564,0"/>
+    </g>
+    <path id="svg_23" class="st8" d="m60.630802,92.520044c0,-4.13 -3.35,-7.48 -7.48,-7.48c-4.13,0 -7.48,3.35 -7.48,7.48c0,3.25 2.08,6.01 4.99,7.04l0,18.98l2.52,1.93l2.46,-1.93l0,-1.99l0.67,0l0,-3.22l-0.72,-0.57l0,-1.3l0.72,-0.17l0,-1.97l-0.8,-0.88l0.8,-0.56l0,-1.66l-0.72,-0.24l-0.05,-2l0.77,-0.2l0,-2.12l-0.67,-0.4l0,-1.7c2.9,-1.03 4.99,-3.79 4.99,-7.04zm-6.55,-5.09a0.79782,0.79782 -180 1 0 -1.59564,0a0.79782,0.79782 -180 1 0 1.59564,0z"/>
+    <path id="svg_24" class="st9" d="m60.630802,92.520044c0,-4.13 -3.35,-7.48 -7.48,-7.48c-4.13,0 -7.48,3.35 -7.48,7.48c0,3.25 2.08,6.01 4.99,7.04l0,18.98l2.52,1.93l2.46,-1.93l0,-1.99l0.67,0l0,-3.22l-0.72,-0.57l0,-1.3l0.72,-0.17l0,-1.97l-0.8,-0.88l0.8,-0.56l0,-1.66l-0.72,-0.24l-0.05,-2l0.77,-0.2l0,-2.12l-0.67,-0.4l0,-1.7c2.9,-1.03 4.99,-3.79 4.99,-7.04"/>
+    <path id="svg_25" class="st9" d="m52.190802,99.810044l0,18.03"/>
+    <path id="svg_26" class="st9" d="m54.080802,87.430044a0.79782,0.79782 -180 1 0 -1.59564,0a0.79782,0.79782 -180 1 0 1.59564,0"/>
+   </g>
+   <g id="shape12-64">
+    <g class="st1" transform="matrix(1,0,0,1,0.345598,1.97279) " id="shadow12-65"/>
+    <text id="svg_27" class="st10" y="133.470044" x="41.403102">Client
+     <tspan id="svg_28" class="st11" dy="1.298em" x="43.153102">私钥</tspan></text>
+   </g>
+  </g>
+  <g id="group14-68">
+   <title transform="translate(70.86609649658203,-1034.0799560546875) ">密钥.14</title>
+   <desc transform="translate(70.86609649658203,-1034.0799560546875) ">Client 公钥</desc>
+   <g id="shape15-69">
+    <title transform="translate(10.237700462341309,0) translate(70.86609649658203,-1034.0799560546875) ">工作表.15</title>
+    <path id="svg_29" class="st12" d="m96.063797,92.520044c0,-4.13 -3.35,-7.48 -7.48,-7.48c-4.13,0 -7.48,3.35 -7.48,7.48c0,3.25 2.08,6.01 4.99,7.04l0,18.98l2.52,1.93l2.46,-1.93l0,-1.99l0.67,0l0,-3.22l-0.72,-0.57l0,-1.3l0.72,-0.17l0,-1.97l-0.8,-0.88l0.8,-0.56l0,-1.66l-0.72,-0.24l-0.05,-2l0.77,-0.2l0,-2.12l-0.67,-0.4l0,-1.7c2.9,-1.03 4.99,-3.79 4.99,-7.04zm-6.55,-5.09a0.79782,0.79782 -180 1 0 -1.59564,0a0.79782,0.79782 -180 1 0 1.59564,0z"/>
+    <path id="svg_30" class="st13" d="m96.063797,92.520044c0,-4.13 -3.35,-7.48 -7.48,-7.48c-4.13,0 -7.48,3.35 -7.48,7.48c0,3.25 2.08,6.01 4.99,7.04l0,18.98l2.52,1.93l2.46,-1.93l0,-1.99l0.67,0l0,-3.22l-0.72,-0.57l0,-1.3l0.72,-0.17l0,-1.97l-0.8,-0.88l0.8,-0.56l0,-1.66l-0.72,-0.24l-0.05,-2l0.77,-0.2l0,-2.12l-0.67,-0.4l0,-1.7c2.9,-1.03 4.99,-3.79 4.99,-7.04"/>
+    <path id="svg_31" class="st13" d="m87.623797,99.810044l0,18.03"/>
+    <path id="svg_32" class="st13" d="m89.513797,87.430044a0.79782,0.79782 -180 1 0 -1.59564,0a0.79782,0.79782 -180 1 0 1.59564,0"/>
+   </g>
+   <g id="shape14-74">
+    <text id="svg_33" class="st14" y="133.470044" x="76.836096">Client
+     <tspan id="svg_34" class="st11" dy="1.298em" x="78.586096">公钥</tspan></text>
+   </g>
+  </g>
+  <g id="group16-77">
+   <title transform="translate(644.8820190429688,-1028.4100341796875) ">密钥.16</title>
+   <desc transform="translate(644.8820190429688,-1028.4100341796875) ">公钥</desc>
+   <g id="shape17-78">
+    <title transform="translate(10.237700462341309,0) translate(644.8820190429688,-1028.4100341796875) ">工作表.17</title>
+    <g class="st1" transform="matrix(1,0,0,1,0.345598,1.97279) " id="shadow17-79">
+     <path id="svg_35" class="st6" d="m670.07972,98.189966c0,-4.13 -3.35,-7.48 -7.48,-7.48c-4.13,0 -7.48,3.35 -7.48,7.48c0,3.25 2.08,6.01 4.99,7.04l0,18.98l2.52,1.93l2.46,-1.93l0,-1.99l0.67,0l0,-3.22l-0.72,-0.57l0,-1.3l0.72,-0.17l0,-1.97l-0.8,-0.88l0.8,-0.56l0,-1.66l-0.72,-0.24l-0.05,-2l0.77,-0.2l0,-2.12l-0.67,-0.4l0,-1.7c2.9,-1.03 4.99,-3.79 4.99,-7.04zm-6.55,-5.09a0.79782,0.79782 -180 1 0 -1.59564,0a0.79782,0.79782 -180 1 0 1.59564,0z"/>
+     <path id="svg_36" class="st7" d="m670.07972,98.189966c0,-4.13 -3.35,-7.48 -7.48,-7.48c-4.13,0 -7.48,3.35 -7.48,7.48c0,3.25 2.08,6.01 4.99,7.04l0,18.98l2.52,1.93l2.46,-1.93l0,-1.99l0.67,0l0,-3.22l-0.72,-0.57l0,-1.3l0.72,-0.17l0,-1.97l-0.8,-0.88l0.8,-0.56l0,-1.66l-0.72,-0.24l-0.05,-2l0.77,-0.2l0,-2.12l-0.67,-0.4l0,-1.7c2.9,-1.03 4.99,-3.79 4.99,-7.04"/>
+     <path id="svg_37" class="st7" d="m661.63972,105.479966l0,18.03"/>
+     <path id="svg_38" class="st7" d="m663.52972,93.099966a0.79782,0.79782 -180 1 0 -1.59564,0a0.79782,0.79782 -180 1 0 1.59564,0"/>
+    </g>
+    <path id="svg_39" class="st15" d="m670.07972,98.189966c0,-4.13 -3.35,-7.48 -7.48,-7.48c-4.13,0 -7.48,3.35 -7.48,7.48c0,3.25 2.08,6.01 4.99,7.04l0,18.98l2.52,1.93l2.46,-1.93l0,-1.99l0.67,0l0,-3.22l-0.72,-0.57l0,-1.3l0.72,-0.17l0,-1.97l-0.8,-0.88l0.8,-0.56l0,-1.66l-0.72,-0.24l-0.05,-2l0.77,-0.2l0,-2.12l-0.67,-0.4l0,-1.7c2.9,-1.03 4.99,-3.79 4.99,-7.04zm-6.55,-5.09a0.79782,0.79782 -180 1 0 -1.59564,0a0.79782,0.79782 -180 1 0 1.59564,0z"/>
+    <path id="svg_40" class="st9" d="m670.07972,98.189966c0,-4.13 -3.35,-7.48 -7.48,-7.48c-4.13,0 -7.48,3.35 -7.48,7.48c0,3.25 2.08,6.01 4.99,7.04l0,18.98l2.52,1.93l2.46,-1.93l0,-1.99l0.67,0l0,-3.22l-0.72,-0.57l0,-1.3l0.72,-0.17l0,-1.97l-0.8,-0.88l0.8,-0.56l0,-1.66l-0.72,-0.24l-0.05,-2l0.77,-0.2l0,-2.12l-0.67,-0.4l0,-1.7c2.9,-1.03 4.99,-3.79 4.99,-7.04"/>
+    <path id="svg_41" class="st9" d="m661.63972,105.479966l0,18.03"/>
+    <path id="svg_42" class="st9" d="m663.52972,93.099966a0.79782,0.79782 -180 1 0 -1.59564,0a0.79782,0.79782 -180 1 0 1.59564,0"/>
+   </g>
+   <g id="shape16-90">
+    <g class="st1" transform="matrix(1,0,0,1,0.345598,1.97279) " id="shadow16-91"/>
+    <text id="svg_43" class="st16" y="140.129966" x="652.602019">公钥</text>
+   </g>
+  </g>
+  <g id="group18-93">
+   <title transform="translate(686.468994140625,-1028.4100341796875) ">密钥.18</title>
+   <desc transform="translate(686.468994140625,-1028.4100341796875) ">私钥</desc>
+   <g id="shape19-94">
+    <title transform="translate(10.237700462341309,0) translate(686.468994140625,-1028.4100341796875) ">工作表.19</title>
+    <g class="st1" transform="matrix(1,0,0,1,0.345598,1.97279) " id="shadow19-95">
+     <path id="svg_44" class="st6" d="m711.666695,98.189966c0,-4.13 -3.35,-7.48 -7.48,-7.48c-4.13,0 -7.48,3.35 -7.48,7.48c0,3.25 2.08,6.01 4.99,7.04l0,18.98l2.52,1.93l2.46,-1.93l0,-1.99l0.67,0l0,-3.22l-0.72,-0.57l0,-1.3l0.72,-0.17l0,-1.97l-0.8,-0.88l0.8,-0.56l0,-1.66l-0.72,-0.24l-0.05,-2l0.77,-0.2l0,-2.12l-0.67,-0.4l0,-1.7c2.9,-1.03 4.99,-3.79 4.99,-7.04zm-6.55,-5.09a0.79782,0.79782 -180 1 0 -1.59564,0a0.79782,0.79782 -180 1 0 1.59564,0z"/>
+     <path id="svg_45" class="st7" d="m711.666695,98.189966c0,-4.13 -3.35,-7.48 -7.48,-7.48c-4.13,0 -7.48,3.35 -7.48,7.48c0,3.25 2.08,6.01 4.99,7.04l0,18.98l2.52,1.93l2.46,-1.93l0,-1.99l0.67,0l0,-3.22l-0.72,-0.57l0,-1.3l0.72,-0.17l0,-1.97l-0.8,-0.88l0.8,-0.56l0,-1.66l-0.72,-0.24l-0.05,-2l0.77,-0.2l0,-2.12l-0.67,-0.4l0,-1.7c2.9,-1.03 4.99,-3.79 4.99,-7.04"/>
+     <path id="svg_46" class="st7" d="m703.226695,105.479966l0,18.03"/>
+     <path id="svg_47" class="st7" d="m705.116695,93.099966a0.79782,0.79782 -180 1 0 -1.59564,0a0.79782,0.79782 -180 1 0 1.59564,0"/>
+    </g>
+    <path id="svg_48" class="st17" d="m711.666695,98.189966c0,-4.13 -3.35,-7.48 -7.48,-7.48c-4.13,0 -7.48,3.35 -7.48,7.48c0,3.25 2.08,6.01 4.99,7.04l0,18.98l2.52,1.93l2.46,-1.93l0,-1.99l0.67,0l0,-3.22l-0.72,-0.57l0,-1.3l0.72,-0.17l0,-1.97l-0.8,-0.88l0.8,-0.56l0,-1.66l-0.72,-0.24l-0.05,-2l0.77,-0.2l0,-2.12l-0.67,-0.4l0,-1.7c2.9,-1.03 4.99,-3.79 4.99,-7.04zm-6.55,-5.09a0.79782,0.79782 -180 1 0 -1.59564,0a0.79782,0.79782 -180 1 0 1.59564,0z"/>
+    <path id="svg_49" class="st9" d="m711.666695,98.189966c0,-4.13 -3.35,-7.48 -7.48,-7.48c-4.13,0 -7.48,3.35 -7.48,7.48c0,3.25 2.08,6.01 4.99,7.04l0,18.98l2.52,1.93l2.46,-1.93l0,-1.99l0.67,0l0,-3.22l-0.72,-0.57l0,-1.3l0.72,-0.17l0,-1.97l-0.8,-0.88l0.8,-0.56l0,-1.66l-0.72,-0.24l-0.05,-2l0.77,-0.2l0,-2.12l-0.67,-0.4l0,-1.7c2.9,-1.03 4.99,-3.79 4.99,-7.04"/>
+    <path id="svg_50" class="st9" d="m703.226695,105.479966l0,18.03"/>
+    <path id="svg_51" class="st9" d="m705.116695,93.099966a0.79782,0.79782 -180 1 0 -1.59564,0a0.79782,0.79782 -180 1 0 1.59564,0"/>
+   </g>
+   <g id="shape18-106">
+    <g class="st1" transform="matrix(1,0,0,1,0.345598,1.97279) " id="shadow18-107"/>
+    <text id="svg_52" class="st16" y="140.129966" x="694.188994">私钥</text>
+   </g>
+  </g>
+  <g id="shape20-109">
+   <title transform="translate(180,-998.64599609375) ">自关联消息</title>
+   <desc transform="translate(180,-998.64599609375) ">生成随机数 RNc</desc>
+   <path id="svg_53" class="st18" d="m187.09,155.904004l18,0l0,34.02l-9.52,0"/>
+   <rect id="svg_54" class="st20" height="10.6501" width="54.699" y="164.754004" x="199.4223"/>
+   <text id="svg_55" class="st21" y="172.744004" x="199.42">生成随机数
+    <tspan id="svg_56" class="st22"/>
+    <tspan id="svg_57" class="st22">RNc</tspan></text>
+  </g>
+  <g id="shape21-119">
+   <title transform="translate(187.08700561523438,-937.7009887695312) ">消息</title>
+   <desc transform="translate(187.08700561523438,-937.7009887695312) ">client hello</desc>
+   <path id="svg_58" class="st18" d="m187.087006,209.759011l382.7,0"/>
+   <rect id="svg_59" class="st23" height="9.59985" width="35.7998" y="204.959011" x="364.778006"/>
+   <text id="svg_60" class="st24" y="212.159011" x="364.777006">client hello</text>
+  </g>
+  <g id="shape23-126">
+   <title transform="translate(317.77899169921875,-963.2130126953125) ">工作表.23</title>
+   <desc transform="translate(317.77899169921875,-963.2130126953125) ">支持的协议版本比如TLS1.0版一个客户端生成的随机数RNc稍后用于生成会话密钥 MS支持的加密算法如RSA公钥加密和支持...</desc>
+   <g class="st1" transform="matrix(1,0,0,1,0.345598,1.97279) " id="shadow23-127">
+    <rect id="svg_61" class="st2" height="65.1969" width="141.434" y="126.136987" x="317.778992"/>
+   </g>
+   <rect id="svg_62" class="st25" height="65.1969" width="141.434" y="126.136987" x="317.778992"/>
+   <text id="svg_63" class="st26" y="137.776987" x="322.648992">支持的协议版本，比如
+    <tspan id="svg_64" class="st27">TLS</tspan>
+    <tspan id="svg_65" class="st27">1</tspan>
+    <tspan id="svg_66" class="st27">.</tspan>
+    <tspan id="svg_67" class="st27">0</tspan>版，
+    <tspan id="svg_68" class="st28" dy="1.331em" x="322.618992">一个客户端生成的随机数</tspan>
+    <tspan id="svg_69" class="st29">RNc</tspan>（稍
+    <tspan id="svg_70" class="st28" dy="1.331em" x="323.058992">后用于生成</tspan>
+    <tspan id="svg_71" class="st30">会话密钥</tspan>
+    <tspan id="svg_72" class="st31"/>
+    <tspan id="svg_73" class="st31">MS</tspan>，支持的
+    <tspan id="svg_74" class="st28" dy="1.331em" x="322.878992">加密算法</tspan>（如
+    <tspan id="svg_75" class="st27">RSA</tspan>公钥加密）和支
+    <tspan id="svg_76" class="st28" dy="1.331em" x="361.498992">持的压缩算法</tspan></text>
+  </g>
+  <g id="shape33-145">
+   <title transform="translate(571.1810302734375,-922.1099853515625) ">自关联消息.33</title>
+   <desc transform="translate(571.1810302734375,-922.1099853515625) ">生成随机数 RNs</desc>
+   <path id="svg_77" class="st18" d="m578.27103,232.440015l18,0l0,34.02l-9.52,0"/>
+   <rect id="svg_78" class="st23" height="10.6501" width="54.6133" y="244.120015" x="525.44933"/>
+   <text id="svg_79" class="st21" y="252.110015" x="525.45103">生成随机数
+    <tspan id="svg_80" class="st27"/>
+    <tspan id="svg_81" class="st27">R</tspan>
+    <tspan id="svg_82" class="st32">Ns</tspan></text>
+  </g>
+  <g id="shape34-155">
+   <title transform="translate(578.2680053710938,-840.1890258789062) ">消息.34</title>
+   <desc transform="translate(578.2680053710938,-840.1890258789062) ">server hello</desc>
+   <path id="svg_83" class="st18" d="m578.268005,307.270974l-382.7,0"/>
+   <rect id="svg_84" class="st23" height="9.59985" width="38.1638" y="302.470974" x="363.596005"/>
+   <text id="svg_85" class="st24" y="309.670974" x="363.598005">server hello</text>
+  </g>
+  <g id="shape35-162">
+   <title transform="translate(282.9049987792969,-856.9130249023438) ">工作表.35</title>
+   <desc transform="translate(282.9049987792969,-856.9130249023438) ">确认使用的加密通信协议版本比如TLS 1.0版本如果浏览器与服务器支持的版本不一致服务器关闭加密通信一个服务器生成的随机数...</desc>
+   <g class="st1" transform="matrix(1,0,0,1,0.345598,1.97279) " id="shadow35-163">
+    <rect id="svg_86" class="st33" height="65.1969" width="211.181" y="232.436975" x="282.904999"/>
+   </g>
+   <rect id="svg_87" class="st25" height="65.1969" width="211.181" y="232.436975" x="282.904999"/>
+   <text id="svg_88" class="st34" y="244.666975" x="294.624999">确认使用的加密通信协议版本，比如
+    <tspan id="svg_89" class="st27">TLS</tspan>
+    <tspan id="svg_90" class="st27">1</tspan>
+    <tspan id="svg_91" class="st27">.</tspan>
+    <tspan id="svg_92" class="st27">0</tspan>版本
+    <tspan id="svg_93" class="st28" dy="1.233em" x="289.494999">（</tspan>如果浏览器与服务器支持的版本不一致，服务器
+    <tspan id="svg_94" class="st28" dy="1.298em" x="295.704999">关闭加密通信</tspan>），一个服务器生成的随机数
+    <tspan id="svg_95" class="st29">RNs</tspan>
+    <tspan id="svg_96" class="st28" dy="1.331em" x="287.064999">（</tspan>稍后用于生成
+    <tspan id="svg_97" class="st30">会话密钥</tspan>
+    <tspan id="svg_98" class="st31"/>
+    <tspan id="svg_99" class="st31">MS</tspan>），确认使用的加密方
+    <tspan id="svg_100" class="st28" dy="1.331em" x="318.384999">法</tspan>（如
+    <tspan id="svg_101" class="st27">RSA</tspan>公钥加密），服务器证书</text>
+  </g>
+  <g id="shape36-181">
+   <title transform="translate(578.2680053710938,-810.1420288085938) ">消息.36</title>
+   <desc transform="translate(578.2680053710938,-810.1420288085938) ">发送服务端公钥和证书</desc>
+   <path id="svg_102" class="st18" d="m578.268005,337.317971l-382.7,0"/>
+   <rect id="svg_103" class="st23" height="10.6501" width="79.9997" y="331.997971" x="342.678005"/>
+   <text id="svg_104" class="st21" y="339.987971" x="342.678005">发送服务端公钥和证书</text>
+  </g>
+  <g id="group37-188">
+   <title transform="translate(307.3349914550781,-808.6199951171875) ">密钥.37</title>
+   <desc transform="translate(307.3349914550781,-808.6199951171875) ">Server公钥</desc>
+   <g id="shape38-189">
+    <title transform="translate(7.371109962463379,0) translate(307.3349914550781,-808.6199951171875) ">工作表.38</title>
+    <g class="st1" transform="matrix(1,0,0,1,0.345598,1.97279) " id="shadow38-190">
+     <path id="svg_105" class="st6" d="m325.476101,325.800005c0,-2.97 -2.41,-5.38 -5.39,-5.38c-2.97,0 -5.38,2.41 -5.38,5.38c0,2.35 1.5,4.34 3.59,5.08l0,13.66l1.82,1.39l1.77,-1.39l0,-1.43l0.48,0l0,-2.32l-0.52,-0.41l0,-0.94l0.52,-0.12l0,-1.41l-0.58,-0.64l0.58,-0.4l0,-1.2l-0.52,-0.17l-0.03,-1.44l0.55,-0.15l0,-1.53l-0.48,-0.28l0,-1.23c2.09,-0.73 3.59,-2.72 3.59,-5.07zm-4.71,-3.66a0.57443,0.57443 -180 1 0 -1.14886,0a0.57443,0.57443 -180 1 0 1.14886,0z"/>
+     <path id="svg_106" class="st7" d="m325.476101,325.800005c0,-2.97 -2.41,-5.38 -5.39,-5.38c-2.97,0 -5.38,2.41 -5.38,5.38c0,2.35 1.5,4.34 3.59,5.08l0,13.66l1.82,1.39l1.77,-1.39l0,-1.43l0.48,0l0,-2.32l-0.52,-0.41l0,-0.94l0.52,-0.12l0,-1.41l-0.58,-0.64l0.58,-0.4l0,-1.2l-0.52,-0.17l-0.03,-1.44l0.55,-0.15l0,-1.53l-0.48,-0.28l0,-1.23c2.09,-0.73 3.59,-2.72 3.59,-5.07"/>
+     <path id="svg_107" class="st7" d="m319.406101,331.050005l0,12.99"/>
+     <path id="svg_108" class="st7" d="m320.766101,322.140005a0.57443,0.57443 -180 1 0 -1.14886,0a0.57443,0.57443 -180 1 0 1.14886,0"/>
+    </g>
+    <path id="svg_109" class="st15" d="m325.476101,325.800005c0,-2.97 -2.41,-5.38 -5.39,-5.38c-2.97,0 -5.38,2.41 -5.38,5.38c0,2.35 1.5,4.34 3.59,5.08l0,13.66l1.82,1.39l1.77,-1.39l0,-1.43l0.48,0l0,-2.32l-0.52,-0.41l0,-0.94l0.52,-0.12l0,-1.41l-0.58,-0.64l0.58,-0.4l0,-1.2l-0.52,-0.17l-0.03,-1.44l0.55,-0.15l0,-1.53l-0.48,-0.28l0,-1.23c2.09,-0.73 3.59,-2.72 3.59,-5.07zm-4.71,-3.66a0.57443,0.57443 -180 1 0 -1.14886,0a0.57443,0.57443 -180 1 0 1.14886,0z"/>
+    <path id="svg_110" class="st9" d="m325.476101,325.800005c0,-2.97 -2.41,-5.38 -5.39,-5.38c-2.97,0 -5.38,2.41 -5.38,5.38c0,2.35 1.5,4.34 3.59,5.08l0,13.66l1.82,1.39l1.77,-1.39l0,-1.43l0.48,0l0,-2.32l-0.52,-0.41l0,-0.94l0.52,-0.12l0,-1.41l-0.58,-0.64l0.58,-0.4l0,-1.2l-0.52,-0.17l-0.03,-1.44l0.55,-0.15l0,-1.53l-0.48,-0.28l0,-1.23c2.09,-0.73 3.59,-2.72 3.59,-5.07"/>
+    <path id="svg_111" class="st9" d="m319.406101,331.050005l0,12.99"/>
+    <path id="svg_112" class="st9" d="m320.766101,322.140005a0.57443,0.57443 -180 1 0 -1.14886,0a0.57443,0.57443 -180 1 0 1.14886,0"/>
+   </g>
+   <g id="shape37-201">
+    <g class="st1" transform="matrix(1,0,0,1,0.345598,1.97279) " id="shadow37-202"/>
+    <text id="svg_113" class="st35" y="355.920005" x="306.284991">Server
+     <tspan id="svg_114" class="st11">公钥</tspan></text>
+   </g>
+  </g>
+  <g id="shape39-205">
+   <title transform="translate(578.2680053710938,-773.291015625) ">消息.39</title>
+   <desc transform="translate(578.2680053710938,-773.291015625) ">server helllo Done, 请求客户端公钥证书</desc>
+   <path id="svg_115" class="st18" d="m578.268005,374.168984l-382.7,0"/>
+   <rect id="svg_116" class="st23" height="20.25" width="71.9997" y="364.048984" x="346.678005"/>
+   <text id="svg_117" class="st24" y="371.248984" x="352.118005">server helllo Done,
+    <tspan id="svg_118" class="st11" dy="1.298em" x="346.678005">请求客户端公钥证书</tspan></text>
+  </g>
+  <g id="shape40-213">
+   <title transform="translate(180,-760.5349731445312) ">自关联消息.40</title>
+   <desc transform="translate(180,-760.5349731445312) ">检查服务端证书的真实性</desc>
+   <path id="svg_119" class="st18" d="m187.09,394.015027l18,0l0,34.02l-9.52,0"/>
+   <rect id="svg_120" class="st23" height="10.6501" width="87.9997" y="405.695027" x="143.0869"/>
+   <text id="svg_121" class="st21" y="413.685027" x="143.09">检查服务端证书的真实性</text>
+  </g>
+  <g id="shape41-220">
+   <title transform="translate(187.08700561523438,-702.4249877929688) ">消息.41</title>
+   <desc transform="translate(187.08700561523438,-702.4249877929688) ">发送客户端ca证书和公钥</desc>
+   <path id="svg_122" class="st18" d="m187.087006,445.035012l382.7,0"/>
+   <rect id="svg_123" class="st23" height="10.6501" width="87.2144" y="439.715012" x="339.070006"/>
+   <text id="svg_124" class="st21" y="447.705012" x="339.067006">发送客户端
+    <tspan id="svg_125" class="st27">ca</tspan>证书和公钥</text>
+  </g>
+  <g id="group42-228">
+   <title transform="translate(428.031005859375,-699.5159912109375) ">密钥.42</title>
+   <desc transform="translate(428.031005859375,-699.5159912109375) ">Client 公钥</desc>
+   <g id="shape43-229">
+    <title transform="translate(7.371109962463379,0) translate(428.031005859375,-699.5159912109375) ">工作表.43</title>
+    <path id="svg_126" class="st12" d="m446.172116,434.904009c0,-2.97 -2.41,-5.38 -5.39,-5.38c-2.97,0 -5.38,2.41 -5.38,5.38c0,2.35 1.5,4.34 3.59,5.08l0,13.66l1.82,1.39l1.77,-1.39l0,-1.43l0.48,0l0,-2.32l-0.52,-0.41l0,-0.94l0.52,-0.12l0,-1.41l-0.58,-0.64l0.58,-0.4l0,-1.2l-0.52,-0.17l-0.03,-1.44l0.55,-0.15l0,-1.53l-0.48,-0.28l0,-1.23c2.09,-0.73 3.59,-2.72 3.59,-5.07zm-4.71,-3.66a0.57443,0.57443 -180 1 0 -1.14886,0a0.57443,0.57443 -180 1 0 1.14886,0z"/>
+    <path id="svg_127" class="st13" d="m446.172116,434.904009c0,-2.97 -2.41,-5.38 -5.39,-5.38c-2.97,0 -5.38,2.41 -5.38,5.38c0,2.35 1.5,4.34 3.59,5.08l0,13.66l1.82,1.39l1.77,-1.39l0,-1.43l0.48,0l0,-2.32l-0.52,-0.41l0,-0.94l0.52,-0.12l0,-1.41l-0.58,-0.64l0.58,-0.4l0,-1.2l-0.52,-0.17l-0.03,-1.44l0.55,-0.15l0,-1.53l-0.48,-0.28l0,-1.23c2.09,-0.73 3.59,-2.72 3.59,-5.07"/>
+    <path id="svg_128" class="st13" d="m440.102116,440.154009l0,12.99"/>
+    <path id="svg_129" class="st13" d="m441.462116,431.244009a0.57443,0.57443 -180 1 0 -1.14886,0a0.57443,0.57443 -180 1 0 1.14886,0"/>
+   </g>
+   <g id="shape42-234">
+    <text id="svg_130" class="st36" y="464.434009" x="433.741006">Client
+     <tspan id="svg_131" class="st11" dy="1.298em" x="434.791006">公钥</tspan></text>
+   </g>
+  </g>
+  <g id="shape44-237">
+   <title transform="translate(571.1810302734375,-689.6690063476562) ">自关联消息.44</title>
+   <desc transform="translate(571.1810302734375,-689.6690063476562) ">检查客户端证书</desc>
+   <path id="svg_132" class="st18" d="m578.27103,464.880994l18,0l0,28.35l-9.52,0"/>
+   <rect id="svg_133" class="st23" height="10.6501" width="55.9998" y="476.560994" x="524.75603"/>
+   <text id="svg_134" class="st21" y="484.550994" x="524.76103">检查客户端证书</text>
+  </g>
+  <g id="shape45-244">
+   <title transform="translate(187.08700561523438,-631.5590209960938) ">消息.45</title>
+   <desc transform="translate(187.08700561523438,-631.5590209960938) ">前面所有的消息都用 hash 摘要计算并用 client私钥 加密 目的是让服务端验证一下他知道的client的公钥和算法</desc>
+   <path id="svg_135" class="st18" d="m187.087006,515.900979l382.7,0"/>
+   <rect id="svg_136" class="st23" height="21.3" width="209.035" y="505.250979" x="278.160306"/>
+   <text id="svg_137" class="st21" y="513.240979" x="278.157006">前面所有的消息都用
+    <tspan id="svg_138" class="st27"/>
+    <tspan id="svg_139" class="st27">hash</tspan>摘要计算，并用
+    <tspan id="svg_140" class="st27"/>
+    <tspan id="svg_141" class="st29">client</tspan>
+    <tspan id="svg_142" class="st37">私钥</tspan>
+    <tspan id="svg_143" class="st29"/>加密，
+    <tspan id="svg_144" class="st28" dy="1.331em" x="289.447006">目的是让服务端验证一下他知道的</tspan>
+    <tspan id="svg_145" class="st29">client</tspan>
+    <tspan id="svg_146" class="st37">的公钥</tspan>和算法</text>
+  </g>
+  <g id="group46-260">
+   <title transform="translate(80.78739929199219,-800.219970703125) ">密钥.46</title>
+   <desc transform="translate(80.78739929199219,-800.219970703125) ">Client 公钥</desc>
+   <g id="shape47-261">
+    <title transform="translate(7.371109962463379,0) translate(80.78739929199219,-800.219970703125) ">工作表.47</title>
+    <path id="svg_147" class="st12" d="m98.928509,334.200029c0,-2.97 -2.41,-5.38 -5.39,-5.38c-2.97,0 -5.38,2.41 -5.38,5.38c0,2.35 1.5,4.34 3.59,5.08l0,13.66l1.82,1.39l1.77,-1.39l0,-1.43l0.48,0l0,-2.32l-0.52,-0.41l0,-0.94l0.52,-0.12l0,-1.41l-0.58,-0.64l0.58,-0.4l0,-1.2l-0.52,-0.17l-0.03,-1.44l0.55,-0.15l0,-1.53l-0.48,-0.28l0,-1.23c2.09,-0.73 3.59,-2.72 3.59,-5.07zm-4.71,-3.66a0.57443,0.57443 -180 1 0 -1.14886,0a0.57443,0.57443 -180 1 0 1.14886,0z"/>
+    <path id="svg_148" class="st13" d="m98.928509,334.200029c0,-2.97 -2.41,-5.38 -5.39,-5.38c-2.97,0 -5.38,2.41 -5.38,5.38c0,2.35 1.5,4.34 3.59,5.08l0,13.66l1.82,1.39l1.77,-1.39l0,-1.43l0.48,0l0,-2.32l-0.52,-0.41l0,-0.94l0.52,-0.12l0,-1.41l-0.58,-0.64l0.58,-0.4l0,-1.2l-0.52,-0.17l-0.03,-1.44l0.55,-0.15l0,-1.53l-0.48,-0.28l0,-1.23c2.09,-0.73 3.59,-2.72 3.59,-5.07"/>
+    <path id="svg_149" class="st13" d="m92.858509,339.450029l0,12.99"/>
+    <path id="svg_150" class="st13" d="m94.218509,330.540029a0.57443,0.57443 -180 1 0 -1.14886,0a0.57443,0.57443 -180 1 0 1.14886,0"/>
+   </g>
+   <g id="shape46-266">
+    <text id="svg_151" class="st14" y="367.330029" x="81.797399">Client
+     <tspan id="svg_152" class="st11" dy="1.298em" x="83.547399">公钥</tspan></text>
+   </g>
+  </g>
+  <g id="group48-269">
+   <title transform="translate(55.79779815673828,-800.219970703125) ">密钥.48</title>
+   <desc transform="translate(55.79779815673828,-800.219970703125) ">Client 私钥</desc>
+   <g id="shape49-270">
+    <title transform="translate(7.371109962463379,0) translate(55.79779815673828,-800.219970703125) ">工作表.49</title>
+    <g class="st1" transform="matrix(1,0,0,1,0.345598,1.97279) " id="shadow49-271">
+     <path id="svg_153" class="st6" d="m73.938908,334.200029c0,-2.97 -2.41,-5.38 -5.39,-5.38c-2.97,0 -5.38,2.41 -5.38,5.38c0,2.35 1.5,4.34 3.59,5.08l0,13.66l1.82,1.39l1.77,-1.39l0,-1.43l0.48,0l0,-2.32l-0.52,-0.41l0,-0.94l0.52,-0.12l0,-1.41l-0.58,-0.64l0.58,-0.4l0,-1.2l-0.52,-0.17l-0.03,-1.44l0.55,-0.15l0,-1.53l-0.48,-0.28l0,-1.23c2.09,-0.73 3.59,-2.72 3.59,-5.07zm-4.71,-3.66a0.57443,0.57443 -180 1 0 -1.14886,0a0.57443,0.57443 -180 1 0 1.14886,0z"/>
+     <path id="svg_154" class="st7" d="m73.938908,334.200029c0,-2.97 -2.41,-5.38 -5.39,-5.38c-2.97,0 -5.38,2.41 -5.38,5.38c0,2.35 1.5,4.34 3.59,5.08l0,13.66l1.82,1.39l1.77,-1.39l0,-1.43l0.48,0l0,-2.32l-0.52,-0.41l0,-0.94l0.52,-0.12l0,-1.41l-0.58,-0.64l0.58,-0.4l0,-1.2l-0.52,-0.17l-0.03,-1.44l0.55,-0.15l0,-1.53l-0.48,-0.28l0,-1.23c2.09,-0.73 3.59,-2.72 3.59,-5.07"/>
+     <path id="svg_155" class="st7" d="m67.868908,339.450029l0,12.99"/>
+     <path id="svg_156" class="st7" d="m69.228908,330.540029a0.57443,0.57443 -180 1 0 -1.14886,0a0.57443,0.57443 -180 1 0 1.14886,0"/>
+    </g>
+    <path id="svg_157" class="st8" d="m73.938908,334.200029c0,-2.97 -2.41,-5.38 -5.39,-5.38c-2.97,0 -5.38,2.41 -5.38,5.38c0,2.35 1.5,4.34 3.59,5.08l0,13.66l1.82,1.39l1.77,-1.39l0,-1.43l0.48,0l0,-2.32l-0.52,-0.41l0,-0.94l0.52,-0.12l0,-1.41l-0.58,-0.64l0.58,-0.4l0,-1.2l-0.52,-0.17l-0.03,-1.44l0.55,-0.15l0,-1.53l-0.48,-0.28l0,-1.23c2.09,-0.73 3.59,-2.72 3.59,-5.07zm-4.71,-3.66a0.57443,0.57443 -180 1 0 -1.14886,0a0.57443,0.57443 -180 1 0 1.14886,0z"/>
+    <path id="svg_158" class="st9" d="m73.938908,334.200029c0,-2.97 -2.41,-5.38 -5.39,-5.38c-2.97,0 -5.38,2.41 -5.38,5.38c0,2.35 1.5,4.34 3.59,5.08l0,13.66l1.82,1.39l1.77,-1.39l0,-1.43l0.48,0l0,-2.32l-0.52,-0.41l0,-0.94l0.52,-0.12l0,-1.41l-0.58,-0.64l0.58,-0.4l0,-1.2l-0.52,-0.17l-0.03,-1.44l0.55,-0.15l0,-1.53l-0.48,-0.28l0,-1.23c2.09,-0.73 3.59,-2.72 3.59,-5.07"/>
+    <path id="svg_159" class="st9" d="m67.868908,339.450029l0,12.99"/>
+    <path id="svg_160" class="st9" d="m69.228908,330.540029a0.57443,0.57443 -180 1 0 -1.14886,0a0.57443,0.57443 -180 1 0 1.14886,0"/>
+   </g>
+   <g id="shape48-282">
+    <g class="st1" transform="matrix(1,0,0,1,0.345598,1.97279) " id="shadow48-283"/>
+    <text id="svg_161" class="st10" y="367.330029" x="56.807798">Client
+     <tspan id="svg_162" class="st11" dy="1.298em" x="58.557798">私钥</tspan></text>
+   </g>
+  </g>
+  <g id="group50-286">
+   <title transform="translate(110.9990005493164,-800.219970703125) ">密钥.50</title>
+   <desc transform="translate(110.9990005493164,-800.219970703125) ">Server 公钥</desc>
+   <g id="shape51-287">
+    <title transform="translate(7.371109962463379,0) translate(110.9990005493164,-800.219970703125) ">工作表.51</title>
+    <g class="st1" transform="matrix(1,0,0,1,0.345598,1.97279) " id="shadow51-288">
+     <path id="svg_163" class="st6" d="m129.140111,334.200029c0,-2.97 -2.41,-5.38 -5.39,-5.38c-2.97,0 -5.38,2.41 -5.38,5.38c0,2.35 1.5,4.34 3.59,5.08l0,13.66l1.82,1.39l1.77,-1.39l0,-1.43l0.48,0l0,-2.32l-0.52,-0.41l0,-0.94l0.52,-0.12l0,-1.41l-0.58,-0.64l0.58,-0.4l0,-1.2l-0.52,-0.17l-0.03,-1.44l0.55,-0.15l0,-1.53l-0.48,-0.28l0,-1.23c2.09,-0.73 3.59,-2.72 3.59,-5.07zm-4.71,-3.66a0.57443,0.57443 -180 1 0 -1.14886,0a0.57443,0.57443 -180 1 0 1.14886,0z"/>
+     <path id="svg_164" class="st7" d="m129.140111,334.200029c0,-2.97 -2.41,-5.38 -5.39,-5.38c-2.97,0 -5.38,2.41 -5.38,5.38c0,2.35 1.5,4.34 3.59,5.08l0,13.66l1.82,1.39l1.77,-1.39l0,-1.43l0.48,0l0,-2.32l-0.52,-0.41l0,-0.94l0.52,-0.12l0,-1.41l-0.58,-0.64l0.58,-0.4l0,-1.2l-0.52,-0.17l-0.03,-1.44l0.55,-0.15l0,-1.53l-0.48,-0.28l0,-1.23c2.09,-0.73 3.59,-2.72 3.59,-5.07"/>
+     <path id="svg_165" class="st7" d="m123.070111,339.450029l0,12.99"/>
+     <path id="svg_166" class="st7" d="m124.430111,330.540029a0.57443,0.57443 -180 1 0 -1.14886,0a0.57443,0.57443 -180 1 0 1.14886,0"/>
+    </g>
+    <path id="svg_167" class="st15" d="m129.140111,334.200029c0,-2.97 -2.41,-5.38 -5.39,-5.38c-2.97,0 -5.38,2.41 -5.38,5.38c0,2.35 1.5,4.34 3.59,5.08l0,13.66l1.82,1.39l1.77,-1.39l0,-1.43l0.48,0l0,-2.32l-0.52,-0.41l0,-0.94l0.52,-0.12l0,-1.41l-0.58,-0.64l0.58,-0.4l0,-1.2l-0.52,-0.17l-0.03,-1.44l0.55,-0.15l0,-1.53l-0.48,-0.28l0,-1.23c2.09,-0.73 3.59,-2.72 3.59,-5.07zm-4.71,-3.66a0.57443,0.57443 -180 1 0 -1.14886,0a0.57443,0.57443 -180 1 0 1.14886,0z"/>
+    <path id="svg_168" class="st9" d="m129.140111,334.200029c0,-2.97 -2.41,-5.38 -5.39,-5.38c-2.97,0 -5.38,2.41 -5.38,5.38c0,2.35 1.5,4.34 3.59,5.08l0,13.66l1.82,1.39l1.77,-1.39l0,-1.43l0.48,0l0,-2.32l-0.52,-0.41l0,-0.94l0.52,-0.12l0,-1.41l-0.58,-0.64l0.58,-0.4l0,-1.2l-0.52,-0.17l-0.03,-1.44l0.55,-0.15l0,-1.53l-0.48,-0.28l0,-1.23c2.09,-0.73 3.59,-2.72 3.59,-5.07"/>
+    <path id="svg_169" class="st9" d="m123.070111,339.450029l0,12.99"/>
+    <path id="svg_170" class="st9" d="m124.430111,330.540029a0.57443,0.57443 -180 1 0 -1.14886,0a0.57443,0.57443 -180 1 0 1.14886,0"/>
+   </g>
+   <g id="shape50-299">
+    <g class="st1" transform="matrix(1,0,0,1,0.345598,1.97279) " id="shadow50-300"/>
+    <text id="svg_171" class="st10" y="367.330029" x="110.739001">Server
+     <tspan id="svg_172" class="st11" dy="1.298em" x="113.759001">公钥</tspan></text>
+   </g>
+  </g>
+  <g id="group58-303">
+   <title transform="translate(655.7360229492188,-693.9210205078125) ">密钥.58</title>
+   <desc transform="translate(655.7360229492188,-693.9210205078125) ">Server 公钥</desc>
+   <g id="shape59-304">
+    <title transform="translate(7.371109962463379,0) translate(655.7360229492188,-693.9210205078125) ">工作表.59</title>
+    <g class="st1" transform="matrix(1,0,0,1,0.345598,1.97279) " id="shadow59-305">
+     <path id="svg_173" class="st6" d="m673.877133,440.498979c0,-2.97 -2.41,-5.38 -5.39,-5.38c-2.97,0 -5.38,2.41 -5.38,5.38c0,2.35 1.5,4.34 3.59,5.08l0,13.66l1.82,1.39l1.77,-1.39l0,-1.43l0.48,0l0,-2.32l-0.52,-0.41l0,-0.94l0.52,-0.12l0,-1.41l-0.58,-0.64l0.58,-0.4l0,-1.2l-0.52,-0.17l-0.03,-1.44l0.55,-0.15l0,-1.53l-0.48,-0.28l0,-1.23c2.09,-0.73 3.59,-2.72 3.59,-5.07zm-4.71,-3.66a0.57443,0.57443 -180 1 0 -1.14886,0a0.57443,0.57443 -180 1 0 1.14886,0z"/>
+     <path id="svg_174" class="st7" d="m673.877133,440.498979c0,-2.97 -2.41,-5.38 -5.39,-5.38c-2.97,0 -5.38,2.41 -5.38,5.38c0,2.35 1.5,4.34 3.59,5.08l0,13.66l1.82,1.39l1.77,-1.39l0,-1.43l0.48,0l0,-2.32l-0.52,-0.41l0,-0.94l0.52,-0.12l0,-1.41l-0.58,-0.64l0.58,-0.4l0,-1.2l-0.52,-0.17l-0.03,-1.44l0.55,-0.15l0,-1.53l-0.48,-0.28l0,-1.23c2.09,-0.73 3.59,-2.72 3.59,-5.07"/>
+     <path id="svg_175" class="st7" d="m667.807133,445.748979l0,12.99"/>
+     <path id="svg_176" class="st7" d="m669.167133,436.838979a0.57443,0.57443 -180 1 0 -1.14886,0a0.57443,0.57443 -180 1 0 1.14886,0"/>
+    </g>
+    <path id="svg_177" class="st15" d="m673.877133,440.498979c0,-2.97 -2.41,-5.38 -5.39,-5.38c-2.97,0 -5.38,2.41 -5.38,5.38c0,2.35 1.5,4.34 3.59,5.08l0,13.66l1.82,1.39l1.77,-1.39l0,-1.43l0.48,0l0,-2.32l-0.52,-0.41l0,-0.94l0.52,-0.12l0,-1.41l-0.58,-0.64l0.58,-0.4l0,-1.2l-0.52,-0.17l-0.03,-1.44l0.55,-0.15l0,-1.53l-0.48,-0.28l0,-1.23c2.09,-0.73 3.59,-2.72 3.59,-5.07zm-4.71,-3.66a0.57443,0.57443 -180 1 0 -1.14886,0a0.57443,0.57443 -180 1 0 1.14886,0z"/>
+    <path id="svg_178" class="st9" d="m673.877133,440.498979c0,-2.97 -2.41,-5.38 -5.39,-5.38c-2.97,0 -5.38,2.41 -5.38,5.38c0,2.35 1.5,4.34 3.59,5.08l0,13.66l1.82,1.39l1.77,-1.39l0,-1.43l0.48,0l0,-2.32l-0.52,-0.41l0,-0.94l0.52,-0.12l0,-1.41l-0.58,-0.64l0.58,-0.4l0,-1.2l-0.52,-0.17l-0.03,-1.44l0.55,-0.15l0,-1.53l-0.48,-0.28l0,-1.23c2.09,-0.73 3.59,-2.72 3.59,-5.07"/>
+    <path id="svg_179" class="st9" d="m667.807133,445.748979l0,12.99"/>
+    <path id="svg_180" class="st9" d="m669.167133,436.838979a0.57443,0.57443 -180 1 0 -1.14886,0a0.57443,0.57443 -180 1 0 1.14886,0"/>
+   </g>
+   <g id="shape58-316">
+    <g class="st1" transform="matrix(1,0,0,1,0.345598,1.97279) " id="shadow58-317"/>
+    <text id="svg_181" class="st10" y="473.628979" x="655.476023">Server
+     <tspan id="svg_182" class="st11" dy="1.298em" x="658.496023">公钥</tspan></text>
+   </g>
+  </g>
+  <g id="group60-320">
+   <title transform="translate(686.1329956054688,-693.9210205078125) ">密钥.60</title>
+   <desc transform="translate(686.1329956054688,-693.9210205078125) ">Server 私钥</desc>
+   <g id="shape61-321">
+    <title transform="translate(7.371109962463379,0) translate(686.1329956054688,-693.9210205078125) ">工作表.61</title>
+    <g class="st1" transform="matrix(1,0,0,1,0.345598,1.97279) " id="shadow61-322">
+     <path id="svg_183" class="st6" d="m704.274106,440.498979c0,-2.97 -2.41,-5.38 -5.39,-5.38c-2.97,0 -5.38,2.41 -5.38,5.38c0,2.35 1.5,4.34 3.59,5.08l0,13.66l1.82,1.39l1.77,-1.39l0,-1.43l0.48,0l0,-2.32l-0.52,-0.41l0,-0.94l0.52,-0.12l0,-1.41l-0.58,-0.64l0.58,-0.4l0,-1.2l-0.52,-0.17l-0.03,-1.44l0.55,-0.15l0,-1.53l-0.48,-0.28l0,-1.23c2.09,-0.73 3.59,-2.72 3.59,-5.07zm-4.71,-3.66a0.57443,0.57443 -180 1 0 -1.14886,0a0.57443,0.57443 -180 1 0 1.14886,0z"/>
+     <path id="svg_184" class="st7" d="m704.274106,440.498979c0,-2.97 -2.41,-5.38 -5.39,-5.38c-2.97,0 -5.38,2.41 -5.38,5.38c0,2.35 1.5,4.34 3.59,5.08l0,13.66l1.82,1.39l1.77,-1.39l0,-1.43l0.48,0l0,-2.32l-0.52,-0.41l0,-0.94l0.52,-0.12l0,-1.41l-0.58,-0.64l0.58,-0.4l0,-1.2l-0.52,-0.17l-0.03,-1.44l0.55,-0.15l0,-1.53l-0.48,-0.28l0,-1.23c2.09,-0.73 3.59,-2.72 3.59,-5.07"/>
+     <path id="svg_185" class="st7" d="m698.204106,445.748979l0,12.99"/>
+     <path id="svg_186" class="st7" d="m699.564106,436.838979a0.57443,0.57443 -180 1 0 -1.14886,0a0.57443,0.57443 -180 1 0 1.14886,0"/>
+    </g>
+    <path id="svg_187" class="st17" d="m704.274106,440.498979c0,-2.97 -2.41,-5.38 -5.39,-5.38c-2.97,0 -5.38,2.41 -5.38,5.38c0,2.35 1.5,4.34 3.59,5.08l0,13.66l1.82,1.39l1.77,-1.39l0,-1.43l0.48,0l0,-2.32l-0.52,-0.41l0,-0.94l0.52,-0.12l0,-1.41l-0.58,-0.64l0.58,-0.4l0,-1.2l-0.52,-0.17l-0.03,-1.44l0.55,-0.15l0,-1.53l-0.48,-0.28l0,-1.23c2.09,-0.73 3.59,-2.72 3.59,-5.07zm-4.71,-3.66a0.57443,0.57443 -180 1 0 -1.14886,0a0.57443,0.57443 -180 1 0 1.14886,0z"/>
+    <path id="svg_188" class="st9" d="m704.274106,440.498979c0,-2.97 -2.41,-5.38 -5.39,-5.38c-2.97,0 -5.38,2.41 -5.38,5.38c0,2.35 1.5,4.34 3.59,5.08l0,13.66l1.82,1.39l1.77,-1.39l0,-1.43l0.48,0l0,-2.32l-0.52,-0.41l0,-0.94l0.52,-0.12l0,-1.41l-0.58,-0.64l0.58,-0.4l0,-1.2l-0.52,-0.17l-0.03,-1.44l0.55,-0.15l0,-1.53l-0.48,-0.28l0,-1.23c2.09,-0.73 3.59,-2.72 3.59,-5.07"/>
+    <path id="svg_189" class="st9" d="m698.204106,445.748979l0,12.99"/>
+    <path id="svg_190" class="st9" d="m699.564106,436.838979a0.57443,0.57443 -180 1 0 -1.14886,0a0.57443,0.57443 -180 1 0 1.14886,0"/>
+   </g>
+   <g id="shape60-333">
+    <g class="st1" transform="matrix(1,0,0,1,0.345598,1.97279) " id="shadow60-334"/>
+    <text id="svg_191" class="st10" y="473.628979" x="685.872996">Server
+     <tspan id="svg_192" class="st11" dy="1.298em" x="688.892996">私钥</tspan></text>
+   </g>
+  </g>
+  <g id="group62-337">
+   <title transform="translate(626.8300170898438,-693.9210205078125) ">密钥.62</title>
+   <desc transform="translate(626.8300170898438,-693.9210205078125) ">Client 公钥</desc>
+   <g id="shape63-338">
+    <title transform="translate(7.371109962463379,0) translate(626.8300170898438,-693.9210205078125) ">工作表.63</title>
+    <path id="svg_193" class="st12" d="m644.971127,440.498979c0,-2.97 -2.41,-5.38 -5.39,-5.38c-2.97,0 -5.38,2.41 -5.38,5.38c0,2.35 1.5,4.34 3.59,5.08l0,13.66l1.82,1.39l1.77,-1.39l0,-1.43l0.48,0l0,-2.32l-0.52,-0.41l0,-0.94l0.52,-0.12l0,-1.41l-0.58,-0.64l0.58,-0.4l0,-1.2l-0.52,-0.17l-0.03,-1.44l0.55,-0.15l0,-1.53l-0.48,-0.28l0,-1.23c2.09,-0.73 3.59,-2.72 3.59,-5.07zm-4.71,-3.66a0.57443,0.57443 -180 1 0 -1.14886,0a0.57443,0.57443 -180 1 0 1.14886,0z"/>
+    <path id="svg_194" class="st13" d="m644.971127,440.498979c0,-2.97 -2.41,-5.38 -5.39,-5.38c-2.97,0 -5.38,2.41 -5.38,5.38c0,2.35 1.5,4.34 3.59,5.08l0,13.66l1.82,1.39l1.77,-1.39l0,-1.43l0.48,0l0,-2.32l-0.52,-0.41l0,-0.94l0.52,-0.12l0,-1.41l-0.58,-0.64l0.58,-0.4l0,-1.2l-0.52,-0.17l-0.03,-1.44l0.55,-0.15l0,-1.53l-0.48,-0.28l0,-1.23c2.09,-0.73 3.59,-2.72 3.59,-5.07"/>
+    <path id="svg_195" class="st13" d="m638.901127,445.748979l0,12.99"/>
+    <path id="svg_196" class="st13" d="m640.261127,436.838979a0.57443,0.57443 -180 1 0 -1.14886,0a0.57443,0.57443 -180 1 0 1.14886,0"/>
+   </g>
+   <g id="shape62-343">
+    <text id="svg_197" class="st14" y="473.628979" x="627.840017">Client
+     <tspan id="svg_198" class="st11" dy="1.298em" x="629.590017">公钥</tspan></text>
+   </g>
+  </g>
+  <g id="shape64-346">
+   <title transform="translate(571.1810302734375,-618.802978515625) ">自关联消息.64</title>
+   <desc transform="translate(571.1810302734375,-618.802978515625) ">解密,检查hash和摘要</desc>
+   <path id="svg_199" class="st18" d="m578.27103,535.747021l18,0l0,28.35l-9.52,0"/>
+   <rect id="svg_200" class="st23" height="10.6501" width="73.3631" y="547.427021" x="496.23183"/>
+   <text id="svg_201" class="st21" y="555.417021" x="496.23103">解密
+    <tspan id="svg_202" class="st27">,</tspan>检查
+    <tspan id="svg_203" class="st27">hash</tspan>和摘要</text>
+  </g>
+  <g id="shape65-355">
+   <title transform="translate(180,-618.802978515625) ">自关联消息.65</title>
+   <desc transform="translate(180,-618.802978515625) ">生成一个随机数PMS(pre-master-secret)</desc>
+   <path id="svg_204" class="st18" d="m187.09,535.747021l18,0l0,34.02l-9.52,0"/>
+   <rect id="svg_205" class="st23" height="10.6501" width="134.112" y="547.427021" x="188.0622"/>
+   <text id="svg_206" class="st21" y="555.417021" x="188.06">生成一个随机数
+    <tspan id="svg_207" class="st27">PMS</tspan>
+    <tspan id="svg_208" class="st27">(</tspan>
+    <tspan id="svg_209" class="st27">pre</tspan>
+    <tspan id="svg_210" class="st27">-</tspan>
+    <tspan id="svg_211" class="st27">master</tspan>
+    <tspan id="svg_212" class="st27">-</tspan>
+    <tspan id="svg_213" class="st27">secret</tspan>
+    <tspan id="svg_214" class="st27">)</tspan></text>
+  </g>
+  <g id="shape66-370">
+   <title transform="translate(187.08700561523438,-540.8499755859375) ">消息.66</title>
+   <desc transform="translate(187.08700561523438,-540.8499755859375) ">用 server的公钥 加密发送(pms)</desc>
+   <path id="svg_215" class="st18" d="m187.087006,606.610024l382.7,0"/>
+   <rect id="svg_216" class="st23" height="10.6501" width="107.004" y="601.290024" x="329.176006"/>
+   <text id="svg_217" class="st21" y="609.280024" x="329.177006">用
+    <tspan id="svg_218" class="st27"/>
+    <tspan id="svg_219" class="st29">server</tspan>
+    <tspan id="svg_220" class="st37">的公钥</tspan>
+    <tspan id="svg_221" class="st29"/>加密发送
+    <tspan id="svg_222" class="st27">(</tspan>
+    <tspan id="svg_223" class="st27">pms</tspan>
+    <tspan id="svg_224" class="st27">)</tspan></text>
+  </g>
+  <g id="shape67-384">
+   <title transform="translate(180,-530.9290161132812) ">自关联消息.67</title>
+   <desc transform="translate(180,-530.9290161132812) ">计算MasterSecrept 从pms,RNc,RNs</desc>
+   <path id="svg_225" class="st18" d="m187.09,623.620984l18,0l0,36.85l-9.52,0"/>
+   <rect id="svg_226" class="st23" height="10.6501" width="116.991" y="636.720984" x="128.591"/>
+   <text id="svg_227" class="st21" y="644.710984" x="128.59">计算
+    <tspan id="svg_228" class="st27">MasterSecrept</tspan>从
+    <tspan id="svg_229" class="st27">pms</tspan>
+    <tspan id="svg_230" class="st27">,</tspan>
+    <tspan id="svg_231" class="st27">RNc</tspan>
+    <tspan id="svg_232" class="st27">,</tspan>
+    <tspan id="svg_233" class="st27">RNs</tspan></text>
+  </g>
+  <g id="shape69-397">
+   <title transform="translate(571.1810302734375,-530.9290161132812) ">自关联消息.69</title>
+   <desc transform="translate(571.1810302734375,-530.9290161132812) ">计算MasterSecrept 从pms,RNc,RNs</desc>
+   <path id="svg_234" class="st18" d="m578.27103,623.620984l18,0l0,36.85l-9.52,0"/>
+   <rect id="svg_235" class="st23" height="10.6501" width="116.991" y="636.720984" x="519.77203"/>
+   <text id="svg_236" class="st21" y="644.710984" x="519.77103">计算
+    <tspan id="svg_237" class="st27">MasterSecrept</tspan>从
+    <tspan id="svg_238" class="st27">pms</tspan>
+    <tspan id="svg_239" class="st27">,</tspan>
+    <tspan id="svg_240" class="st27">RNc</tspan>
+    <tspan id="svg_241" class="st27">,</tspan>
+    <tspan id="svg_242" class="st27">RNs</tspan></text>
+  </g>
+  <g id="shape70-410">
+   <title transform="translate(187.08700561523438,-458.34698486328125) ">消息.70</title>
+   <desc transform="translate(187.08700561523438,-458.34698486328125) ">ChangeCipherSpec ,告知服务端已经切换到协商过的加密套件状态 准备使用加密套件和MS加密数据了</desc>
+   <path id="svg_243" class="st18" d="m187.087006,689.113015l382.7,0"/>
+   <rect id="svg_244" class="st20" height="21.3" width="232.573" y="678.463015" x="266.391106"/>
+   <text id="svg_245" class="st24" y="686.453015" x="266.387006">ChangeCipherSpec
+    <tspan id="svg_246" class="st28"/>
+    <tspan id="svg_247" class="st28">,</tspan>
+    <tspan id="svg_248" class="st11">告知服务端已经切换到协商过的加密套件状态</tspan>
+    <tspan id="svg_249" class="st11">，</tspan>
+    <tspan id="svg_250" class="st11" dy="1.331em" x="321.417006">准备使用加密套件和</tspan>
+    <tspan id="svg_251" class="st28">MS</tspan>
+    <tspan id="svg_252" class="st11">加密数据了</tspan></text>
+  </g>
+  <g id="shape71-424">
+   <title transform="translate(187.08700561523438,-433.1340026855469) ">消息.71</title>
+   <desc transform="translate(187.08700561523438,-433.1340026855469) ">结束SSL握手</desc>
+   <path id="svg_253" class="st18" d="m187.087006,714.325997l382.7,0"/>
+   <rect id="svg_254" class="st23" height="10.6501" width="42.7146" y="709.005997" x="361.320006"/>
+   <text id="svg_255" class="st21" y="716.995997" x="361.317006">结束
+    <tspan id="svg_256" class="st27">SSL</tspan>握手</text>
+  </g>
+  <g id="shape72-432">
+   <title transform="translate(578.2680053710938,-406.5780029296875) ">消息.72</title>
+   <desc transform="translate(578.2680053710938,-406.5780029296875) ">ChangeCipherSpec ,告知客户端已经切换到协商过的加密套件状态 准备使用加密套件和MS加密数据了</desc>
+   <path id="svg_257" class="st18" d="m578.268005,740.881997l-382.7,0"/>
+   <rect id="svg_258" class="st23" height="21.3" width="232.573" y="730.231997" x="266.391005"/>
+   <text id="svg_259" class="st24" y="738.221997" x="266.388005">ChangeCipherSpec
+    <tspan id="svg_260" class="st28"/>
+    <tspan id="svg_261" class="st28">,</tspan>
+    <tspan id="svg_262" class="st11">告知客户端已经切换到协商过的加密套件状态</tspan>
+    <tspan id="svg_263" class="st11">，</tspan>
+    <tspan id="svg_264" class="st11" dy="1.331em" x="321.418005">准备使用加密套件和</tspan>
+    <tspan id="svg_265" class="st28">MS</tspan>
+    <tspan id="svg_266" class="st11">加密数据了</tspan></text>
+  </g>
+  <g id="shape73-446">
+   <title transform="translate(578.2680053710938,-381.364013671875) ">消息.73</title>
+   <desc transform="translate(578.2680053710938,-381.364013671875) ">结束SSL握手</desc>
+   <path id="svg_267" class="st18" d="m578.268005,766.095986l-382.7,0"/>
+   <rect id="svg_268" class="st23" height="10.6501" width="42.7146" y="760.775986" x="361.320005"/>
+   <text id="svg_269" class="st21" y="768.765986" x="361.318005">结束
+    <tspan id="svg_270" class="st27">SSL</tspan>握手</text>
+  </g>
+  <g id="shape76-454">
+   <title transform="translate(650.4390258789062,-535.5349731445312) ">矩形</title>
+   <desc transform="translate(650.4390258789062,-535.5349731445312) ">RNc</desc>
+   <g class="st1" transform="matrix(1,0,0,1,0.345598,1.97279) " id="shadow76-455">
+    <rect id="svg_271" class="st2" height="19.1339" width="25.5118" y="599.885027" x="650.439026"/>
+   </g>
+   <rect id="svg_272" class="st3" height="19.1339" width="25.5118" y="599.885027" x="650.439026"/>
+   <text id="svg_273" class="st38" y="612.445027" x="655.139026">RNc</text>
+  </g>
+  <g id="shape77-460">
+   <title transform="translate(626.2329711914062,-535.5349731445312) ">矩形.77</title>
+   <desc transform="translate(626.2329711914062,-535.5349731445312) ">RNs</desc>
+   <g class="st1" transform="matrix(1,0,0,1,0.345598,1.97279) " id="shadow77-461">
+    <rect id="svg_274" class="st2" height="19.1339" width="25.5118" y="599.885027" x="626.232971"/>
+   </g>
+   <rect id="svg_275" class="st3" height="19.1339" width="25.5118" y="599.885027" x="626.232971"/>
+   <text id="svg_276" class="st38" y="612.445027" x="631.092971">RNs</text>
+  </g>
+  <g id="shape78-466">
+   <title transform="translate(587.1069946289062,-535.5349731445312) ">矩形.78</title>
+   <desc transform="translate(587.1069946289062,-535.5349731445312) ">PMS</desc>
+   <g class="st1" transform="matrix(1,0,0,1,0.345598,1.97279) " id="shadow78-467">
+    <rect id="svg_277" class="st2" height="19.1339" width="37.8201" y="599.885027" x="587.106995"/>
+   </g>
+   <rect id="svg_278" class="st3" height="19.1339" width="37.8201" y="599.885027" x="587.106995"/>
+   <text id="svg_279" class="st38" y="612.445027" x="596.856995">PMS</text>
+  </g>
+  <g id="shape79-472">
+   <title transform="translate(70.86609649658203,-535.5349731445312) ">矩形.79</title>
+   <desc transform="translate(70.86609649658203,-535.5349731445312) ">RNc</desc>
+   <g class="st1" transform="matrix(1,0,0,1,0.345598,1.97279) " id="shadow79-473">
+    <rect id="svg_280" class="st2" height="19.1339" width="25.5118" y="599.885027" x="70.866096"/>
+   </g>
+   <rect id="svg_281" class="st3" height="19.1339" width="25.5118" y="599.885027" x="70.866096"/>
+   <text id="svg_282" class="st38" y="612.445027" x="75.566096">RNc</text>
+  </g>
+  <g id="shape80-478">
+   <title transform="translate(96.60169982910156,-535.5349731445312) ">矩形.80</title>
+   <desc transform="translate(96.60169982910156,-535.5349731445312) ">RNs</desc>
+   <g class="st1" transform="matrix(1,0,0,1,0.345598,1.97279) " id="shadow80-479">
+    <rect id="svg_283" class="st2" height="19.1339" width="25.5118" y="599.885027" x="96.6017"/>
+   </g>
+   <rect id="svg_284" class="st3" height="19.1339" width="25.5118" y="599.885027" x="96.6017"/>
+   <text id="svg_285" class="st38" y="612.445027" x="101.4617">RNs</text>
+  </g>
+  <g id="shape81-484">
+   <title transform="translate(122.33699798583984,-535.5349731445312) ">矩形.81</title>
+   <desc transform="translate(122.33699798583984,-535.5349731445312) ">PMS</desc>
+   <g class="st1" transform="matrix(1,0,0,1,0.345598,1.97279) " id="shadow81-485">
+    <rect id="svg_286" class="st2" height="19.1339" width="37.8201" y="599.885027" x="122.336998"/>
+   </g>
+   <rect id="svg_287" class="st3" height="19.1339" width="37.8201" y="599.885027" x="122.336998"/>
+   <text id="svg_288" class="st38" y="612.445027" x="132.086998">PMS</text>
+  </g>
+  <g id="shape83-490">
+   <title transform="translate(144.56700134277344,-445.8900146484375) ">圆形</title>
+   <desc transform="translate(144.56700134277344,-445.8900146484375) ">MS</desc>
+   <g class="st1" transform="matrix(1,0,0,1,0.345598,1.97279) " id="shadow83-491">
+    <path id="svg_289" class="st2" d="m144.567001,695.909985a12.7559,12.7559 0 0 1 25.51,0a12.7559,12.7559 0 1 1 -25.51,0z"/>
+   </g>
+   <path id="svg_290" class="st39" d="m144.567001,695.909985a12.7559,12.7559 0 0 1 25.51,0a12.7559,12.7559 0 1 1 -25.51,0z"/>
+   <text id="svg_291" class="st40" y="698.909985" x="150.747001">MS</text>
+  </g>
+  <g id="shape84-496">
+   <title transform="translate(599.416015625,-445.8900146484375) ">圆形.84</title>
+   <desc transform="translate(599.416015625,-445.8900146484375) ">MS</desc>
+   <g class="st1" transform="matrix(1,0,0,1,0.345598,1.97279) " id="shadow84-497">
+    <path id="svg_292" class="st2" d="m599.416016,695.909985a12.7559,12.7559 0 0 1 25.51,0a12.7559,12.7559 0 1 1 -25.51,0z"/>
+   </g>
+   <path id="svg_293" class="st39" d="m599.416016,695.909985a12.7559,12.7559 0 0 1 25.51,0a12.7559,12.7559 0 1 1 -25.51,0z"/>
+   <text id="svg_294" class="st40" y="698.909985" x="605.596016">MS</text>
+  </g>
+  <g id="shape85-502">
+   <title transform="translate(147.40199279785156,-975.260009765625) ">矩形.85</title>
+   <desc transform="translate(147.40199279785156,-975.260009765625) ">RNc</desc>
+   <g class="st1" transform="matrix(1,0,0,1,0.345598,1.97279) " id="shadow85-503">
+    <rect id="svg_295" class="st2" height="19.1339" width="25.5118" y="160.15999" x="147.401993"/>
+   </g>
+   <rect id="svg_296" class="st3" height="19.1339" width="25.5118" y="160.15999" x="147.401993"/>
+   <text id="svg_297" class="st38" y="172.71999" x="152.101993">RNc</text>
+  </g>
+  <g id="shape86-508">
+   <title transform="translate(610.8660278320312,-894.4719848632812) ">矩形.86</title>
+   <desc transform="translate(610.8660278320312,-894.4719848632812) ">RNs</desc>
+   <g class="st1" transform="matrix(1,0,0,1,0.345598,1.97279) " id="shadow86-509">
+    <rect id="svg_298" class="st2" height="19.1339" width="25.5118" y="240.948015" x="610.866028"/>
+   </g>
+   <rect id="svg_299" class="st3" height="19.1339" width="25.5118" y="240.948015" x="610.866028"/>
+   <text id="svg_300" class="st38" y="253.508015" x="615.726028">RNs</text>
+  </g>
+  <g id="shape88-514">
+   <title transform="translate(301.5429992675781,-559.2760009765625) ">工作表.88</title>
+   <desc transform="translate(301.5429992675781,-559.2760009765625) ">协议中称作ClientKeyExchange过程</desc>
+   <rect id="svg_301" class="st41" height="20" width="152" y="575.273999" x="301.542999"/>
+   <text id="svg_302" class="st42" y="588.273999" x="311.562999">协议中称作
+    <tspan id="svg_303" class="st27">ClientKeyExchange</tspan>过程</text>
+  </g>
+  <g id="shape93-518">
+   <title transform="translate(187.08700561523438,-348.9150085449219) ">普通双箭头</title>
+   <desc transform="translate(187.08700561523438,-348.9150085449219) ">Application data</desc>
+   <g class="st1" transform="matrix(1,0,0,1,0.345598,1.97279) " id="shadow93-519">
+    <path id="svg_304" class="st43" d="m187.087006,805.634991l11.34,-11.34l0,5.67l368.5,0l0,-5.67l11.34,11.34l-11.34,11.34l0,-5.67l-368.5,0l0,5.67l-11.34,-11.34z"/>
+   </g>
+   <path id="svg_305" class="st44" d="m187.087006,805.634991l11.34,-11.34l0,5.67l368.5,0l0,-5.67l11.34,11.34l-11.34,11.34l0,-5.67l-368.5,0l0,5.67l-11.34,-11.34z"/>
+   <text id="svg_306" class="st38" y="808.634991" x="349.417006">Application data</text>
+  </g>
+ </g>
+ <g>
+  <title>background</title>
+  <rect fill="none" id="canvas_background" height="852" width="782" y="-1" x="-1"/>
+ </g>
 </svg>
