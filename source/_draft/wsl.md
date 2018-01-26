@@ -8,8 +8,18 @@
 apt-get install zsh
 # 安装oh my zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-```
 
+```
+优化
+```
+git config --global oh-my-zsh.hide-status 1 关闭对status的检查，
+然后disable auto upgrade To disable automatic upgrades, set the following in your ~/.zshrc:DISABLE_AUTO_UPDATE=true
+
+```
+安装autojump
+```
+apt-get install autojump
+```
 ### 常用的shortcut
 
 1. 直接输入d 列出之前所有的路径
@@ -64,3 +74,5 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 
 - [Vim 多文件编辑：缓冲区](http://harttle.land/2015/11/17/vim-buffer.html)
 - [vim实用技巧之高效的buffer操作]( http://fishcried.com/2014-10-25/vim%E5%AE%9E%E7%94%A8%E6%8A%80%E5%B7%A7%E4%B9%8B%E9%AB%98%E6%95%88%E7%9A%84buffer%E6%93%8D%E4%BD%9C/)
+- [Running Node.js on WSL from Visual Studio Code](https://blogs.msdn.microsoft.com/commandline/2017/10/27/running-node-js-on-wsl-from-visual-studio-code/)
+- [how to i user ubuntu on window wsl form vs code](https://stackoverflow.com/questions/44450218/how-do-i-use-bash-on-ubuntu-on-windows-wsl-for-my-vs-code-terminal)
