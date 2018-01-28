@@ -74,7 +74,7 @@ HASH算法：`MD5`，`SHA1`，`SHA256`
 
 ### SSL密钥协商的过程如下
 
-[点击查看大图](/uploads/https/https_ssl.svg)
+[点击查看大图](/uploads/https/https_ssl.png)
 ![](/uploads/https/https_ssl.svg)
 [来源](https://upload.wikimedia.org/wikipedia/commons/a/ae/SSL_handshake_with_two_way_authentication_with_certificates.svg)
 
