@@ -31,7 +31,7 @@ Each run-time constant pool is allocated from the Java Virtual Machine's method 
 
 获取类或接口并将其组合到Java虚拟机的运行时的状态.
 
-#### initializes
+#### initializesk
 
 执行类或接口初始化方法组成
 
@@ -41,5 +41,7 @@ Each run-time constant pool is allocated from the Java Virtual Machine's method 
 ## 参考资料
 
 - [Java Language and Virtual Machine Specifications](https://docs.oracle.com/javase/specs/index.html)
+- [JVMInternals](http://blog.jamesdbloom.com/JVMInternals.html#constant_pool)
+- [string-constant-pool-adn-intern](https://stackoverflow.com/questions/33416740/string-constant-pool-and-intern)
 - [stackoverflow purpose of constant pool](https://stackoverflow.com/questions/10209952/what-is-the-purpose-of-the-java-constant-pool)
 - [java-string-pool](https://www.journaldev.com/797/what-is-java-string-pool)
