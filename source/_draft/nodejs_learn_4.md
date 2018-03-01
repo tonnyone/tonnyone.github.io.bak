@@ -12,7 +12,6 @@ tag: nodejs
 - [淘宝FED团队 深入理解 Node.js Stream 内部机制](http://taobaofed.org/blog/2017/08/31/nodejs-stream/)
 - [node-js-streams-everything-you-need-to-know](https://medium.freecodecamp.org/node-js-streams-everything-you-need-to-know-c9141306be93)
 
-
 Node.js 中有四种基本的流类型：
 
 - Readable - 可读的流 (例如 fs.createReadStream()).

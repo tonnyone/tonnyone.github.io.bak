@@ -41,6 +41,8 @@ apt-get install autojump
 `tmux kill-session -t demo` # 关闭demo会话
 `tmux kill-server` # 关闭服务器，所有的会话都将关闭
 
+`prefix $ 重命名session`
+
 #### 命令模式
 所有的命令都可以用命令的方式执行,一般用在`tmux`内部执行命令的时候如下:
 

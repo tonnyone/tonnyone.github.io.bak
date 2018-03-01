@@ -98,3 +98,4 @@
 - [vim 上古神器vim插件：你真的学会用NERDTree了吗？](https://www.jianshu.com/p/3066b3191cb1)
 - [Vim 多文件编辑：缓冲区](http://harttle.land/2015/11/17/vim-buffer.html)
 - [vim实用技巧之高效的buffer操作]( http://fishcried.com/2014-10-25/vim%E5%AE%9E%E7%94%A8%E6%8A%80%E5%B7%A7%E4%B9%8B%E9%AB%98%E6%95%88%E7%9A%84buffer%E6%93%8D%E4%BD%9C/)
+- [vim 中文doc](http://vimcdoc.sourceforge.net/doc/)

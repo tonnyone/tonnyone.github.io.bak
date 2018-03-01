@@ -11,7 +11,7 @@ tag: nodejs
 
 ## connect
 
-`connnect`是一个基于`HTTP`服务的工具集，它的核心功能就是提供了一种`中间件`的代码组织方式来与请求和响应做交互.
+`connnect` 是一个基于`HTTP`服务的工具集，它的核心功能就是提供了一种`中间件`的代码组织方式来与请求和响应做交互.
 下面是connnect最常见的使用方式,github上有[大量的中间件](https://github.com/senchalabs/connect#middleware)简化http处理的过程
 
 ```javascript
