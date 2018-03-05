@@ -40,7 +40,15 @@ Each run-time constant pool is allocated from the Java Virtual Machine's method 
 
 ## 参考资料
 
+- [](https://www.zhihu.com/question/28916657)
 - [Java Language and Virtual Machine Specifications](https://docs.oracle.com/javase/specs/index.html)
+- [](https://docs.oracle.com/javase/6/docs/api/java/lang/String.html#intern%28%29)
+- [se6 jvm](https://docs.oracle.com/javase/specs/jvms/se6/html/ConstantPool.doc.html#67960)
+- [se7 jvm](https://docs.oracle.com/javase/specs/jvms/se7/html/jvms-5.html#jvms-5.1)
+- [美团技术团队](https://tech.meituan.com/in_depth_understanding_string_intern.html)
+- [](http://java-performance.info/string-intern-in-java-6-7-8/)
+- [ScjpTipLine-StringsLiterally.](https://javaranch.com/journal/200409/ScjpTipLine-StringsLiterally.html)
+- [java-string-literal-and-string-constant-pool-concept](http://www.benchresources.net/java-string-literal-and-string-constant-pool-concept/)
 - [JVMInternals](http://blog.jamesdbloom.com/JVMInternals.html#constant_pool)
 - [string-constant-pool-adn-intern](https://stackoverflow.com/questions/33416740/string-constant-pool-and-intern)
 - [stackoverflow purpose of constant pool](https://stackoverflow.com/questions/10209952/what-is-the-purpose-of-the-java-constant-pool)
