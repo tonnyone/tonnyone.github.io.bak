@@ -54,7 +54,7 @@ Log的分区被分布到集群中的多个服务器上。每个服务器处理�
 bin/kafka-topics.sh --list --zookeeper localhost:2181
 
 # 查看topic详细信息
-bin/kafka-topics.sh --list --zookeeper localhost:2181 --describe --topic test
+bin/kafka-topics.sh --zookeeper localhost:2181 --describe --topic test
 
 # 生产消息
 bin/kafka-console-producer.sh --broker-list localhost:9092 --topic test
