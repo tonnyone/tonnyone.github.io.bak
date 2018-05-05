@@ -2,6 +2,7 @@
 title: 一起学nodejs(写一个基于TCP/IP终端聊天系统)
 category: js
 tag: nodejs
+date: 2018-03-12 08:40:12
 ---
 
 ![test](/uploads/tcpip.gif)

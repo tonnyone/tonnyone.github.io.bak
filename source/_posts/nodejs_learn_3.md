@@ -2,6 +2,7 @@
 title: 一起学nodejs(Buffer)
 category: js
 tag: nodejs
+date: 2018-02-12 06:40:12
 ---
 ## Buffer 对象
 
