@@ -1,5 +1,5 @@
 ---
-title: kafka 学习系列 02-kafka生产者与消费者
+title: kafka 学习系列 02-kafka生产者
 category: kafka 
 tags: [java, kafka]
 date: 2018-05-20 22:00:00
@@ -16,6 +16,10 @@ date: 2018-05-20 22:00:00
 1. 会有专门的线程把这些记录批次发到响应的broker上
 1. 服务器收到消息会返回一个响应,如果写如成功就会返回一个RecordMetaData对象(包含了主题和分区信息以及分区的偏移量)
 1. 如果不成功,则会返回一个错误,某些错误在生者收到后会重新尝试发送消息,几次后如果还是失败,就返回失败信息
+
+<!--more-->
+
+![](/uploads/kafka/kafka_produce.png)
 
 ### java api 解析
 
