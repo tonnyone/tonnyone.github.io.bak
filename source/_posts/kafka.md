@@ -1,7 +1,7 @@
 ---
 title: kafka 学习系列 01-kafka的安装和常用命令
 category: kafka 
-tag: java,kafka
+tags: [java, kafka]
 date: 2018-05-17 22:00:00
 ---
 
@@ -9,7 +9,9 @@ date: 2018-05-17 22:00:00
 
 - 用于发布和订阅消息（流），类似于一个消息队列或企业消息系统。
 - 以容错的方式存储消息（流）。
-- 流处理 
+- 流处理
+
+<!--more-->
 
 ### 用于什么地方
 
@@ -23,7 +25,6 @@ date: 2018-05-17 22:00:00
 1. Consumer
 1. Log
 
-<!--more-->
 
 #### 日志
 
@@ -53,7 +54,7 @@ Log的分区被分布到集群中的多个服务器上。每个服务器处理�
 
 ## 常用命令
 
-**说明:**以下命令都是运行再0.9以上版本,0.9之前的版本消费者的偏移量是存储在zookeeper 下的,0.9或以上版本,消费者的便宜移到了kafka的一个内部topic里面`__consumer_offsets`里面,
+**说明:**以下命令都是运行再0.9以上版本,0.9之前的版本消费者的偏移量是存储在zookeeper 下的,0.9或以上版本,消费者的偏移存储到了kafka的一个内部topic里面`__consumer_offsets`里面,
 0.9不光指服务端版本,只有服务端和客户端都使用0.9或以上版本,偏移才会存在kafka中.
 
 [官网提供的常用的维护工具](https://cwiki.apache.org/confluence/display/KAFKA/System+Tools)
