@@ -1,5 +1,5 @@
 ---
-title: kafka 学习系列 02-kafka生产者与消费者
+title: kafka 学习系列 02-kafka生产者
 category: kafka 
 tags: [java, kafka]
 date: 2018-05-20 22:00:00
@@ -9,8 +9,6 @@ date: 2018-05-20 22:00:00
 
 下图展示了kafka发送消息的整体流程
 
-<!--more-->
-
 1. 创建一个ProductRecord对象(对象包含主题名称,分区,key,value).
 1. 把key和value 序列化成字节数组.
 1. 如果ProductRecord对象没有指定了分区,那么分区器会通过key选择一个分区,如果指定了分区的话直接返回
@@ -19,7 +17,11 @@ date: 2018-05-20 22:00:00
 1. 服务器收到消息会返回一个响应,如果写如成功就会返回一个RecordMetaData对象(包含了主题和分区信息以及分区的偏移量)
 1. 如果不成功,则会返回一个错误,某些错误在生者收到后会重新尝试发送消息,几次后如果还是失败,就返回失败信息
 
-### 生产者 java api
+<!--more-->
+
+![](/uploads/kafka/kafka_produce.png)
+
+### java api 解析
 
 ```java
 Properties props = new Properties();
@@ -99,5 +101,3 @@ broker地址清单，生产者会从给定的groker里面查找到其他的broke
 #### `retries`
 
 重试次数: 生产者发送从服务器收到的错误消息可能是临时性的错误(比如分区找不到Leader),这种情况,retrise参数决定了生产者可以重试的次数,如果达到这个次数生产者会放弃重试，返回错误,默认情况重试会等待100ms,可以通过`retry.badkoff.ms`来修改.不过有些错误不是临时错误,比如(消息太大的错误),业务处理一般只处理不可重试的错误,或者重试次数超出上限的情况.
-
-####
