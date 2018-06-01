@@ -1,29 +1,29 @@
 ---
 title: mongodb3.X 单机安装与配置
 category: 数据库 
-tag: mongdb  
+tag: mongodb  
 date: 2018-05-05 10:40:12
 ---
 
-![](/uploads/mongodb.png)
-[官网生产环境安装mongodb注意事项说明,装前必看!](https://docs.mongodb.com/manual/administration/production-notes/ "官网生产环境安装mongodb注意事项说明")
+![](/uploads/mongodb.jpg)
 
-## [下载安装包](https://www.mongodb.com/download-center?jmp=docs&_ga=1.201102574.1776437196.1479373354#community "下载地址")
+## 安装
 
-企业版和社区版本区别
+### 下载安装包
+
+[下载安装包](https://www.mongodb.com/download-center?jmp=docs&_ga=1.201102574.1776437196.1479373354#community "下载地址")
+
 我用的是社区版通用64位安装包(至于直接解压安装,还是用包管理器安装看个人习惯,大多数人应该是解压安装方便管理)
 
 <!--more-->
 
-## 安装
-
 ### 解压文件
 
-我的在(/usr/local/mongodb)
+我的在了(/usr/local/mongodb)目录
 
 ### 新建conf目录添加配置文件 mongo.conf
 
-**注意**: 此时配置项authorization是disable的
+**注意**: 此时配置里面项`authorization`是`disable`的
 
 1. 新建启动脚本 startmq.sh(如下:)
 
@@ -43,7 +43,8 @@ numactl --interleave=all /home/eversec/mongodb/bin/mongod --config ../conf/mongo
 - 以numacl启动
 - 启动成功添加管理用户
 
-这里我们先添加一个超级管理员 role为root
+### 新建一个超级管理员 role为root
+
 [mongodb内建角色](https://docs.mongodb.com/v3.2/reference/built-in-roles/ "mongodb内建角色")
 [给用户赋权限命令](https://docs.mongodb.com/manual/reference/method/db.grantRolesToUser/#db.grantRolesToUser "给用户赋权限")
 
@@ -59,24 +60,24 @@ db.createUser({
 });
 ```
 
-### shutdown数据库
+### 重启mongo并新建数据库
 
-我们用kill -2 杀掉进程
+1. 我们用kill -2 杀掉进程
+
 **注意:** 官方特意说明千万不要kill -9 损坏数据
-[官网mongodb 进程说明](https://docs.mongodb.com/v3.4/tutorial/manage-mongodb-processes/ "mongodb 进程说明")
+[mongodb 进程说明](https://docs.mongodb.com/v3.4/tutorial/manage-mongodb-processes/ "mongodb 进程说明")
 
-### 修改开启鉴权(authorization)为enable重启
+2. 启动数据库
 
-- 修改conf文件mongo.conf 里面
-- 修改authorization为enabled
-- 执行startmq.sh
+- 修改conf文件 mongo.conf 中配置项`authorization`为`enabled`
+- 执行刚才的启动脚本启动数据库
 - 登录mongodb
 
 ```bash
 ./mongo -u root -p root123456 --host 192.168.243.140/admin
 ```
 
-- 新建数据库,添加用户
+- (此步骤可以忽略)新建数据库并为数据库单独添加读写用户
 
 ```javascript
 use testDb
@@ -92,9 +93,9 @@ db.createUser({
 
 ## 说明
 
-[mongodb配置文件配置项官网说明](https://docs.mongodb.com/manual/reference/configuration-options/ "mongodb配置文件")
+[mongodb配置项说明](https://docs.mongodb.com/manual/reference/configuration-options/ "mongodb配置文件")
 
-## 关于企业版和社区版的区别
+### 关于企业版和社区版
 
 1. 官网给出的解释:
 
@@ -107,3 +108,7 @@ db.createUser({
 - 除了Ops Manager，Compass和BI连接器之外，还提供对MongoDB和最佳SLA的最全面的支持
 
 [stackoverflow关于社区版和企业版](http://stackoverflow.com/questions/26527603/mongodb-opensource-vs-mongodb-enterprise "stackoverflow")
+
+## 参考
+
+- [官网生产环境安装mongodb注意事项](https://docs.mongodb.com/manual/administration/production-notes/ "官网生产环境安装mongodb注意事项说明")
