@@ -91,7 +91,7 @@ menu:
   home: / || home
   archives: /archives/ || archive
   tags: /tags/ || tags
-  #categories: /categories/ || th
+  categories: /categories/ || th
   about: /about/ || user
   # schedule: /schedule/ || calendar
   # sitemap: /sitemap.xml || sitemap
@@ -791,7 +791,7 @@ vendors:
 
   # Internal version: 1.0.0
   # https://github.com/hustcc/canvas-nest.js
-  canvas_nest: 
+  canvas_nest:
 
   # three
   three:

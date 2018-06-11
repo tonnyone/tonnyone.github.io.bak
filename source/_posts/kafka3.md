@@ -183,78 +183,95 @@ try{
 
 ### 再均衡监听器
 
+1. 实现ConsumerRebalanceListener接口
+2. 如果发生再均衡，先要把即将失去的分区读取的偏移量全部都体提交。
+3. 消费者订阅消息的时候把`ConsumerRebalanceListener`传给`subscribe()`方法
+
+```java
+private static Map<TopicPartition,OffsetAndMetadata> currentOffsets = new HashMap();
+private static KafkaConsumer<String,String> consumer = new KafkaConsumer<String,String>(props);
+
+// 1. 实现ConsumerRebalanceListener 接口,实现消费者再均衡监听器
+private static class HandleRebalance implements org.apache.kafka.clients.consumer.ConsumerRebalanceListener{
+    //2. 方法会在再均衡开始之前和消费者停止读取消息之后被调用,在这里提交已经读取的偏移量，下一个接管分区的消费者就会继续从这里开始读取
+    public void onPartitionsRevoked(Collection<TopicPartition> partitions) {
+        System.out.println("Lost paritions in rebalance,commit current offset"+currentOffsets);
+        consumer.commitSync(currentOffsets);
+    }
+
+    // 3. 方法会在在均衡之后，就是重新分配分区之后，新的消费者开始读取消息之前被调用
+    public void onPartitionsAssigned(Collection<TopicPartition> partitions) {}
+}
+
+// 4. 注册再均衡监听器
+consumer.subscribe(Arrays.asList("test"),new HandleRebalance());
+try{
+    while (true){
+        //5. 消费者必须持续向kafka轮询，否则就会被认为死亡
+        ConsumerRecords<String, String> cr = consumer.poll(100);
+        for (ConsumerRecord<String, String> record : cr) {
+            System.out.printf("record:%s \n",record.toString());
+            currentOffsets.put(new TopicPartition(record.topic(),record.partition()),new OffsetAndMetadata(record.offset()+1,"no metadata"));
+        }
+        consumer.commitAsync(currentOffsets,null);
+    }
+}catch (WakeupException e){
+}catch (Exception e){
+    e.printStackTrace();
+}finally {
+    try{
+        //6.在退出程序之前使用close()方法关闭消费者。
+        consumer.commitSync(currentOffsets);
+    }finally {
+        consumer.close();
+        System.out.println("consumer has been Closed");
+    }
+}
+```
 
 ### 从特定的偏移量开始处理记录
 
-api 提供了`seekToBeginning(Collection<TopicPartition>, tp)` 和 `seekToEnd(Collection<TopicPartition> tp)` 这两个方法。
+api 提供了`seekToBeginning(Collection<TopicPartition>, tp)` 和 `seekToEnd(Collection<TopicPartition> tp)`,`seek()`等方法，可以直接跳转到指定的位置进行读取记录。有人尝试把偏移量保存到数据库里面，让处理数据和提交偏移量再一个事务里面处理，这样保证了数据的完整和唯一性。
 
 ### 如何退出
 
+如果消费者要退出循环.唯一一个可以从其他线程安全调用的方法`consumer.wakeup()`。调用`consumer.wakeup()`可以退出poll().并抛出WakeupException异常，如果效用consumer.wakeup()时，线程没有再等待poll方法，那么他会在下一轮循环跳出。在退出线程之前调用`consumer.close()`时必要的，它会提交任何没有提交的东西，并且向群组协调器发送消息，告知自己要离开群组，触发再均衡，而不需要等待会话超时。
+
 ### 消费者关键配置一览
 
-#### `bootstrap.servers`
+#### `fetch.min.bytes`
 
-broker地址清单，生产者会从给定的groker里面查找到其他的broker的信息。建议配置多个，一旦其中一个宕机，生产者仍然能够连到集群上。
+该属性指定了消费者从服务器获取记录的最小字节数。当broker收到消费者数据请求时，如果可用的数据量小宇fetch.min.bytes指定大小，那么它会等到有足够的可用数据时才把它返回给消费者.
 
-#### `key.serializer`
+#### `fetch.max.wait.ms`
 
-必须 设置为 `org.apache.kafka.common.serialization.Serializer`接口类，用于将消息key序列化为字节数组
+此配置用于指定broker的等待时间，默认是`500ms`,如果没有足够的数据流入kafka,消费者获取的最小数据量达不到满足，到500ms,就会返回给消费者.
 
-#### `value.serializer` 
+#### `max.partition.fetch.bytes`
 
-必须 设置为 `org.apache.kafka.common.serialization.Serializer`接口类，用于将消息value序列化为字节数组
+此配置指定了服务器从每个分区返回给消费者的最大字节数，默认值为`1M`,即`poll()`方法从每个分区返回的记录最多不超过`max.partition.fethc.bytes`指定的字节数。
 
-#### `acks` 
+#### `session.timeout.ms`
 
-指定了集群中多少个分区副本收到消息,生产者才认为消息是写入成功的.
+该属性指定了消费者被认为死亡之前可以与服务器断开的连接时间,默认为`3s`,也就是说如果没有在`session.timeout.ms`指定的时间内发送心跳给群组协调器，就会被认为死亡触发再均衡。该属性与`heartbeat.interval.ms`密切相关。`heartbeat.interval.ms`指定了`poll()`方法向协调器发送心跳的频率。所以`heartbeat.interval.ms`一定要比`session.timeout.ms`小，一般为`session.timout.ms`的三分之一。
 
-1. acks=0 生产者不会等待任何分区副本的确认，如果配置`retries`,则配置无效,如果写入错误生产者是获取不到的,返回的offset永远都是`-1`.
-2. acks=1 只要分区副本的`leader`被写入消息后,生产者就会认为消息写入成功.如果消息无法到达`leader`(比如leader崩溃后还没有选举出来),生产者会收到错误的响应重发,但是如果写入`leader`的消息没来得及同步到其他副本,挂掉了，此时还是会发生消息丢失.
-3. acks=all 只有全部参与复制的节点收到都收到消息后才认为消息写入是成功的,就算有副本发生崩溃整个集群仍然可用.不过此选项写入消息的延迟会更高。
+#### `auto.offset.reset`
 
-#### `buffer.memory`
+该属性指定了消费者再读取一个没有偏移量的分区或者偏移量无效的情况下，该作何处理,默认值为`lastest`,从最新的记录开始读取,另一个值`earliest`,意思说，在偏移量无效的情况下，从起始位置开始读取
 
-用来设置生产者消息内存缓冲区的大小.如果消息发送的太快，就会导致缓冲区的空间不足.这个时候`send`方法要么被阻塞，要么抛出异常.`max.blocks.ms`设置了可阻塞的时长.
+#### `enable.auto.commit`
 
-#### `compression.type`
+指定了消费者是否自动提交偏移量,默认为`true`,可以设置为`false`,进行手动提交
 
-压缩类型,指定了发送给broker的消息压缩算法,压缩可以降低网络传输和存储的开销,但是增加了CPU的计算压力
+#### `partition.assignmeng.strategy`
 
-- none
-- gzip
-- anappy
-- lz4
-
-#### `retries`
-
-重试次数: 生产者发送从服务器收到的错误消息可能是临时性的错误(比如分区找不到Leader),这种情况,retrise参数决定了生产者可以重试的次数,如果达到这个次数生产者会放弃重试，返回错误,默认情况重试会等待100ms,可以通过`retry.badkoff.ms`来修改.不过有些错误不是临时错误,比如(消息太大的错误),业务处理一般只处理不可重试的错误,或者重试次数超出上限的情况.如果设置了
-
-#### `batch.size`
-
-当多个消息被发送到同一个分区的时候，生产者会把它放入到一个批次当中提交，该参数指定了一个批次可使用的内存大小，按照字节数计算，当批次被填满是就会被发送出去，不过生产者生产者并不一定会等批次被填满才会去发送,详见`linger.ms`参数， 所以就算把批次设置的很大也不会造成延迟，只会增加更多多的内存而已，但是如果设置的很小，生产者就会频繁的发送消息，会增加额外的开销
-
-#### `linger.ms`
-
-该参数指定了生产者在发送批次之前等待更多消息加入批次的时间，生产者会在批次被填满或者等待时间达到该参数的值的时候消息被发送出去。把`linger.ms`设置为比0大的值，让生产者发送到批次的时候等待一会儿，虽然这样会增加延迟，但是会提高kafka的吞吐量.
+分区分配策略,默认kafka有两种`Range`和`RoundRobin`,当然可以自定义
 
 #### `client.id`
 
-该参数如果被设置，服务器会用来标识消息的来源
-
-#### `max.block.ms`
-
-该参数指定在调用send方法或使用partitionFor方法获取元数据的时候，生产者的阻塞时间。当生产者发送的缓存区已满，或者没有可用的元数据时，方法就会阻塞，阻塞时间达到`max.block.ms`时，生产者会抛出异常
-
-#### `max.request.size`
-
-生产者发送单个消息的最大值,也可以指单个请求中所有消息的大小。另外，broker对可接收消息最大值也有自己的限制`message.max.bytes`指一个批次发送到broker的最大值，这个值应该是`max.request.size`的整数倍
-
-#### `max.in.flight.requests.per.connection`
-
-该参数指定了生产者在服务器收到响应之前可以发送多少个消息。它的值越大就会占用越多的内存提高吞吐量。把它设置为1 可以保证消息是按照顺序写入服务器的，但是如果retries不为0的话，消息的先后顺序会发生错位,假设第一条消息失败了，第二条先发送成功了，然后第一条又重试成功了，这个时候发送的服务器的顺序就出现了错位。
+broker用它来表示从客户端发送过来的消息，通常用在日志，指标监控中。
 
 ## 参考
 
 - [kafka 官网](https://cwiki.apache.org/confluence/display/KAFKA/Index)
 - [kafka 权威指南](https://book.douban.com/subject/27665114/)
-- [聊聊spring集成kafka的集中方式](https://segmentfault.com/a/1190000011454052#articleHeader4)
