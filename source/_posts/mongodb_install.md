@@ -23,7 +23,7 @@ date: 2018-05-05 10:40:12
 
 ### 新建conf目录添加配置文件 mongo.conf
 
-```
+```yml
 systemLog:
    verbosity: 0
    destination: file
@@ -45,12 +45,12 @@ net:
    bindIp: 192.168.200.219
    port: 27017
 security:
-   authorization: enabled
+   authorization: disabled
 setParameter:
    enableLocalhostAuthBypass: false
 ```
 
-**注意**: 此时配置里面项`authorization`是`disable`的
+**注意**: 此时配置里面项`authorization`是`disabled`的
 
 ### 新建启动脚本 startmq.sh(如下:)
 
