@@ -23,9 +23,36 @@ date: 2018-05-05 10:40:12
 
 ### 新建conf目录添加配置文件 mongo.conf
 
+```
+systemLog:
+   verbosity: 0
+   destination: file
+   path: "/usr/local/mongodb/log/mongod.log"
+   logAppend: true
+   timeStampFormat: iso8601-local
+storage:
+   dbPath: "/home/mongodb/data"
+   engine: wiredTiger
+   wiredTiger:
+      engineConfig:
+         journalCompressor: snappy
+   directoryPerDB: true
+   journal:
+      enabled: true
+processManagement:
+   fork: true
+net:
+   bindIp: 192.168.200.219
+   port: 27017
+security:
+   authorization: enabled
+setParameter:
+   enableLocalhostAuthBypass: false
+```
+
 **注意**: 此时配置里面项`authorization`是`disable`的
 
-1. 新建启动脚本 startmq.sh(如下:)
+### 新建启动脚本 startmq.sh(如下:)
 
 ```bash
 #!/bin/bash
@@ -77,7 +104,7 @@ db.createUser({
 ./mongo -u root -p root123456 --host 192.168.243.140/admin
 ```
 
-- (此步骤可以忽略)新建数据库并为数据库单独添加读写用户
+- (直接使用root 用户无需此步骤)新建数据库并为数据库单独添加读写用户
 
 ```javascript
 use testDb
