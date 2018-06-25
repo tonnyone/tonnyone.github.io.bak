@@ -25,32 +25,36 @@ date: 2018-05-05 10:40:12
 
 ```yml
 systemLog:
-   verbosity: 0
-   destination: file
-   path: "/usr/local/mongodb/log/mongod.log"
-   logAppend: true
-   timeStampFormat: iso8601-local
+  verbosity: 0
+  destination: file
+  path: "/usr/local/mongodb/log/mongod.log"
+  logAppend: true
+  timeStampFormat: iso8601-local
 storage:
-   dbPath: "/home/mongodb/data"
-   engine: wiredTiger
-   wiredTiger:
-      engineConfig:
-         journalCompressor: snappy
-   directoryPerDB: true
-   journal:
-      enabled: true
+  dbPath: "/home/mongodb/data"
+  engine: wiredTiger
+  wiredTiger:
+    engineConfig:
+      cacheSizeGB: 2
+      journalCompressor: snappy
+  directoryPerDB: true
+  journal:
+    enabled: true
 processManagement:
-   fork: true
+  fork: true
 net:
-   bindIp: 192.168.200.219
-   port: 27017
+  bindIp: 192.168.200.219
+  port: 27017
 security:
-   authorization: disabled
+  authorization: disabled
 setParameter:
-   enableLocalhostAuthBypass: false
+  enableLocalhostAuthBypass: false
 ```
 
-**注意**: 此时配置里面项`authorization`是`disabled`的
+**注意**:
+
+- 此时配置里面项`authorization`是`disabled`的
+- `cacheSizeGB` 为默认占用操作系统的内存`60%`或者最小1G
 
 ### 新建启动脚本 startmq.sh(如下:)
 
