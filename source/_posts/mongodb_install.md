@@ -43,7 +43,7 @@ storage:
 processManagement:
   fork: true
 net:
-  bindIp: 192.168.200.219
+  bindIp: 0.0.0.0
   port: 27017
 security:
   authorization: disabled
@@ -83,7 +83,7 @@ numactl --interleave=all /home/eversec/mongodb/bin/mongod --config ../conf/mongo
 use admin
 db.createUser({
   user:"root",
-  pwd:"root123456",
+  pwd:"123456",
   roles:[{
       role:"root",
       db:"admin"
@@ -105,7 +105,7 @@ db.createUser({
 - 登录mongodb
 
 ```bash
-./mongo 192.168.200.219:27017/apk-analysis --authenticationDatabase admin -uroot -peversec123098
+./mongo 192.168.200.219:27017/apk-analysis --authenticationDatabase admin -uroot -p123456
 ```
 
 - (直接使用root 用户无需此步骤)新建数据库并为数据库单独添加读写用户
