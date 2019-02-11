@@ -105,7 +105,7 @@ db.createUser({
 - 登录mongodb
 
 ```bash
-./mongo 192.168.200.219:27017/apk-analysis --authenticationDatabase admin -uroot -p123456
+./mongo 127.0.0.1:27017/test --authenticationDatabase admin -uroot -p123456
 ```
 
 - (直接使用root 用户无需此步骤)新建数据库并为数据库单独添加读写用户
