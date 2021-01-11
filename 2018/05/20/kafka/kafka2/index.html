@@ -1,0 +1,1223 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=6.0.0" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.0.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.0.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.0.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.0.0" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="liushaoqing , blog">
+
+
+
+
+  
+
+
+  <link rel="alternate" href="/atom.xml" title="进化" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="业精于勤,荒于嬉.行成于思,毁于随.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="进化">
+<meta property="og:url" content="http://tonnyone.github.io/categories/index.html">
+<meta property="og:site_name" content="进化">
+<meta property="og:description" content="业精于勤,荒于嬉.行成于思,毁于随.">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2021-01-11T21:33:44.478Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="进化">
+<meta name="twitter:description" content="业精于勤,荒于嬉.行成于思,毁于随.">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '6.0.0',
+    sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://tonnyone.github.io/categories/">
+
+
+
+
+
+  <title>kafka 学习系列 02-kafka生产者 | 进化</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-111552399-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"> <div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">进化</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">刘少卿的个人网站</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://tonnyone.github.io/2018/05/20/kafka/kafka2/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="刘少卿">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/me.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="进化">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">kafka 学习系列 02-kafka生产者</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-20T22:00:00+08:00">2018-05-20</time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/kafka/" itemprop="url" rel="index">
+                    <span itemprop="name">kafka</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/05/20/kafka/kafka2/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/05/20/kafka/kafka2/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="kafka-生产者流程"><a href="#kafka-生产者流程" class="headerlink" title="kafka 生产者流程"></a>kafka 生产者流程</h2><p><img src="/uploads/kafka/kafka_producer.png" alt=""></p>
+<ol>
+<li>创建一个ProductRecord对象(对象包含主题名称,分区,key,value).</li>
+<li>把key和value 序列化成字节数组.</li>
+<li>如果ProductRecord对象没有指定了分区,那么分区器会通过key选择一个分区,如果指定了分区的话直接返回</li>
+<li>被序列化后的这条记录会被发往一个记录批次里,这个批次里面的所有消息都是发往相同的主题和相同的分区的</li>
+<li>会有专门的线程把这些记录批次发到响应的broker上</li>
+<li>服务器收到消息会返回一个响应,如果写如成功就会返回一个RecordMetaData对象(包含了主题和分区信息以及分区的偏移量)</li>
+<li>如果不成功,则会返回一个错误,某些错误在生者收到后会重新尝试发送消息,几次后如果还是失败,就返回失败信息</li>
+</ol>
+<a id="more"></a>
+<h3 id="生产者API解析"><a href="#生产者API解析" class="headerlink" title="生产者API解析"></a>生产者API解析</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Properties props = <span class="keyword">new</span> Properties();</span><br><span class="line">props.put(<span class="string">"bootstrap.servers"</span>,<span class="string">"192.168.200.219:19092"</span>);</span><br><span class="line">props.put(<span class="string">"key.serializer"</span>,<span class="string">"org.apache.kafka.common.serialization.StringSerializer"</span>);</span><br><span class="line">props.put(<span class="string">"value.serializer"</span>,<span class="string">"org.apache.kafka.common.serialization.StringSerializer"</span>);</span><br><span class="line">KafkaProducer producer = <span class="keyword">new</span> KafkaProducer&lt;String,String&gt;(props);</span><br><span class="line"></span><br><span class="line">String topic = <span class="string">"test"</span>;</span><br><span class="line">ProducerRecord&lt;String,String&gt; producerRecord = <span class="keyword">new</span> ProducerRecord&lt;String, String&gt;(topic,<span class="string">"1"</span>,<span class="string">"nihao"</span>);</span><br><span class="line">producer.send(producerRecord);</span><br></pre></td></tr></table></figure>
+<h4 id="关键方法send发送消息的三种方式"><a href="#关键方法send发送消息的三种方式" class="headerlink" title="关键方法send发送消息的三种方式"></a>关键方法<code>send</code>发送消息的三种方式</h4><ol>
+<li>发送不管无论结果是否成功</li>
+<li>发送消息后阻塞直到消息发送成功</li>
+<li>发送消息,异步获取成功结果</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1. 直接发送,无论是否成功</span></span><br><span class="line">producer.send(producerRecord);</span><br><span class="line"><span class="comment">//2. 获取future,阻塞获取结果</span></span><br><span class="line">Future&lt;RecordMetadata&gt; future = producer.send(producerRecord);</span><br><span class="line">RecordMetadata recordMetadata = <span class="keyword">null</span>;</span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">  recordMetadata = future.get();</span><br><span class="line">&#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">  e.printStackTrace();</span><br><span class="line">&#125; <span class="keyword">catch</span> (ExecutionException e) &#123;</span><br><span class="line">  e.printStackTrace();</span><br><span class="line">&#125;</span><br><span class="line">System.out.println(<span class="string">"发送成功"</span>+recordMetadata.toString());</span><br><span class="line"><span class="comment">//3. 成功后执行回调</span></span><br><span class="line">producer.send(producerRecord, <span class="keyword">new</span> Callback() &#123;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onCompletion</span><span class="params">(RecordMetadata recordMetadata, Exception e)</span> </span>&#123;</span><br><span class="line">      System.out.println(<span class="string">"发送成功CallBack:"</span>+recordMetadata.toString());</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="生产者关键配置"><a href="#生产者关键配置" class="headerlink" title="生产者关键配置"></a>生产者关键配置</h3><h4 id="bootstrap-servers"><a href="#bootstrap-servers" class="headerlink" title="bootstrap.servers"></a><code>bootstrap.servers</code></h4><p>broker地址清单，生产者会从给定的groker里面查找到其他的broker的信息。建议配置多个，一旦其中一个宕机，生产者仍然能够连到集群上。</p>
+<h4 id="key-serializer"><a href="#key-serializer" class="headerlink" title="key.serializer"></a><code>key.serializer</code></h4><p>必须 设置为 <code>org.apache.kafka.common.serialization.Serializer</code>接口类，用于将消息key序列化为字节数组</p>
+<h4 id="value-serializer"><a href="#value-serializer" class="headerlink" title="value.serializer"></a><code>value.serializer</code></h4><p>必须 设置为 <code>org.apache.kafka.common.serialization.Serializer</code>接口类，用于将消息value序列化为字节数组</p>
+<h4 id="acks"><a href="#acks" class="headerlink" title="acks"></a><code>acks</code></h4><p>指定了集群中多少个分区副本收到消息,生产者才认为消息是写入成功的.</p>
+<ol>
+<li>acks=0 生产者不会等待任何分区副本的确认，如果配置<code>retries</code>,则配置无效,如果写入错误生产者是获取不到的,返回的offset永远都是<code>-1</code>.</li>
+<li>acks=1 只要分区副本的<code>leader</code>被写入消息后,生产者就会认为消息写入成功.如果消息无法到达<code>leader</code>(比如leader崩溃后还没有选举出来),生产者会收到错误的响应重发,但是如果写入<code>leader</code>的消息没来得及同步到其他副本,挂掉了，此时还是会发生消息丢失.</li>
+<li>acks=all 只有全部参与复制的节点收到都收到消息后才认为消息写入是成功的,就算有副本发生崩溃整个集群仍然可用.不过此选项写入消息的延迟会更高。</li>
+</ol>
+<h4 id="buffer-memory"><a href="#buffer-memory" class="headerlink" title="buffer.memory"></a><code>buffer.memory</code></h4><p>用来设置生产者消息内存缓冲区的大小.如果消息发送的太快，就会导致缓冲区的空间不足.这个时候<code>send</code>方法要么被阻塞，要么抛出异常.<code>max.blocks.ms</code>设置了可阻塞的时长.</p>
+<h4 id="compression-type"><a href="#compression-type" class="headerlink" title="compression.type"></a><code>compression.type</code></h4><p>压缩类型,指定了发送给broker的消息压缩算法,压缩可以降低网络传输和存储的开销,但是增加了CPU的计算压力</p>
+<ul>
+<li>none</li>
+<li>gzip</li>
+<li>anappy</li>
+<li>lz4</li>
+</ul>
+<h4 id="retries"><a href="#retries" class="headerlink" title="retries"></a><code>retries</code></h4><p>重试次数: 生产者发送从服务器收到的错误消息可能是临时性的错误(比如分区找不到Leader),这种情况,retrise参数决定了生产者可以重试的次数,如果达到这个次数生产者会放弃重试，返回错误,默认情况重试会等待100ms,可以通过<code>retry.badkoff.ms</code>来修改.不过有些错误不是临时错误,比如(消息太大的错误),业务处理一般只处理不可重试的错误,或者重试次数超出上限的情况.如果设置了</p>
+<h4 id="batch-size"><a href="#batch-size" class="headerlink" title="batch.size"></a><code>batch.size</code></h4><p>当多个消息被发送到同一个分区的时候，生产者会把它放入到一个批次当中提交，该参数指定了一个批次可使用的内存大小，按照字节数计算，当批次被填满是就会被发送出去，不过生产者生产者并不一定会等批次被填满才会去发送,详见<code>linger.ms</code>参数， 所以就算把批次设置的很大也不会造成延迟，只会增加更多多的内存而已，但是如果设置的很小，生产者就会频繁的发送消息，会增加额外的开销</p>
+<h4 id="linger-ms"><a href="#linger-ms" class="headerlink" title="linger.ms"></a><code>linger.ms</code></h4><p>该参数指定了生产者在发送批次之前等待更多消息加入批次的时间，生产者会在批次被填满或者等待时间达到该参数的值的时候消息被发送出去。把<code>linger.ms</code>设置为比0大的值，让生产者发送到批次的时候等待一会儿，虽然这样会增加延迟，但是会提高kafka的吞吐量.</p>
+<h4 id="client-id"><a href="#client-id" class="headerlink" title="client.id"></a><code>client.id</code></h4><p>该参数如果被设置，服务器会用来标识消息的来源</p>
+<h4 id="max-block-ms"><a href="#max-block-ms" class="headerlink" title="max.block.ms"></a><code>max.block.ms</code></h4><p>该参数指定在调用send方法或使用partitionFor方法获取元数据的时候，生产者的阻塞时间。当生产者发送的缓存区已满，或者没有可用的元数据时，方法就会阻塞，阻塞时间达到<code>max.block.ms</code>时，生产者会抛出异常</p>
+<h4 id="max-request-size"><a href="#max-request-size" class="headerlink" title="max.request.size"></a><code>max.request.size</code></h4><p>生产者发送单个消息的最大值,也可以指单个请求中所有消息的大小。另外，broker对可接收消息最大值也有自己的限制<code>message.max.bytes</code>指一个批次发送到broker的最大值，这个值应该是<code>max.request.size</code>的整数倍</p>
+<h4 id="max-in-flight-requests-per-connection"><a href="#max-in-flight-requests-per-connection" class="headerlink" title="max.in.flight.requests.per.connection"></a><code>max.in.flight.requests.per.connection</code></h4><p>该参数指定了生产者在服务器收到响应之前可以发送多少个消息。它的值越大就会占用越多的内存提高吞吐量。把它设置为1 可以保证消息是按照顺序写入服务器的，但是如果retries不为0的话，消息的先后顺序会发生错位,假设第一条消息失败了，第二条先发送成功了，然后第一条又重试成功了，这个时候发送的服务器的顺序就出现了错位。</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="https://cwiki.apache.org/confluence/display/KAFKA/Index" target="_blank" rel="noopener">kafka 官网</a></li>
+<li><a href="https://book.douban.com/subject/27665114/" target="_blank" rel="noopener">kafka 权威指南</a></li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/java/" rel="tag"># java</a>
+          
+            <a href="/tags/kafka/" rel="tag"># kafka</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/05/17/kafka/kafka/" rel="next" title="kafka 学习系列 01-kafka的基本概念和常用命令">
+                <i class="fa fa-chevron-left"></i> kafka 学习系列 01-kafka的基本概念和常用命令
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/06/04/kafka/kafka3/" rel="prev" title="kafka 学习系列 03-kafka消费者">
+                kafka 学习系列 03-kafka消费者 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      
+        <div id="gitment-container"></div>
+      
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/uploads/me.jpg" alt="刘少卿">
+            
+              <p class="site-author-name" itemprop="name">刘少卿</p>
+              <p class="site-description motion-element" itemprop="description">业精于勤,荒于嬉.行成于思,毁于随.</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/tonnyone" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i></a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:liushaoqing1@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i></a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#kafka-生产者流程"><span class="nav-number">1.</span> <span class="nav-text">kafka 生产者流程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#生产者API解析"><span class="nav-number">1.1.</span> <span class="nav-text">生产者API解析</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#关键方法send发送消息的三种方式"><span class="nav-number">1.1.1.</span> <span class="nav-text">关键方法send发送消息的三种方式</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#生产者关键配置"><span class="nav-number">1.2.</span> <span class="nav-text">生产者关键配置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#bootstrap-servers"><span class="nav-number">1.2.1.</span> <span class="nav-text">bootstrap.servers</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#key-serializer"><span class="nav-number">1.2.2.</span> <span class="nav-text">key.serializer</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#value-serializer"><span class="nav-number">1.2.3.</span> <span class="nav-text">value.serializer</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#acks"><span class="nav-number">1.2.4.</span> <span class="nav-text">acks</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#buffer-memory"><span class="nav-number">1.2.5.</span> <span class="nav-text">buffer.memory</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#compression-type"><span class="nav-number">1.2.6.</span> <span class="nav-text">compression.type</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#retries"><span class="nav-number">1.2.7.</span> <span class="nav-text">retries</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#batch-size"><span class="nav-number">1.2.8.</span> <span class="nav-text">batch.size</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#linger-ms"><span class="nav-number">1.2.9.</span> <span class="nav-text">linger.ms</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#client-id"><span class="nav-number">1.2.10.</span> <span class="nav-text">client.id</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#max-block-ms"><span class="nav-number">1.2.11.</span> <span class="nav-text">max.block.ms</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#max-request-size"><span class="nav-number">1.2.12.</span> <span class="nav-text">max.request.size</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#max-in-flight-requests-per-connection"><span class="nav-number">1.2.13.</span> <span class="nav-text">max.in.flight.requests.per.connection</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">2.</span> <span class="nav-text">参考</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">刘少卿</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Gemini</a> v6.0.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.0.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.0.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.0.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.0.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.0.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.0.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.0.0"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+<!-- LOCAL: You can save these files to your site and update links -->
+    
+        
+        <link rel="stylesheet" href="https://aimingoo.github.io/gitmint/style/default.css">
+        <script src="https://aimingoo.github.io/gitmint/dist/gitmint.browser.js"></script>
+    
+<!-- END LOCAL -->
+
+    
+
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitmint({
+            id: window.location.pathname, 
+            owner: 'tonnyone',
+            repo: 'tonnyone.github.io',
+            
+            lang: "" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+            
+            oauth: {
+            
+            
+                client_secret: 'd27df47248351d770a8395dea042b7f3a52f4b9c',
+            
+                client_id: '5767d10518f40f363142'
+            }});
+        gitment.render('gitment-container');
+      }
+
+      
+      renderGitment();
+      
+      </script>
+    
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

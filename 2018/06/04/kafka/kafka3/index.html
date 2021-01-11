@@ -1,0 +1,1238 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=6.0.0" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.0.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.0.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.0.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.0.0" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="liushaoqing , blog">
+
+
+
+
+  
+
+
+  <link rel="alternate" href="/atom.xml" title="进化" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="业精于勤,荒于嬉.行成于思,毁于随.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="进化">
+<meta property="og:url" content="http://tonnyone.github.io/categories/index.html">
+<meta property="og:site_name" content="进化">
+<meta property="og:description" content="业精于勤,荒于嬉.行成于思,毁于随.">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2021-01-11T21:33:44.478Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="进化">
+<meta name="twitter:description" content="业精于勤,荒于嬉.行成于思,毁于随.">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '6.0.0',
+    sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://tonnyone.github.io/categories/">
+
+
+
+
+
+  <title>kafka 学习系列 03-kafka消费者 | 进化</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-111552399-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"> <div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">进化</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">刘少卿的个人网站</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://tonnyone.github.io/2018/06/04/kafka/kafka3/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="刘少卿">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/me.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="进化">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">kafka 学习系列 03-kafka消费者</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-04T10:10:00+08:00">2018-06-04</time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/kafka/" itemprop="url" rel="index">
+                    <span itemprop="name">kafka</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/06/04/kafka/kafka3/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/06/04/kafka/kafka3/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="消费者群组"><a href="#消费者群组" class="headerlink" title="消费者群组"></a>消费者群组</h2><p>为了横向伸缩,同属于一个组内的消费者只消费一个主题的部分消息，多个消费者可以对消息进行分流.Topic分区中消息只能由消费者组中的唯一个消费者处理(正常情况分区数量应该大于等于消费者数量,否则会有消费者会闲置)</p>
+<p><img src="/uploads/kafka/kafka_consumer.png" alt=""></p>
+<a id="more"></a>
+<h3 id="消费者群组以及分区再均衡"><a href="#消费者群组以及分区再均衡" class="headerlink" title="消费者群组以及分区再均衡"></a>消费者群组以及分区再均衡</h3><p>群组的消费者共同读取主题中的分区，当一个新的消费者加入群组或者当一个消费者被关闭或崩溃时，它就离开群组.分区的所有权从一个消费者转移到另一个消费者，这样的行为称为<code>分区再均衡</code>.</p>
+<ol>
+<li>消费者通过向指派为<code>群组协调器</code>的broker(不同的群主有不同的群组协调器)发送心跳.来维持他们和群主的从属关系以及它们对分区的所有权关系</li>
+<li>只要消费者正常的时间间隔发送心跳，就被<code>协调器</code>认为是活跃的。</li>
+<li>消费者会在轮询消息或者提交偏移量的时候发送心跳</li>
+<li>如果消费者停止发送心跳的时间过长会话就会过期, <code>群组协调器</code>会认为其已经死亡,就会触发一次再均衡。</li>
+<li>如果一个消费者发生死亡，群主协调器会等待几秒钟确定死亡了，才会触发再均衡。在这几秒钟的时间里，死亡的消费者不会消费分区中的消息。在清理消费者时，消费者会通知<code>群组协调器</code>它要离开群组，立即触发一次分区再均衡。</li>
+</ol>
+<p>分配分区的过程:</p>
+<p><img src="/uploads/kafka/kafka_consumer2.png" alt=""></p>
+<ol>
+<li>当消费者要加入群组时，会向<code>群组协调器</code>发送一个JoinGroup 请求,第一个加入群组的消费者将成为<code>群主</code></li>
+<li>群主从协调器那里获得群组成员列表(列表中包含了最近发送心跳的消费者，它被认为时活跃的)，并负责给每个消费者分配分区。</li>
+<li>群主使用一个实现了PartitionAssignor接口的类来决定哪些分区要被分配给哪个消费者。</li>
+<li>分配结束后群主把分配情况发送给<code>群组协调器</code>,协调器再把这些信息发送给所有消费者。每个消费者只能看到自己的分配信息，群主知道群组里面所有消费者的分配情况。</li>
+<li>这个过程每次分区再均衡的时候发生一次</li>
+</ol>
+<h2 id="kafka-消费者API"><a href="#kafka-消费者API" class="headerlink" title="kafka 消费者API"></a>kafka 消费者API</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">Properties props = <span class="keyword">new</span> Properties();</span><br><span class="line">props.put(<span class="string">"bootstrap.servers"</span>,<span class="string">"192.168.200.219:19092"</span>);</span><br><span class="line">props.put(<span class="string">"group.id"</span>,<span class="string">"testgroup2"</span>);</span><br><span class="line">props.put(<span class="string">"key.deserializer"</span>,<span class="string">"org.apache.kafka.common.serialization.StringDeserializer"</span>);</span><br><span class="line">props.put(<span class="string">"value.deserializer"</span>,<span class="string">"org.apache.kafka.common.serialization.StringDeserializer"</span>);</span><br><span class="line"></span><br><span class="line">KafkaConsumer&lt;String,String&gt; consumer = <span class="keyword">new</span> KafkaConsumer&lt;String,String&gt;(props);</span><br><span class="line"><span class="comment">// 1. 消费者订阅主题，此处一次订阅多个主题，或者可以使用正则表达式</span></span><br><span class="line">consumer.subscribe(Arrays.asList(<span class="string">"test"</span>));</span><br><span class="line"><span class="keyword">try</span>&#123;</span><br><span class="line">  <span class="keyword">while</span> (<span class="keyword">true</span>)&#123;</span><br><span class="line">    <span class="comment">// 2. 消费者必须持续向kafka轮询，否则就会被认为死亡。</span></span><br><span class="line">    ConsumerRecords&lt;String, String&gt; cr = consumer.poll(<span class="number">100</span>);</span><br><span class="line">    <span class="keyword">for</span> (ConsumerRecord&lt;String, String&gt; record : cr) &#123;</span><br><span class="line">        System.out.printf(<span class="string">"record:%s \n"</span>,record.toString());</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;<span class="keyword">finally</span> &#123;</span><br><span class="line">  <span class="comment">// 3.在退出程序之前使用close()方法关闭消费者。</span></span><br><span class="line">  consumer.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol>
+<li>消费者订阅主题,可以同时订阅多个主题，或者使用正则表达式</li>
+<li><code>poll()</code>方法轮询kafka获取数据(必须持续的对kafka进行轮询否则消费者会被认为已经死亡,轮询不止获取数据这么简单，在第一次调用poll方法的时候，它会负责查找GroupCoordinator,然后加入群组，接受分配的分区，如果发生了在均衡整个过程也是在轮询期间进行的。当然心跳也是从轮询中发送出去的，所以我们应该确保轮询期间所做的任何工作尽快完成)。<code>poll</code>方法包含一个参数控制阻塞的超时时间。该参数如果设置为0，poll方法立即返回。否则它会在指定的毫秒数内一直等待broker返回数据。<code>poll</code>会返回一个记录列表.每条记录包含了主题记录的信息(分区信息，偏移量，键值对).无论是否有数据，<code>poll</code>方法都会返回，超时时间取决于应用程序对响应速度的要求，</li>
+<li>在退出程序之前使用close()关闭消费者。网络连接和socket随即会被关闭。并立即触发一次再均衡,而不是等待群组协调器发现它不在发送心跳并认定已死亡，因为那样需要更长时间，导致整个群组再一段时间内无法读取消息。</li>
+</ol>
+<h3 id="提交和偏移量"><a href="#提交和偏移量" class="headerlink" title="提交和偏移量"></a>提交和偏移量</h3><p>kafka 是如何记录消费者的偏移量的呢？ 在早期的版本里面消费者的偏移量是记录在<code>zookeeper</code>里面的，从0.9版本开始，偏移量记录在一个名为<code>__consumer_offset</code>的topic里面.如果消费者发生崩溃或者有新的消费者加入群组，就会触发在均衡。完成再均衡后，每个消费者可能分配到新的分区。消费者读取此分区最后一次的提交偏移量,继续处理</p>
+<ol>
+<li>如果之前的消费者消费了消息但是来不及提交崩溃了，再均衡的时候，未提交偏移量的这部分消费会被重复处理。(这就是kakfa本身不能保证消息只被处理一次的原因)。</li>
+<li>消费者也可以提交大于它当前正处理消息的偏移量，跳过某些消息。</li>
+</ol>
+<h4 id="自动提交偏移量"><a href="#自动提交偏移量" class="headerlink" title="自动提交偏移量"></a>自动提交偏移量</h4><p>如果消费者的<code>enable.auto.commit</code> 的配置项被设置为 <code>true</code> ,那么消费者会默认每隔<code>5s</code>就会自动把从poll接收到的最大偏移量提交上去。提交时间由<code>auto.commit.interval.ms</code>控制，单位为秒.<br>自动提交偏移量也是发生在轮询中，每次轮询，消费者会检测是否到了该提交偏移量了的时候，如果是，那么提交上次poll返回的偏移量。如果在最近一次提交后3s发生了<code>再均衡</code>,那么待消费者重新分配完分区后这3s的消费就会被重复处理。</p>
+<h4 id="手动提交偏移量"><a href="#手动提交偏移量" class="headerlink" title="手动提交偏移量"></a>手动提交偏移量</h4><p>消费者把<code>auto.commit.offset</code>设置为<code>false</code>,可以手动控制偏移量</p>
+<h5 id="同步提交"><a href="#同步提交" class="headerlink" title="同步提交"></a>同步提交</h5><p><code>commitSync()</code>方法会将上次poll方法返回的偏移量提交。只要没有发生不可恢复的错误，commitSync()方法会一直尝试提交直到成功。如果提交失败，我们可以把错误日志记录下来。如果在提交过程中发生再均衡，最近的一批消息在再均衡后还会被重复处理.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> (<span class="keyword">true</span>)&#123;</span><br><span class="line">    <span class="comment">//2. 消费者必须持续向kafka轮询，否则就会被认为死亡。</span></span><br><span class="line">    ConsumerRecords&lt;String, String&gt; cr = consumer.poll(<span class="number">100</span>);</span><br><span class="line">    <span class="keyword">for</span> (ConsumerRecord&lt;String, String&gt; record : cr) &#123;</span><br><span class="line">        System.out.printf(<span class="string">"record:%s \n"</span>,record.toString());</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 4 .同步提交</span></span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        consumer.commitSync();</span><br><span class="line">    &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="异步提交"><a href="#异步提交" class="headerlink" title="异步提交"></a>异步提交</h5><p><code>commitAsync</code> 方法不会重试，这是异步提交不好的一个地方。不重试的原因是，可能在此次提交失败后，另一个更大的偏移量已经提交.<code>commitAsync</code>支持回调，在broker做出响应的时候会执行回调。回调一般用于记录提交错误或者生成指标。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> (<span class="keyword">true</span>)&#123;</span><br><span class="line">    <span class="comment">//2. 消费者必须持续向kafka轮询，否则就会被认为死亡。</span></span><br><span class="line">    ConsumerRecords&lt;String, String&gt; cr = consumer.poll(<span class="number">100</span>);</span><br><span class="line">    <span class="keyword">for</span> (ConsumerRecord&lt;String, String&gt; record : cr) &#123;</span><br><span class="line">        System.out.printf(<span class="string">"record:%s \n"</span>,record.toString());</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 4 .异步提交</span></span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        consumer.commitAsync(<span class="keyword">new</span> OffsetCommitCallback() &#123;</span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onComplete</span><span class="params">(Map&lt;TopicPartition, OffsetAndMetadata&gt; offsets, Exception exception)</span> </span>&#123;</span><br><span class="line">                <span class="keyword">if</span>(exception!=<span class="keyword">null</span>) &#123;</span><br><span class="line">                    System.out.printf(<span class="string">"提交失败\n"</span>);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="同步加异步提交"><a href="#同步加异步提交" class="headerlink" title="同步加异步提交"></a>同步加异步提交</h5><p>一般情况下，针对偶尔出现的提交失败，不进行重试不会有太大的问题，因为如果提交失败是由临时问题导致的，那么后续的提交总是会成功的。因此消费者关闭前，一般会组合使用同步和异步提交，这样确保最后一次提交能够成功。如下:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>&#123;</span><br><span class="line">    <span class="keyword">while</span> (<span class="keyword">true</span>)&#123;</span><br><span class="line">        <span class="comment">//2. 消费者必须持续向kafka轮询，否则就会被认为死亡。</span></span><br><span class="line">        ConsumerRecords&lt;String, String&gt; cr = consumer.poll(<span class="number">100</span>);</span><br><span class="line">        <span class="keyword">for</span> (ConsumerRecord&lt;String, String&gt; record : cr) &#123;</span><br><span class="line">            System.out.printf(<span class="string">"record:%s \n"</span>,record.toString());</span><br><span class="line">        &#125;</span><br><span class="line">        consumer.commitAsync();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;<span class="keyword">catch</span> (Exception e)&#123;</span><br><span class="line">    System.out.println(e.getMessage());</span><br><span class="line">&#125;<span class="keyword">finally</span> &#123;</span><br><span class="line">    <span class="keyword">try</span>&#123;</span><br><span class="line">        consumer.commitSync();</span><br><span class="line">    &#125;<span class="keyword">finally</span> &#123;</span><br><span class="line">        <span class="comment">//3.在退出程序之前使用close()方法关闭消费者。</span></span><br><span class="line">        consumer.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="提交特定的偏移量"><a href="#提交特定的偏移量" class="headerlink" title="提交特定的偏移量"></a>提交特定的偏移量</h4><p>之前提交的方式都是按照<code>poll()</code>方法同步，按照如果想根据按照消息数量来提交。下面的方法每隔<code>1000</code>条消息提交偏移量。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment">// 1. 用于跟踪各个分区的偏移量</span></span><br><span class="line">Map&lt;TopicPartition,OffsetAndMetadata&gt; currentOffsets = <span class="keyword">new</span> HashMap();</span><br><span class="line"><span class="keyword">int</span> count=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">try</span>&#123;</span><br><span class="line">    <span class="keyword">while</span> (<span class="keyword">true</span>)&#123;</span><br><span class="line">        <span class="comment">//2. 消费者必须持续向kafka轮询，否则就会被认为死亡</span></span><br><span class="line">        ConsumerRecords&lt;String, String&gt; cr = consumer.poll(<span class="number">100</span>);</span><br><span class="line">        <span class="keyword">for</span> (ConsumerRecord&lt;String, String&gt; record : cr) &#123;</span><br><span class="line">            System.out.printf(<span class="string">"record:%s \n"</span>,record.toString());</span><br><span class="line">            currentOffsets.put(<span class="keyword">new</span> TopicPartition(record.topic(),record.partition()),<span class="keyword">new</span> OffsetAndMetadata(record.offset()+<span class="number">1</span>,<span class="string">"no metadata"</span>));</span><br><span class="line">            <span class="comment">// 3. 如果消费数量到1000 就提交偏移量</span></span><br><span class="line">            <span class="keyword">if</span>(count % <span class="number">1000</span>==<span class="number">0</span>)&#123;</span><br><span class="line">                consumer.commitAsync();</span><br><span class="line">            &#125;</span><br><span class="line">            count++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;<span class="keyword">catch</span> (Exception e)&#123;</span><br><span class="line">    e.printStackTrace();</span><br><span class="line">&#125;<span class="keyword">finally</span> &#123;</span><br><span class="line">    <span class="comment">//4.在退出程序之前使用close()方法关闭消费者。</span></span><br><span class="line">    consumer.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="再均衡监听器"><a href="#再均衡监听器" class="headerlink" title="再均衡监听器"></a>再均衡监听器</h3><ol>
+<li>实现ConsumerRebalanceListener接口</li>
+<li>如果发生再均衡，先要把即将失去的分区读取的偏移量全部都体提交。</li>
+<li>消费者订阅消息的时候把<code>ConsumerRebalanceListener</code>传给<code>subscribe()</code>方法</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> Map&lt;TopicPartition,OffsetAndMetadata&gt; currentOffsets = <span class="keyword">new</span> HashMap();</span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> KafkaConsumer&lt;String,String&gt; consumer = <span class="keyword">new</span> KafkaConsumer&lt;String,String&gt;(props);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 1. 实现ConsumerRebalanceListener 接口,实现消费者再均衡监听器</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">HandleRebalance</span> <span class="keyword">implements</span> <span class="title">org</span>.<span class="title">apache</span>.<span class="title">kafka</span>.<span class="title">clients</span>.<span class="title">consumer</span>.<span class="title">ConsumerRebalanceListener</span></span>&#123;</span><br><span class="line">    <span class="comment">//2. 方法会在再均衡开始之前和消费者停止读取消息之后被调用,在这里提交已经读取的偏移量，下一个接管分区的消费者就会继续从这里开始读取</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onPartitionsRevoked</span><span class="params">(Collection&lt;TopicPartition&gt; partitions)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"Lost paritions in rebalance,commit current offset"</span>+currentOffsets);</span><br><span class="line">        consumer.commitSync(currentOffsets);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 3. 方法会在在均衡之后，就是重新分配分区之后，新的消费者开始读取消息之前被调用</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onPartitionsAssigned</span><span class="params">(Collection&lt;TopicPartition&gt; partitions)</span> </span>&#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 4. 注册再均衡监听器</span></span><br><span class="line">consumer.subscribe(Arrays.asList(<span class="string">"test"</span>),<span class="keyword">new</span> HandleRebalance());</span><br><span class="line"><span class="keyword">try</span>&#123;</span><br><span class="line">    <span class="keyword">while</span> (<span class="keyword">true</span>)&#123;</span><br><span class="line">        <span class="comment">//5. 消费者必须持续向kafka轮询，否则就会被认为死亡</span></span><br><span class="line">        ConsumerRecords&lt;String, String&gt; cr = consumer.poll(<span class="number">100</span>);</span><br><span class="line">        <span class="keyword">for</span> (ConsumerRecord&lt;String, String&gt; record : cr) &#123;</span><br><span class="line">            System.out.printf(<span class="string">"record:%s \n"</span>,record.toString());</span><br><span class="line">            currentOffsets.put(<span class="keyword">new</span> TopicPartition(record.topic(),record.partition()),<span class="keyword">new</span> OffsetAndMetadata(record.offset()+<span class="number">1</span>,<span class="string">"no metadata"</span>));</span><br><span class="line">        &#125;</span><br><span class="line">        consumer.commitAsync(currentOffsets,<span class="keyword">null</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;<span class="keyword">catch</span> (WakeupException e)&#123;</span><br><span class="line">&#125;<span class="keyword">catch</span> (Exception e)&#123;</span><br><span class="line">    e.printStackTrace();</span><br><span class="line">&#125;<span class="keyword">finally</span> &#123;</span><br><span class="line">    <span class="keyword">try</span>&#123;</span><br><span class="line">        <span class="comment">//6.在退出程序之前使用close()方法关闭消费者。</span></span><br><span class="line">        consumer.commitSync(currentOffsets);</span><br><span class="line">    &#125;<span class="keyword">finally</span> &#123;</span><br><span class="line">        consumer.close();</span><br><span class="line">        System.out.println(<span class="string">"consumer has been Closed"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="从特定的偏移量开始处理记录"><a href="#从特定的偏移量开始处理记录" class="headerlink" title="从特定的偏移量开始处理记录"></a>从特定的偏移量开始处理记录</h3><p>api 提供了<code>seekToBeginning(Collection&lt;TopicPartition&gt;, tp)</code> 和 <code>seekToEnd(Collection&lt;TopicPartition&gt; tp)</code>,<code>seek()</code>等方法，可以直接跳转到指定的位置进行读取记录。有人尝试把偏移量保存到数据库里面，让处理数据和提交偏移量再一个事务里面处理，这样保证了数据的完整和唯一性。</p>
+<h3 id="如何退出"><a href="#如何退出" class="headerlink" title="如何退出"></a>如何退出</h3><p>如果消费者要退出循环.唯一一个可以从其他线程安全调用的方法<code>consumer.wakeup()</code>。调用<code>consumer.wakeup()</code>可以退出poll().并抛出WakeupException异常，如果效用consumer.wakeup()时，线程没有再等待poll方法，那么他会在下一轮循环跳出。在退出线程之前调用<code>consumer.close()</code>时必要的，它会提交任何没有提交的东西，并且向群组协调器发送消息，告知自己要离开群组，触发再均衡，而不需要等待会话超时。</p>
+<h3 id="消费者关键配置一览"><a href="#消费者关键配置一览" class="headerlink" title="消费者关键配置一览"></a>消费者关键配置一览</h3><h4 id="fetch-min-bytes"><a href="#fetch-min-bytes" class="headerlink" title="fetch.min.bytes"></a><code>fetch.min.bytes</code></h4><p>该属性指定了消费者从服务器获取记录的最小字节数。当broker收到消费者数据请求时，如果可用的数据量小宇fetch.min.bytes指定大小，那么它会等到有足够的可用数据时才把它返回给消费者.</p>
+<h4 id="fetch-max-wait-ms"><a href="#fetch-max-wait-ms" class="headerlink" title="fetch.max.wait.ms"></a><code>fetch.max.wait.ms</code></h4><p>此配置用于指定broker的等待时间，默认是<code>500ms</code>,如果没有足够的数据流入kafka,消费者获取的最小数据量达不到满足，到500ms,就会返回给消费者.</p>
+<h4 id="max-partition-fetch-bytes"><a href="#max-partition-fetch-bytes" class="headerlink" title="max.partition.fetch.bytes"></a><code>max.partition.fetch.bytes</code></h4><p>此配置指定了服务器从每个分区返回给消费者的最大字节数，默认值为<code>1M</code>,即<code>poll()</code>方法从每个分区返回的记录最多不超过<code>max.partition.fethc.bytes</code>指定的字节数。</p>
+<h4 id="session-timeout-ms"><a href="#session-timeout-ms" class="headerlink" title="session.timeout.ms"></a><code>session.timeout.ms</code></h4><p>该属性指定了消费者被认为死亡之前可以与服务器断开的连接时间,默认为<code>3s</code>,也就是说如果没有在<code>session.timeout.ms</code>指定的时间内发送心跳给群组协调器，就会被认为死亡触发再均衡。该属性与<code>heartbeat.interval.ms</code>密切相关。<code>heartbeat.interval.ms</code>指定了<code>poll()</code>方法向协调器发送心跳的频率。所以<code>heartbeat.interval.ms</code>一定要比<code>session.timeout.ms</code>小，一般为<code>session.timout.ms</code>的三分之一。</p>
+<h4 id="auto-offset-reset"><a href="#auto-offset-reset" class="headerlink" title="auto.offset.reset"></a><code>auto.offset.reset</code></h4><p>该属性指定了消费者再读取一个没有偏移量的分区或者偏移量无效的情况下，该作何处理,默认值为<code>lastest</code>,从最新的记录开始读取,另一个值<code>earliest</code>,意思说，在偏移量无效的情况下，从起始位置开始读取</p>
+<h4 id="enable-auto-commit"><a href="#enable-auto-commit" class="headerlink" title="enable.auto.commit"></a><code>enable.auto.commit</code></h4><p>指定了消费者是否自动提交偏移量,默认为<code>true</code>,可以设置为<code>false</code>,进行手动提交</p>
+<h4 id="partition-assignmeng-strategy"><a href="#partition-assignmeng-strategy" class="headerlink" title="partition.assignmeng.strategy"></a><code>partition.assignmeng.strategy</code></h4><p>分区分配策略,默认kafka有两种<code>Range</code>和<code>RoundRobin</code>,当然可以自定义</p>
+<h4 id="client-id"><a href="#client-id" class="headerlink" title="client.id"></a><code>client.id</code></h4><p>broker用它来表示从客户端发送过来的消息，通常用在日志，指标监控中。</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="https://cwiki.apache.org/confluence/display/KAFKA/Index" target="_blank" rel="noopener">kafka 官网</a></li>
+<li><a href="https://book.douban.com/subject/27665114/" target="_blank" rel="noopener">kafka 权威指南</a></li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/java/" rel="tag"># java</a>
+          
+            <a href="/tags/kafka/" rel="tag"># kafka</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/05/20/kafka/kafka2/" rel="next" title="kafka 学习系列 02-kafka生产者">
+                <i class="fa fa-chevron-left"></i> kafka 学习系列 02-kafka生产者
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/06/12/kafka/kafka5/" rel="prev" title="kafka 学习系列 04--kafka的事务处理机制">
+                kafka 学习系列 04--kafka的事务处理机制 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      
+        <div id="gitment-container"></div>
+      
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/uploads/me.jpg" alt="刘少卿">
+            
+              <p class="site-author-name" itemprop="name">刘少卿</p>
+              <p class="site-description motion-element" itemprop="description">业精于勤,荒于嬉.行成于思,毁于随.</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/tonnyone" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i></a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:liushaoqing1@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i></a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#消费者群组"><span class="nav-number">1.</span> <span class="nav-text">消费者群组</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#消费者群组以及分区再均衡"><span class="nav-number">1.1.</span> <span class="nav-text">消费者群组以及分区再均衡</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#kafka-消费者API"><span class="nav-number">2.</span> <span class="nav-text">kafka 消费者API</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#提交和偏移量"><span class="nav-number">2.1.</span> <span class="nav-text">提交和偏移量</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#自动提交偏移量"><span class="nav-number">2.1.1.</span> <span class="nav-text">自动提交偏移量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#手动提交偏移量"><span class="nav-number">2.1.2.</span> <span class="nav-text">手动提交偏移量</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#同步提交"><span class="nav-number">2.1.2.1.</span> <span class="nav-text">同步提交</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#异步提交"><span class="nav-number">2.1.2.2.</span> <span class="nav-text">异步提交</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#同步加异步提交"><span class="nav-number">2.1.2.3.</span> <span class="nav-text">同步加异步提交</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#提交特定的偏移量"><span class="nav-number">2.1.3.</span> <span class="nav-text">提交特定的偏移量</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#再均衡监听器"><span class="nav-number">2.2.</span> <span class="nav-text">再均衡监听器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#从特定的偏移量开始处理记录"><span class="nav-number">2.3.</span> <span class="nav-text">从特定的偏移量开始处理记录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何退出"><span class="nav-number">2.4.</span> <span class="nav-text">如何退出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#消费者关键配置一览"><span class="nav-number">2.5.</span> <span class="nav-text">消费者关键配置一览</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#fetch-min-bytes"><span class="nav-number">2.5.1.</span> <span class="nav-text">fetch.min.bytes</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#fetch-max-wait-ms"><span class="nav-number">2.5.2.</span> <span class="nav-text">fetch.max.wait.ms</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#max-partition-fetch-bytes"><span class="nav-number">2.5.3.</span> <span class="nav-text">max.partition.fetch.bytes</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#session-timeout-ms"><span class="nav-number">2.5.4.</span> <span class="nav-text">session.timeout.ms</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#auto-offset-reset"><span class="nav-number">2.5.5.</span> <span class="nav-text">auto.offset.reset</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#enable-auto-commit"><span class="nav-number">2.5.6.</span> <span class="nav-text">enable.auto.commit</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#partition-assignmeng-strategy"><span class="nav-number">2.5.7.</span> <span class="nav-text">partition.assignmeng.strategy</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#client-id"><span class="nav-number">2.5.8.</span> <span class="nav-text">client.id</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">3.</span> <span class="nav-text">参考</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">刘少卿</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Gemini</a> v6.0.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.0.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.0.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.0.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.0.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.0.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.0.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.0.0"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+<!-- LOCAL: You can save these files to your site and update links -->
+    
+        
+        <link rel="stylesheet" href="https://aimingoo.github.io/gitmint/style/default.css">
+        <script src="https://aimingoo.github.io/gitmint/dist/gitmint.browser.js"></script>
+    
+<!-- END LOCAL -->
+
+    
+
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitmint({
+            id: window.location.pathname, 
+            owner: 'tonnyone',
+            repo: 'tonnyone.github.io',
+            
+            lang: "" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+            
+            oauth: {
+            
+            
+                client_secret: 'd27df47248351d770a8395dea042b7f3a52f4b9c',
+            
+                client_id: '5767d10518f40f363142'
+            }});
+        gitment.render('gitment-container');
+      }
+
+      
+      renderGitment();
+      
+      </script>
+    
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

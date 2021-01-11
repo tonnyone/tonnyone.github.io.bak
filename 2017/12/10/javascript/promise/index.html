@@ -1,0 +1,1251 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=6.0.0" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.0.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.0.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.0.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.0.0" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="liushaoqing , blog">
+
+
+
+
+  
+
+
+  <link rel="alternate" href="/atom.xml" title="进化" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="业精于勤,荒于嬉.行成于思,毁于随.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="进化">
+<meta property="og:url" content="http://tonnyone.github.io/categories/index.html">
+<meta property="og:site_name" content="进化">
+<meta property="og:description" content="业精于勤,荒于嬉.行成于思,毁于随.">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2021-01-11T21:33:44.478Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="进化">
+<meta name="twitter:description" content="业精于勤,荒于嬉.行成于思,毁于随.">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '6.0.0',
+    sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://tonnyone.github.io/categories/">
+
+
+
+
+
+  <title>javascript 异步编程-3.Promise对象和Deferred对象 | 进化</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-111552399-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"> <div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">进化</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">刘少卿的个人网站</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://tonnyone.github.io/2017/12/10/javascript/promise/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="刘少卿">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/me.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="进化">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">javascript 异步编程-3.Promise对象和Deferred对象</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-10T00:00:00+08:00">2017-12-10</time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/javascript-异步编程读书笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript 异步编程读书笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/12/10/javascript/promise/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2017/12/10/javascript/promise/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Promise-对象和-Deferred-对象"><a href="#Promise-对象和-Deferred-对象" class="headerlink" title="Promise 对象和 Deferred 对象"></a>Promise 对象和 Deferred 对象</h1><p>Promise对象的最大优势仍然在于，它可以轻松从现有Promise对象派生出新的Promise对象。我们可以要求代表着并行任务的两个Promise对象合并成一个Promise对象，由后者负责通知前面那些任务都已完成。也可以要求代表着任务系列中首任务的Promise对象派生出一个能代表任务系列中末任务的Promise对象，这样后者就能知道这一系列任务是否均已完成。待会儿我们就会看到，Promise对象天生就适合用来进行这些操作。</p>
+<h2 id="Promise极简史"><a href="#Promise极简史" class="headerlink" title="Promise极简史"></a>Promise极简史</h2><ul>
+<li>2007 Dojo框架刚从Twisted框架汲取灵感，新增了一个叫做dojo.Deferred的对象。</li>
+<li>2009 Kris Zyp有感于dojo.Deferred的影响力提出了CommonJS之Promises/A规范</li>
+<li>同年，Node.js首次亮相。Node早期的几个版本在其非阻塞式API中用到了Promise。</li>
+<li>2010 Ryan Dahl决定切换至当时为人所熟知的callback(err, result…)格式，因为Promise是一种属于“用户之境”的甚高层构造。</li>
+<li>2011 jQuery 1.5在2011年1月携$.ajax重量级重写之势，用其Promise实现震惊了无数初次接触Promise对象的开发者。不过，其他的开发者则忧心忡忡，因为jQuery 1.5对Promises/A规范的无视导致了微妙的API差异。</li>
+</ul>
+<a id="more"></a>
+<h2 id="生成Promise对象"><a href="#生成Promise对象" class="headerlink" title="生成Promise对象"></a>生成Promise对象</h2><p>假设我们提示用户应敲击Y键或N键。为此要做的第一件事就是生成一个$.Deferred实例以代表用户做出的决定。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> promptDeferred = <span class="keyword">new</span> $.Deferred();</span><br><span class="line">promptDeferred.always(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'A choice was made:'</span>);</span><br><span class="line">&#125;);</span><br><span class="line">promptDeferred.done(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'Starting game...'</span>);</span><br><span class="line">&#125;);</span><br><span class="line">promptDeferred.fail(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'No game today.'</span>);</span><br><span class="line">&#125;);（</span><br><span class="line"><span class="comment">//注： always关键字仅适用于jQuery 1.6 + 。）</span></span><br></pre></td></tr></table></figure>
+<p>大家可能会奇怪：为什么本节叫做“生成Promise对象”，却要生成一个Deferred（延迟）实例？别担心，Deferred就是Promise！更准确地说，Deferred是Promise的超集，它比Promise多了一项关键特性：可以直接触发。纯Promise实例只允许添加多个调用，而且必须由其他什么东西来触发这些调用。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">'#playGame'</span>).focus().on(<span class="string">'keypress'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> Y = <span class="number">121</span>,</span><br><span class="line">        N = <span class="number">110</span>;</span><br><span class="line">    <span class="keyword">if</span> (e.keyCode === Y) &#123;</span><br><span class="line">        promptDeferred.resolve();</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (e.keyCode === N) &#123;</span><br><span class="line">        promptDeferred.reject();</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p><a href="http://jsfiddle.net/TrevorBurnham/PJ6Bf/" target="_blank" rel="noopener">例子</a></p>
+<p>Promise只能执行或拒绝一次，之后就失效了。我们断言，Promise对象会一直保持挂起状态，<br>直到被执行或拒绝。对Promise对象调用state（状态）方法，可以查看其状态是”pending”、”resolved”，还是”rejected”。（到jQuery 1.7才添加了state方法，此前的版本使用的是isResolved和isRe-jected。）<br>如果正在进行的一次性异步操作的结果可以笼统地分成两种（如成功/失败，或接受/拒绝），则生成Deferred对象就能直观地表达这次任务。</p>
+<h3 id="生成纯的promise对象"><a href="#生成纯的promise对象" class="headerlink" title="生成纯的promise对象"></a>生成纯的promise对象</h3><p>我们刚刚了解到Deferred对象也是Promise对象，那么，如何得到一个不是Deferred对象的Promise对象呢？很简单，对Deferred对象调用promise方法即可。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> promptPromise = promptDeferred.promise();</span><br></pre></td></tr></table></figure>
+<p>promptPromise只是promptDeferred对象的一个没有re-solve/reject方法的副本。我们把回调绑定至Deferred或其下辖的Promise并无不同，因为这两个对象本质上分享着同样的回调。它们也分享着同样的state（返回的状态值为”pending”、”re-solved”或”rejected”）。这意味着，对同一个Deferred对象生成多个Promise对象是毫无意义的。事实上，jQuery给出的只不过是同一个对象。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> promise1 = promptDeferred.promise();</span><br><span class="line"><span class="keyword">var</span> promise2 = promptDeferred.promise();</span><br><span class="line"><span class="built_in">console</span>.log(promise1 === promise2); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<p>每个Deferred对象都含有一个Promise对象，而每个Promise对象都代表着一个Deferred对象。有了De-ferred对象，就可以控制其状态，而有了纯Promise对象，只能读取其状态及附加回调。</p>
+<h3 id="jQuery-API中的Promise对象"><a href="#jQuery-API中的Promise对象" class="headerlink" title="jQuery API中的Promise对象"></a>jQuery API中的Promise对象</h3><p>开头列举了jQuery的Ajax函数（$.ajax、$.get及$.post）可返回的几个Promise对象。<br>Ajax是演示Promise的绝佳用例：每次对远程服务器的调用都或成功或失败，而我们希望以不同的方式来处理这两种情况。不过，Promise也同样适用于本地的一些异步操作，譬如动画。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">'.error'</span>).fadeIn(afterErrorShown);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> errorPromise = $(<span class="string">'.error'</span>).fadeIn().promise();</span><br><span class="line">errorPromise.done(afterErrorShown);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> $flash = $(<span class="string">'.flash'</span>);</span><br><span class="line"><span class="keyword">var</span> showPromise = $flash.show().promise();</span><br><span class="line"><span class="keyword">var</span> hidePromise = $flash.hide().promise();</span><br></pre></td></tr></table></figure>
+<p>相当简单，对不对？在jQuery 1.6及jQuery 1.7中，jQuery对象的promise方法只是一种权宜之计。如果使用Deferred对象的resolve方法作为动画的回调，即可自行轻松生成一个行为完全相同的动画版Promise对象</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> slideUpDeferred = <span class="keyword">new</span> $.Deferred();</span><br><span class="line">$(<span class="string">'.menu'</span>).slideUp(slideUpDeferred.resolve);</span><br><span class="line"><span class="keyword">var</span> slideUpPromise = slideUpDeferred.promise();</span><br></pre></td></tr></table></figure>
+<p>jQuery 1.8又向jQuery大家庭中新添了一种Promise资源：$.ready. promise()也能生成一个Promise对象，<br>并且当文档就绪时即执行该对象。这意味着以下3行代码现在是等效的。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(onReady); </span><br><span class="line">$(<span class="built_in">document</span>).ready(onReady); </span><br><span class="line">$.ready.promise().done(onReady);</span><br></pre></td></tr></table></figure>
+<h2 id="向回调传递数据"><a href="#向回调传递数据" class="headerlink" title="向回调传递数据"></a>向回调传递数据</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> aDreamDeferred = <span class="keyword">new</span> $.Deferred();</span><br><span class="line">aDreamDeferred.done(<span class="function"><span class="keyword">function</span>(<span class="params">subject</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'I had the most wonderful dream about'</span>, subject);</span><br><span class="line">&#125;);</span><br><span class="line">aDreamDeferred.resolve(<span class="string">'the JS event model'</span>);</span><br></pre></td></tr></table></figure>
+<p>执行或拒绝Deferred对象时，提供的任何参数都会转发至相应的回调。<br>还有一些特殊的方法能实现在特定上下文中运行回调（即将this设置为特定的值）：resolveWith和rejectWith。<br>此时只需传递上下文环境作为第一个参数，同时以数组的形式传递所有其他</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> slashdotter = &#123;</span><br><span class="line">    comment: <span class="function"><span class="keyword">function</span> (<span class="params">editor</span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'Obviously'</span>, editor, <span class="string">'is the best text editor.'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> grammarDeferred = <span class="keyword">new</span> $.Deferred();</span><br><span class="line">grammarDeferred.done(<span class="function"><span class="keyword">function</span> (<span class="params">verb, object</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>[verb](object);</span><br><span class="line">&#125;);</span><br><span class="line">grammarDeferred.resolveWith(slashdotter, [<span class="string">'comment'</span>, <span class="string">'Emacs'</span>]);</span><br></pre></td></tr></table></figure>
+<p>然而，将参数打包成数组是很痛苦的。所以还有一个小窍门：不再使用resolveWith/rejectWith，而是直接在目标上下文中调用resolve/ reject方法，这是因为resolve/reject可以直接将其上下文环境传递至自己所触发的回调。因此，对于前面那个例子，使用以下代码亦可得到同样的结果。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grammarDeferred.resolve.call(slashdotter, <span class="string">'comment'</span>, <span class="string">'Emacs'</span>);</span><br></pre></td></tr></table></figure>
+<h3 id="进度通知"><a href="#进度通知" class="headerlink" title="进度通知"></a>进度通知</h3><p>jQuery团队意识到了进度的重要并遵守Promises/A规范，<br>于是在jQuery 1.7中为Promise对象新添了一种可以调用无数次的回调。<br>这个回调叫做progress（进度）。举个例子，假设有人正在奋力达成美国全国小说写作月（National Novel WritingMonth，简写为NaNoWriMo）项目设定的日均码字目标，而我们希望更新一个指示器以反映他距离实现这个目标还有多远。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> nanowrimoing = $.Deferred();</span><br><span class="line"><span class="keyword">var</span> wordGoal = <span class="number">5000</span>;</span><br><span class="line">nanowrimoing.progress(<span class="function"><span class="keyword">function</span> (<span class="params">wordCount</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> percentComplete = <span class="built_in">Math</span>.floor(wordCount / wordGoal * <span class="number">100</span>);</span><br><span class="line">    $(<span class="string">'#indicator'</span>).text(percentComplete + <span class="string">'% complete'</span>);</span><br><span class="line">&#125;);</span><br><span class="line">nanowrimoing.done(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    $(<span class="string">'#indicator'</span>).text(<span class="string">'Good job!'</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">$(<span class="string">'#document'</span>).on(<span class="string">'keypress'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> wordCount = $(<span class="keyword">this</span>).val().split(<span class="regexp">/\s+/</span>).length;</span><br><span class="line">    <span class="keyword">if</span> (wordCount &gt;= wordGoal) &#123;</span><br><span class="line">        nanowrimoing.resolve();</span><br><span class="line">    &#125;;</span><br><span class="line">    nanowrimoing.notify(wordCount);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>Deferred对象的notify（通知）调用会调用我们设定的progress回调。就像resolve和reject一样，notify也能接受任意参数。<br>请注意，一旦执行了nanowrimoing对象，则再作nanowrimoing.notify调用将不会有任何反应，这就像任何额外的resolve调用及reject调用也会被直接无视一样。</p>
+<p>Promise对象接受3种回调形式：done、fail和progress。执行Promise对象时，运行的是done回调；拒绝Promise对象时，运行的是fail回调；对处于挂起状态的Deferred对象调用notify时，运行的是progress回调。</p>
+<h2 id="Promise-对象的合并"><a href="#Promise-对象的合并" class="headerlink" title="Promise 对象的合并"></a>Promise 对象的合并</h2><p>Promise对象的逻辑合并技术有一个最常见的用例：判定一组异步任务何时完成。假设我们正在播放一段演示视频，同时又在加载服务器上的一个游戏。我们希望这两件事一旦结束（对次序没有要求），就马上启动游戏。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> gameReadying = $.when(tutorialPromise, gameLoadedPromise);</span><br><span class="line">gameReadying.done(startGame);</span><br></pre></td></tr></table></figure>
+<p>when相当于Promise执行情况的逻辑与运算符（AND）。<br>一旦给定的所有Promise均已执行，就立即执行when方法产生的Promise对象；或者，一旦给定的任意一个Promise被拒绝，就立即拒绝when产生的Promise。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$.when($.post(<span class="string">'/1'</span>, data1), $.post(<span class="string">'/2'</span>, data2)).then(onPosted, onFailure);</span><br></pre></td></tr></table></figure>
+<p>调用成功时，when可以访问下辖的各个成员Promise对象的回调参数，不过这么做很复杂。这些回调参数会当作参数列表进行传递，传递的次序和成员Promise对象传递给when方法时一样。如果某个成员Promise对象提供多个回调参数，则这些参数会先转换成数组<br>虽然有可能，但如果不是绝对必要，我们不应该自行解析when回调的参数，<br>相反应该直接向那些传递至when方法的成员Promise对象附加回调来收集相应的结果。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> serverData = &#123;&#125;;</span><br><span class="line"><span class="keyword">var</span> getting1 = $.<span class="keyword">get</span>('/1').done(function (result) &#123;</span><br><span class="line">    serverData[<span class="string">'1'</span>] = result;</span><br><span class="line">&#125;);</span><br><span class="line"><span class="keyword">var</span> getting2 = $.<span class="keyword">get</span>('/2').done(function (result) &#123;</span><br><span class="line">    serverData[<span class="string">'2'</span>] = result;</span><br><span class="line">&#125;);</span><br><span class="line">$.when(getting1, getting2).done(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; <span class="comment">// 获得的信息现在都已位于serverData……</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="函数的promise用法"><a href="#函数的promise用法" class="headerlink" title="函数的promise用法"></a>函数的promise用法</h3><p>$.when及其他能取用Promise对象的jQuery方法均支持传入非Promise对象作为参数。<br>这些非Promise参数会被当成因相应参数位置已赋值而执行的Promise对象来处理。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$.when(<span class="string">'foo'</span>)</span><br></pre></td></tr></table></figure>
+<p>会生成一个因赋值’foo’而立即执行的Promise对象。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> promise = $.Deferred().resolve(<span class="string">'manchu'</span>);</span><br><span class="line">$.when(<span class="string">'foo'</span>, promise)</span><br></pre></td></tr></table></figure>
+<p>会生成一个因赋值’foo’和’manchu’而立即执行的Promise对象。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> promise = $.Deferred().resolve(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>);</span><br><span class="line">$.when(<span class="string">'test'</span>, promise)</span><br></pre></td></tr></table></figure>
+<p>会生成一个因赋值’test’和数组[1,2,3]而立即执行的Promise对象。（请记住，Deferred对象传递多个参数给resolve方法时，$.when会把这些参数转换成一个数组。）</p>
+<p>$.when如何知道参数是不是Promise对象呢？答案是：jQuery负责检查$.when的各个参数是否带有promise方法，如果有就使用该方法返回的值。Promise对象的promise方法会直接返回自身。</p>
+<p>jQuery对象也可以有promise方法，这意味着$.when方法强行将那些带promise方法的jQuery对象转换成了jQuery动画版Promise对象。因此，如果想生成一个在抓取某些数据且已完成#loading动画之后执行的Promise对象，只需写下下面这样的代码：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fetching = $.<span class="keyword">get</span>('/myData');</span><br><span class="line">$.when(fetching, $('#loading'));</span><br></pre></td></tr></table></figure>
+<p>只是请记住，必须要在动画开始之后再执行$.when生成的那个Promise对象。<br>如果#loading的动画队列为空，则立即执行相应的Promise对象。</p>
+<h2 id="管道连接未来"><a href="#管道连接未来" class="headerlink" title="管道连接未来"></a>管道连接未来</h2><p>在JavaScript中常常无法便捷地执行一系列异步任务，一个主要原因是无法在第一个任务结束之前就向第二个任务附加处理器。举个例子，假设我们要从一个URL抓取数据（GET），接着又将这些数据发送给另一个URL（POST）。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> getPromise = $.<span class="keyword">get</span>('/query');</span><br><span class="line">getPromise.done(function (data) &#123;</span><br><span class="line">    <span class="keyword">var</span> postPromise = $.post(<span class="string">'/search'</span>, data);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>看到这里的问题了吗？在GET操作成功之前我们无法对postPromise对象绑定回调，因为这时postPromise对象还不存在！除非我们已经得到因$.get调用而异步抓取的数据，否则甚至无法进行那个负责生成postPromise对象的$.post调用！</p>
+<p>这正是jQuery 1.6为Promise对象新增pipe（管道）方法的原因。pipe好像在说：“请针对这个Promise对象给我一个回调，我会归还一个Promise对象以表示回调运行的结果。”</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> getPromise = $.<span class="keyword">get</span>('/query');</span><br><span class="line">var postPromise = getPromise.pipe(function(data) &#123;</span><br><span class="line">    <span class="keyword">return</span> $.post(<span class="string">'/search'</span>, data);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>看起来就像黑魔法，对吧？下面是详情大揭秘：pipe最多能接受3个参数，它们对应着Promise对象的3种回调类型：done、fail和progress。<br>也就是说，我们在上述例子中只提供了执行getPromise时应运行的那个回调。当这个回调返回的Promise对象已经执行/拒绝时，pipe方法返回的那个新Promise对象也就可以执行/拒绝。</p>
+<p>我们也可以通过修改pipe回调参数来“滤清”Promise对象。如果pipe方法的回调返回值不是Promise/Deferred对象，它就会变成回调参数。举例来说，假设有个Promise对象发出的进度通知表示成0与1之间的某个数，则可以使用pipe方法生成一个完全相同的Promise对象，但它发出的进度通知却转变成可读性更高的字符串。</p>
+<ul>
+<li>如果pipe回调返回的是Promise对象，则pipe生成的那个Promise对象会模仿这个Promise对象。</li>
+<li>如果pipe回调返回的是非Promise对象（值或空白），则pipe生成的那个Promise对象会立即因该赋值而执行、拒绝或得到通知，具体取决于调用pipe的那个初始Promise对象刚刚发生了什么。</li>
+</ul>
+<p>pipe判定参数是否为Promise对象的方法和$.when完全一样：如果pipe的参数带有promise方法，则该方法的返回值会被当作Promise对象以代表调用pipe的那个初始Promise对象。再重申一次，promise. promise() === promise。</p>
+<h3 id="管道级联技术"><a href="#管道级联技术" class="headerlink" title="管道级联技术"></a>管道级联技术</h3><p>pipe方法并不要求提供所有的可能回调。事实上，我们通常只想写成这样：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> pipedPromise = originalPromise.pipe(successCallback);</span><br><span class="line"><span class="keyword">var</span> pipedPromise = originalPromise.pipe(<span class="literal">null</span>, failCallback);</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> getPromise = $.<span class="keyword">get</span>('/query');</span><br><span class="line">getPromise.done(function (data) &#123;</span><br><span class="line">    <span class="keyword">var</span> postPromise = $.post(<span class="string">'/search'</span>, data);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> step1 = $.post(<span class="string">'/step1'</span>, data1);</span><br><span class="line"><span class="keyword">var</span> step2 = step1.pipe(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> $.post(<span class="string">'/step2'</span>, data2);</span><br><span class="line">&#125;);</span><br><span class="line"><span class="keyword">var</span> lastStep = step2.pipe(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> $.post(<span class="string">'/step3'</span>, data3);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>这里的lastStep对象当且仅当所有这3个Ajax调用都成功完成时才执行，其中任意一个Ajax调用未能成功完成，lastStep均被拒绝。如果只在乎整体进程，则可以省略掉前面的变量声明。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> posting = $.post(<span class="string">'/step1'</span>, data1).pipe(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> $.post(<span class="string">'/step2'</span>, data2).pipe(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> $.post(<span class="string">'/step3'</span>, data3);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>当然，这会重现金字塔厄运。大家应该了解这种书写风格，不过请尽量逐一声明pipe生成的那些Promise对象。也许并不需要这些变量名称，但它们能让代码更加自文档化<br>接下来简单介绍一下其主要替代方案：CommonJS的Promises/A规范及其旗舰版实现Q.js。</p>
+<h3 id="jQuery与Promises-A的对比"><a href="#jQuery与Promises-A的对比" class="headerlink" title="jQuery与Promises/A的对比"></a>jQuery与Promises/A的对比</h3><p>jQuery的Promise与CommonJS的Promises/A几乎完全一样。<br>Q.js库是最流行的Promises/A实现，其提供的方法甚至能与jQuery的Promise和谐共存。这两者的区别只是形式上的，即用相同的词语表示不同的含义。<br>在jQuery 1.8问世之前，jQuery的then方法只是一种可以同时调用done、fail和progress这3种回调的速写法，<br>而Promises/A的then在行为上更像是jQuery的pipe。jQuery 1.8订正了这个问题，使得then成为pipe的同义词。不过，由于向后兼容的问题，jQuery的Promise再如何对Promises/A示好也不太会招人待见。<br>当然还有其他一些细微的差别。例如，在Promises/A规范中，由then方法生成的Promise对象是已执行还是已拒绝，取决于由then方法调用的那个回调是返回值还是抛出错误。（在jQuery的Promise对象的回调中抛出错误是个糟糕的主意，因为错误不会被捕获。）</p>
+<p>基于上述原因，应该尽量避免在同一个项目中与多个Promise实现“打情骂俏”。如果因jQuery方法而得到Promise对象，请使用jQuery的Promise。如果因使用其他库而得到CommonJS Promise对象，则请遵守Promises/A规范。而Q.js可以轻松“消化”jQuery的Promise对象。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> qPromise = Q.when(jqPromise);</span><br></pre></td></tr></table></figure>
+<h3 id="用Promise对象代替回调函数"><a href="#用Promise对象代替回调函数" class="headerlink" title="用Promise对象代替回调函数"></a>用Promise对象代替回调函数</h3><p>理想情况下，开始执行异步任务的任何函数都应该返回Promise对象。遗憾的是，大多数JavaScript API（包括所有浏览器及Node.js均使用的那些原生函数）都基于回调函数，而不是基于Promise对象。在本节中，我们将看到如何在基于回调函数的API中使用Promise对象。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> timing = <span class="keyword">new</span> $.Deferred();</span><br><span class="line">setTimeout(timing.resolve, <span class="number">500</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> fileReading = <span class="keyword">new</span> $.Deferred();</span><br><span class="line">fs.readFile(filename, <span class="string">'utf8'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">err</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (err) &#123;</span><br><span class="line">        fileReading.reject(err);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        ileReading.resolve(<span class="built_in">Array</span>.prototype.slice.call(<span class="built_in">arguments</span>, <span class="number">1</span>));</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>总这么写很麻烦，所以何不写一个工具函数以根据任何给定Deferred对象来生成Node风格的回调呢？</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">deferredCallback = <span class="function"><span class="keyword">function</span> (<span class="params">deferred</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params">err</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (err) &#123;</span><br><span class="line">            deferred.reject(err);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            deferred.resolve(<span class="built_in">Array</span>.prototype.slice.call(<span class="built_in">arguments</span>, <span class="number">1</span>));</span><br><span class="line">        &#125;;</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>有了这个工具函数，前面那个例子就可以写成这样：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fileReading = <span class="keyword">new</span> $.Deferred();</span><br><span class="line">fs.readFile(filename, <span class="string">'utf8'</span>, deferredCallback(fileReading));</span><br></pre></td></tr></table></figure>
+<p>Q.js的Deferred对象为此提供了一个现成的node方法：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fileReading = Q.defer();</span><br><span class="line">fs.readFile(filename, <span class="string">'utf8'</span>, fileReading.node());</span><br></pre></td></tr></table></figure>
+<p>随着Promise越来越流行，会有越来越多的JavaScript库循着jQuery的脚步，要求其异步函数必须返回Promise对象。到那时，只需要几行代码就能将想用的任何异步函数转变成Promise对象的生成函数。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/12/05/javascript/fen-bu-shi-shi-jian/" rel="next" title="javascript 异步编程-2.分布式事件">
+                <i class="fa fa-chevron-left"></i> javascript 异步编程-2.分布式事件
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/12/15/javascript/async.js/" rel="prev" title="javascript 异步编程-4.async.js工作流控制">
+                javascript 异步编程-4.async.js工作流控制 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      
+        <div id="gitment-container"></div>
+      
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/uploads/me.jpg" alt="刘少卿">
+            
+              <p class="site-author-name" itemprop="name">刘少卿</p>
+              <p class="site-description motion-element" itemprop="description">业精于勤,荒于嬉.行成于思,毁于随.</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/tonnyone" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i></a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:liushaoqing1@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i></a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Promise-对象和-Deferred-对象"><span class="nav-number">1.</span> <span class="nav-text">Promise 对象和 Deferred 对象</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Promise极简史"><span class="nav-number">1.1.</span> <span class="nav-text">Promise极简史</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#生成Promise对象"><span class="nav-number">1.2.</span> <span class="nav-text">生成Promise对象</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#生成纯的promise对象"><span class="nav-number">1.2.1.</span> <span class="nav-text">生成纯的promise对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#jQuery-API中的Promise对象"><span class="nav-number">1.2.2.</span> <span class="nav-text">jQuery API中的Promise对象</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#向回调传递数据"><span class="nav-number">1.3.</span> <span class="nav-text">向回调传递数据</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#进度通知"><span class="nav-number">1.3.1.</span> <span class="nav-text">进度通知</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Promise-对象的合并"><span class="nav-number">1.4.</span> <span class="nav-text">Promise 对象的合并</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#函数的promise用法"><span class="nav-number">1.4.1.</span> <span class="nav-text">函数的promise用法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#管道连接未来"><span class="nav-number">1.5.</span> <span class="nav-text">管道连接未来</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#管道级联技术"><span class="nav-number">1.5.1.</span> <span class="nav-text">管道级联技术</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#jQuery与Promises-A的对比"><span class="nav-number">1.5.2.</span> <span class="nav-text">jQuery与Promises/A的对比</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用Promise对象代替回调函数"><span class="nav-number">1.5.3.</span> <span class="nav-text">用Promise对象代替回调函数</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">刘少卿</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Gemini</a> v6.0.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.0.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.0.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.0.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.0.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.0.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.0.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.0.0"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+<!-- LOCAL: You can save these files to your site and update links -->
+    
+        
+        <link rel="stylesheet" href="https://aimingoo.github.io/gitmint/style/default.css">
+        <script src="https://aimingoo.github.io/gitmint/dist/gitmint.browser.js"></script>
+    
+<!-- END LOCAL -->
+
+    
+
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitmint({
+            id: window.location.pathname, 
+            owner: 'tonnyone',
+            repo: 'tonnyone.github.io',
+            
+            lang: "" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+            
+            oauth: {
+            
+            
+                client_secret: 'd27df47248351d770a8395dea042b7f3a52f4b9c',
+            
+                client_id: '5767d10518f40f363142'
+            }});
+        gitment.render('gitment-container');
+      }
+
+      
+      renderGitment();
+      
+      </script>
+    
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

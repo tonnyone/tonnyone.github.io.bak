@@ -1,0 +1,1283 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=6.0.0" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.0.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.0.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.0.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.0.0" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="liushaoqing , blog">
+
+
+
+
+  
+
+
+  <link rel="alternate" href="/atom.xml" title="进化" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="业精于勤,荒于嬉.行成于思,毁于随.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="进化">
+<meta property="og:url" content="http://tonnyone.github.io/categories/index.html">
+<meta property="og:site_name" content="进化">
+<meta property="og:description" content="业精于勤,荒于嬉.行成于思,毁于随.">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2021-01-11T21:33:44.478Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="进化">
+<meta name="twitter:description" content="业精于勤,荒于嬉.行成于思,毁于随.">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '6.0.0',
+    sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://tonnyone.github.io/categories/">
+
+
+
+
+
+  <title>一文完全理解HTTPS | 进化</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-111552399-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"> <div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">进化</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">刘少卿的个人网站</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://tonnyone.github.io/2018/04/15/https/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="刘少卿">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/me.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="进化">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">一文完全理解HTTPS</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-15T02:00:00+08:00">2018-04-15</time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/protocal/" itemprop="url" rel="index">
+                    <span itemprop="name">protocal</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/04/15/https/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/04/15/https/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="/uploads/https/https.png" alt=""></p>
+<h2 id="http通信有什么问题呢"><a href="#http通信有什么问题呢" class="headerlink" title="http通信有什么问题呢"></a>http通信有什么问题呢</h2><h3 id="1-可能被窃听"><a href="#1-可能被窃听" class="headerlink" title="1. 可能被窃听"></a>1. 可能被窃听</h3><ul>
+<li>HTTP 本身不具备加密的功能,HTTP 报文使用明文方式发送</li>
+<li>由于互联网是由联通世界各个地方的网络设施组成,所有发送和接收经过某些设备的数据都可能被截获或窥视。(例如大家都熟悉的抓包工具:Wireshark),即使经过加密处理,也会被窥视是通信内容,只是可能很难或者无法破解出报文的信息而已</li>
+</ul>
+<a id="more"></a>
+<h3 id="2-认证问题"><a href="#2-认证问题" class="headerlink" title="2. 认证问题"></a>2. 认证问题</h3><ul>
+<li>无法确认你发送到的服务器就是真正的目标服务器(可能服务器是伪装的)</li>
+<li>无法确定返回的客户端是否是按照真实意图接收的客户端(可能是伪装的客户端)</li>
+<li>无法确定正在通信的对方是否具备访问权限,Web 服务器上某些重要的信息，只想发给特定用户</li>
+<li>即使是无意义的请求也会照单全收。无法阻止海量请求下的 DoS 攻击（Denial of Service，拒绝服务攻击）。</li>
+</ul>
+<h3 id="3-可能被篡改"><a href="#3-可能被篡改" class="headerlink" title="3. 可能被篡改"></a>3. 可能被篡改</h3><p>请求或响应在传输途中，遭攻击者拦截并篡改内容的攻击被称为中间人攻击（Man-in-the-Middle attack，MITM）。</p>
+<h2 id="HTTPS如何解决上述三个问题"><a href="#HTTPS如何解决上述三个问题" class="headerlink" title="HTTPS如何解决上述三个问题"></a>HTTPS如何解决上述三个问题</h2><p>HTTPS 只是在通信接口部分用 TLS（Transport Layer Security）协议代替而已。<br><img src="/uploads/https/https1.png" alt=""></p>
+<p>SSL 和 TLS 的区别:</p>
+<blockquote>
+<p>传输层安全性协议（英语：Transport Layer Security，缩写作 TLS），及其前身安全套接层（Secure Sockets Layer，缩写作 SSL）是一种安全协议，目的是为互联网通信，提供安全及数据完整性保障。网景公司（Netscape）在1994年推出首版网页浏览器，网景导航者时，推出HTTPS协议，以SSL进行加密，这是SSL的起源。IETF将SSL进行标准化，1999年公布第一版TLS标准文件。随后又公布RFC 5246 （2008年8月）与 RFC 6176 （2011年3月）。以下就简称SSL</p>
+</blockquote>
+<p><strong>TLS是SSL的标准</strong>. <strong>HTTPS</strong> 就是 <strong>HTTP + SSL</strong><br><img src="/uploads/https/https_http.png" alt=""></p>
+<h3 id="SSL-协议"><a href="#SSL-协议" class="headerlink" title="SSL 协议"></a>SSL 协议</h3><h4 id="SSL-协议的实现需要用到的几类算法"><a href="#SSL-协议的实现需要用到的几类算法" class="headerlink" title="SSL 协议的实现需要用到的几类算法"></a>SSL 协议的实现需要用到的几类算法</h4><h5 id="对称加密"><a href="#对称加密" class="headerlink" title="对称加密"></a>对称加密</h5><p>常用的加密算法:<code>DES</code>、<code>AES</code> ,<code>RC2</code>,<code>RC4</code><br>优点：算法公开、计算量小、加密速度快、加密效率高。<br>缺点：交易双方都使用同样钥匙，安全性得不到保证。<br><img src="/uploads/https/https2.png" alt=""></p>
+<h5 id="非对称加密技术"><a href="#非对称加密技术" class="headerlink" title="非对称加密技术"></a>非对称加密技术</h5><p>常用的非对称加密算法:<code>RSA</code>,<code>DSA</code>,<code>Diffie-Hellman</code><br>优点:安全性高<br>缺点:速度慢</p>
+<p><img src="/uploads/https/https3.png" alt=""></p>
+<h5 id="完整性验证算法"><a href="#完整性验证算法" class="headerlink" title="完整性验证算法"></a>完整性验证算法</h5><p>HASH算法：<code>MD5</code>，<code>SHA1</code>，<code>SHA256</code><br>用作校验消息的完整性<br><img src="/uploads/https/tls_ssl.png" alt=""></p>
+<h4 id="SSL协议构成"><a href="#SSL协议构成" class="headerlink" title="SSL协议构成"></a>SSL协议构成</h4><ol>
+<li>第一层是Record Protocol, 用于定义传输格式。</li>
+<li>第二层Handshake Protocol,它建立在SSL记录协议之上,用于在实际的数据传输开始前，通讯双方进行身份认证、协商加密算法、交换加密密钥等。</li>
+</ol>
+<p><img src="/uploads/https/ssl_layout.png" alt=""></p>
+<blockquote>
+<p>工作方式:</p>
+<ul>
+<li>客户端使用非对称加密与服务器进行通信，实现身份验证并协商对称加密使用的密钥，</li>
+<li>然后采用协商密钥对信息进行加密通信，不同的节点之间采用的对称密钥不同，从而可以保证对称密钥的安全。</li>
+</ul>
+</blockquote>
+<h3 id="SSL密钥协商的过程如下"><a href="#SSL密钥协商的过程如下" class="headerlink" title="SSL密钥协商的过程如下"></a>SSL密钥协商的过程如下</h3><p><a href="/uploads/https/https_ssl.svg">点击查看大图</a><br><img src="/uploads/https/https_ssl.svg" alt=""><br><a href="https://upload.wikimedia.org/wikipedia/commons/a/ae/SSL_handshake_with_two_way_authentication_with_certificates.svg" target="_blank" rel="noopener">来源</a></p>
+<p>详细描述下流程,主要分为<strong>四大步骤</strong>(此处略繁琐,不关注细节的可以先略过):</p>
+<h5 id="1-client-hello-过程"><a href="#1-client-hello-过程" class="headerlink" title="1. client_hello 过程"></a>1. client_hello 过程</h5><p>客户端发起请求，以明文传输请求信息，包含版本信息，加密套件候选列表，压缩算法候选列表，随机数，扩展字段等信息，相关信息如下：</p>
+<ul>
+<li><strong>版本信息:</strong> 支持的最高TSL协议版本version，从低到高依次 SSLv2 SSLv3 TLSv1 TLSv1.1 TLSv1.2，当前基本不再使用低于 TLSv1 的版本 </li>
+<li><strong>加密套件候选列表(cipher suite):</strong> 认证算法 Au (身份验证)、密钥交换算法 KeyExchange(密钥协商)、对称加密算法 Enc (信息加密)和信息摘要 Mac(完整性校验);</li>
+<li><strong>压缩算法候选列表</strong>:支持的压缩算法 compression methods 列表，用于后续的信息压缩传输;</li>
+<li><strong>随机数</strong>:随机数就是上图里的RNc,用于后续生成协商密钥;</li>
+<li><strong>协商数据</strong>:支持协议与算法的相关参数以及其它辅助信息等，常见的 SNI 就属于扩展字段，后续单独讨论该字段作用。</li>
+</ul>
+<h5 id="2-server-hello-过程"><a href="#2-server-hello-过程" class="headerlink" title="2. server_hello 过程"></a>2. server_hello 过程</h5><ul>
+<li>服务端返回协商的信息结果，包括选择使用的协议版本version，选择的加密套件 cipher suite，选择的压缩算法 compression method、随机数 RNs等，其中随机数用于后续的密钥协商;</li>
+<li>服务器证书链,用于身份校验和密钥交换</li>
+<li>通知客户端server-hello 结束,请求客户端的证书和密钥</li>
+</ul>
+<h5 id="3-证书校验，协商最后通信密钥"><a href="#3-证书校验，协商最后通信密钥" class="headerlink" title="3. 证书校验，协商最后通信密钥"></a>3. 证书校验，协商最后通信密钥</h5><p>a. 客户端验证服务端证书的合法性，如果验证通过才会进行后续通信，否则根据错误情况不同做出提示和操作，合法性验证包括如下：</p>
+<ul>
+<li>证书链的可信性 trusted certificate path</li>
+<li>证书是否吊销 revocation</li>
+<li>有效期 expiry date，证书是否在有效时间范围;</li>
+<li>域名 domain，核查证书域名是否与当前的访问域名匹配，匹配规则后续分析;</li>
+</ul>
+<p>b. 客户端发送客户端证书,公钥服务端验证(过程同客户端验证)<br>c. 客户端hash所有之前的消息,发送hash值和摘要,用客户端的私钥加密发送给服务端,服务端用客户端的公钥解密,验证了服务端获取的客户端的公钥和算法是正确的<br>d. 客户端生成<code>pms</code>,用服务端的公钥加密加密后发送给服务端<br>e. 客户端和服务端同时计算出最终会话密钥(<code>MS</code>)</p>
+<h5 id="4-验证协商密钥"><a href="#4-验证协商密钥" class="headerlink" title="4. 验证协商密钥"></a>4. 验证协商密钥</h5><p>a. Client发送<code>ChangeCipherSpec</code>，指示Server从现在开始发送的消息都是加密过的<br>b. Client发送Finishd，包含了前面所有握手消息的hash，可以让server验证握手过程是否被第三方篡改<br>c. 服务端发送<code>ChangeCipherSpec</code>，指示Client从现在开始发送的消息都是加密过的<br>d. Server发送Finishd，包含了前面所有握手消息的hash，可以让client验证握手过程是否被第三方篡改，并且证明自己是Certificate密钥的拥有者，即证明自己的身份</p>
+<h3 id="HTTPS完整建立连接过程-如下图"><a href="#HTTPS完整建立连接过程-如下图" class="headerlink" title="HTTPS完整建立连接过程,如下图"></a>HTTPS完整建立连接过程,如下图</h3><ol>
+<li>首先建立tcp 握手连接</li>
+<li>进行ssl 协议的握手密钥交换(Handshake protocal)</li>
+<li>然后通过共同约定的密钥开始通信</li>
+</ol>
+<p><img src="/uploads/https/https_protocal.png" alt=""></p>
+<h3 id="上文说到的证书是个什么玩意儿"><a href="#上文说到的证书是个什么玩意儿" class="headerlink" title="上文说到的证书是个什么玩意儿"></a>上文说到的证书是个什么玩意儿</h3><p><img src="/uploads/https/zhengshu_brower.png" alt="浏览器证书"></p>
+<p>证书的作用就是,我和服务端通信,我怎么知道这个服务端是我要真正通信的服务端呢. 打个不恰当的比方:</p>
+<p> 你在某宝购物,到了结算页面,你消费了100万,输入银行卡账号和密码付款,但是当你付款结束以后,你发现账户少了100万,但是账户页面还是显示未付款,你去打某宝客服,客服说你被别人盗号了100万没支付到我某宝,注意：这里面存在两种可能性</p>
+<ol>
+<li>一个是有可能遭到了中间人攻击(用户名和密码被黑客截获)</li>
+<li>某宝收了你的钱，假装不承认,(抵赖)</li>
+</ol>
+<p><img src="/uploads/https/https_gj.png" alt=""></p>
+<h4 id="申请和发放证书流程如下："><a href="#申请和发放证书流程如下：" class="headerlink" title="申请和发放证书流程如下："></a>申请和发放证书流程如下：</h4><p><img src="/uploads/https/zhengshu.png" alt=""></p>
+<ol>
+<li><p>服务方 Server 向第三方机构CA提交公钥、组织信息、个人信息(域名)等信息并申请认证;</p>
+</li>
+<li><p>CA通过线上、线下等多种手段验证申请者提供信息的真实性，如组织是否存在、企业是否合法，是否拥有域名的所有权等;</p>
+</li>
+<li><p>如信息审核通过，CA会向申请者签发认证文件-证书。证书包含以下信息：申请者公钥、申请者的组织信息和个人信息、签发机构 CA的信息、有效时间、证书序列号等信息的明文，同时包含一个签名; 签名的产生算法：首先，使用散列函数计算公开的明文信息的信息摘要，然后，采用 CA的私钥对信息摘要进行加密，密文即签名;</p>
+</li>
+<li><p>客户端 Client 向服务器 Server 发出请求时，Server 返回证书文件;</p>
+</li>
+<li><p>客户端 Client 读取证书中的相关的明文信息，采用相同的散列函数计算得到信息摘要，然后，利用对应 CA的公钥解密签名数据，对比证书的信息摘要，如果一致，则可以确认证书的合法性，即公钥合法;</p>
+</li>
+<li><p>客户端还会验证证书相关的域名信息、有效时间等信息; 客户端会内置信任CA的证书信息(包含公钥)，如果CA不被信任，则找不到对应 CA的证书，证书也会被判定非法。</p>
+</li>
+</ol>
+<h4 id="证书链"><a href="#证书链" class="headerlink" title="证书链"></a>证书链</h4><p><img src="/uploads/https/zhengshulian.png" alt=""></p>
+<ol>
+<li>服务器证书 server.pem 的签发者为中间证书机构 inter，inter 根据证书 inter.pem 验证 server.pem 确实为自己签发的有效证书</li>
+<li>中间证书 inter.pem 的签发 CA 为 root，root 根据证书 root.pem 验证 inter.pem 为自己签发的合法证书;</li>
+<li>客户端内置信任 CA 的 root.pem 证书，因此服务器证书 server.pem 的被信任。</li>
+</ol>
+<blockquote>
+<p>服务器证书、中间证书与根证书在一起组合成一条合法的证书链，证书链的验证是自下而上的信任传递的过程。</p>
+</blockquote>
+<p>证书的详细了解,请详细了解<a href="https://zh.wikipedia.org/wiki/%E5%85%AC%E9%96%8B%E9%87%91%E9%91%B0%E5%9F%BA%E7%A4%8E%E5%BB%BA%E8%A8%AD" target="_blank" rel="noopener">PKI体系</a></p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul>
+<li><a href="https://www.wosign.com/info/https_tls_ssl_http.htmj" target="_blank" rel="noopener">详解 HTTPS、TLS、SSL、HTTP区别和关系</a></li>
+<li><a href="http://galaxylab.org/https%E9%82%A3%E4%BA%9B%E4%BA%8B/" target="_blank" rel="noopener">https 那些事儿</a></li>
+<li><a href="https://zh.wikipedia.org/zh-cn/%E5%82%B3%E8%BC%B8%E5%B1%A4%E5%AE%89%E5%85%A8%E6%80%A7%E5%8D%94%E5%AE%9A" target="_blank" rel="noopener">WIKI传输层安全性协议</a></li>
+<li><a href="https://book.douban.com/subject/24737674/" target="_blank" rel="noopener">图解TCP/IP</a></li>
+<li><a href="http://www.nsfocus.net/index.php?act=magazine&amp;do=view&amp;mid=841" target="_blank" rel="noopener">绿盟月刊SSL/TLS/WTLS原理</a></li>
+<li><a href="http://tianyawy.farbox.com/post/http/how-tls-work" target="_blank" rel="noopener">how tls work</a></li>
+<li><a href="https://segmentfault.com/a/1190000002554673" target="_blank" rel="noopener">SSL/TLS原理详解</a></li>
+<li><a href="https://www.wosign.com/Basic/aboutPKI.htm" target="_blank" rel="noopener">PKI 基础知识</a></li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/http/" rel="tag"># http</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/03/12/nodejs/nodejs_learn_5/" rel="next" title="一起学nodejs(写一个基于TCP/IP终端聊天系统)">
+                <i class="fa fa-chevron-left"></i> 一起学nodejs(写一个基于TCP/IP终端聊天系统)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/05/05/mongodb_install/" rel="prev" title="mongodb3.X 单机安装与配置">
+                mongodb3.X 单机安装与配置 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      
+        <div id="gitment-container"></div>
+      
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/uploads/me.jpg" alt="刘少卿">
+            
+              <p class="site-author-name" itemprop="name">刘少卿</p>
+              <p class="site-description motion-element" itemprop="description">业精于勤,荒于嬉.行成于思,毁于随.</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/tonnyone" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i></a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:liushaoqing1@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i></a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#http通信有什么问题呢"><span class="nav-number">1.</span> <span class="nav-text">http通信有什么问题呢</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-可能被窃听"><span class="nav-number">1.1.</span> <span class="nav-text">1. 可能被窃听</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-认证问题"><span class="nav-number">1.2.</span> <span class="nav-text">2. 认证问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-可能被篡改"><span class="nav-number">1.3.</span> <span class="nav-text">3. 可能被篡改</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTPS如何解决上述三个问题"><span class="nav-number">2.</span> <span class="nav-text">HTTPS如何解决上述三个问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#SSL-协议"><span class="nav-number">2.1.</span> <span class="nav-text">SSL 协议</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#SSL-协议的实现需要用到的几类算法"><span class="nav-number">2.1.1.</span> <span class="nav-text">SSL 协议的实现需要用到的几类算法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#对称加密"><span class="nav-number">2.1.1.1.</span> <span class="nav-text">对称加密</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#非对称加密技术"><span class="nav-number">2.1.1.2.</span> <span class="nav-text">非对称加密技术</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#完整性验证算法"><span class="nav-number">2.1.1.3.</span> <span class="nav-text">完整性验证算法</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#SSL协议构成"><span class="nav-number">2.1.2.</span> <span class="nav-text">SSL协议构成</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SSL密钥协商的过程如下"><span class="nav-number">2.2.</span> <span class="nav-text">SSL密钥协商的过程如下</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-client-hello-过程"><span class="nav-number">2.2.0.1.</span> <span class="nav-text">1. client_hello 过程</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-server-hello-过程"><span class="nav-number">2.2.0.2.</span> <span class="nav-text">2. server_hello 过程</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-证书校验，协商最后通信密钥"><span class="nav-number">2.2.0.3.</span> <span class="nav-text">3. 证书校验，协商最后通信密钥</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-验证协商密钥"><span class="nav-number">2.2.0.4.</span> <span class="nav-text">4. 验证协商密钥</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTPS完整建立连接过程-如下图"><span class="nav-number">2.3.</span> <span class="nav-text">HTTPS完整建立连接过程,如下图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#上文说到的证书是个什么玩意儿"><span class="nav-number">2.4.</span> <span class="nav-text">上文说到的证书是个什么玩意儿</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#申请和发放证书流程如下："><span class="nav-number">2.4.1.</span> <span class="nav-text">申请和发放证书流程如下：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#证书链"><span class="nav-number">2.4.2.</span> <span class="nav-text">证书链</span></a></li></ol></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资料"><span class="nav-number">3.</span> <span class="nav-text">参考资料</span></a></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">刘少卿</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Gemini</a> v6.0.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.0.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.0.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.0.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.0.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.0.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.0.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.0.0"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+<!-- LOCAL: You can save these files to your site and update links -->
+    
+        
+        <link rel="stylesheet" href="https://aimingoo.github.io/gitmint/style/default.css">
+        <script src="https://aimingoo.github.io/gitmint/dist/gitmint.browser.js"></script>
+    
+<!-- END LOCAL -->
+
+    
+
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitmint({
+            id: window.location.pathname, 
+            owner: 'tonnyone',
+            repo: 'tonnyone.github.io',
+            
+            lang: "" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+            
+            oauth: {
+            
+            
+                client_secret: 'd27df47248351d770a8395dea042b7f3a52f4b9c',
+            
+                client_id: '5767d10518f40f363142'
+            }});
+        gitment.render('gitment-container');
+      }
+
+      
+      renderGitment();
+      
+      </script>
+    
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

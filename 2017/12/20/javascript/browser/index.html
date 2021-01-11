@@ -1,0 +1,1241 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=6.0.0" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.0.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.0.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.0.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.0.0" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="liushaoqing , blog">
+
+
+
+
+  
+
+
+  <link rel="alternate" href="/atom.xml" title="进化" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="业精于勤,荒于嬉.行成于思,毁于随.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="进化">
+<meta property="og:url" content="http://tonnyone.github.io/categories/index.html">
+<meta property="og:site_name" content="进化">
+<meta property="og:description" content="业精于勤,荒于嬉.行成于思,毁于随.">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2021-01-11T21:33:44.478Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="进化">
+<meta name="twitter:description" content="业精于勤,荒于嬉.行成于思,毁于随.">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '6.0.0',
+    sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://tonnyone.github.io/categories/">
+
+
+
+
+
+  <title>javascript 异步编程-5.异步脚本加载 | 进化</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-111552399-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"> <div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">进化</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">刘少卿的个人网站</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://tonnyone.github.io/2017/12/20/javascript/browser/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="刘少卿">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/me.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="进化">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">javascript 异步编程-5.异步脚本加载</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-20T00:00:00+08:00">2017-12-20</time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/javascript-异步编程读书笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript 异步编程读书笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/12/20/javascript/browser/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2017/12/20/javascript/browser/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="异步脚本加载"><a href="#异步脚本加载" class="headerlink" title="异步脚本加载"></a>异步脚本加载</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src = <span class="string">"allMyClientSideCode.js"</span>&gt;&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+<p>放在哪儿? </p>
+<ul>
+<li>head标签里面</li>
+</ul>
+<p>用户在脚本加载完毕之前一直处于“白屏死机”状态</p>
+<ul>
+<li>放到body 后面</li>
+</ul>
+<a id="more"></a>
+<p>原本应该进行客户端渲染的地方却散布着不起作用的控件和空空如也的方框。</p>
+<p>完美解决问题的办法<br>完美解决这个问题需要对脚本分而治之：那些负责让页面更好看、更好用的脚本应该立即加载，而那些可以待会儿再加载的脚本稍后再加载。<br>HTML5之async/defer属性的作用，以及两个流行的脚本加载库：yepnope和Require.js。</p>
+<h2 id="Script-标签再认识"><a href="#Script-标签再认识" class="headerlink" title="Script 标签再认识"></a>Script 标签再认识</h2><p>经典型和非阻塞型</p>
+<h3 id="阻塞型脚本"><a href="#阻塞型脚本" class="headerlink" title="阻塞型脚本"></a>阻塞型脚本</h3><p>script 标签被称为阻塞型标签<br>现代浏览器看到阻塞型\<script\>标签时，会跳过阻塞点继续读取文档及下载其他资源（脚本和样式表）。但直到脚本下载完毕并运行之后，浏览器才会评估阻塞点之后的那些资源。</script\></p>
+<p>因此，如果网页文档的\<head\>标签里有5个阻塞型\<script\>标签，则在所有这5个脚本均下载完毕并运行之前，用户除了页面标题之外看不到任何东西。不仅如此，即便这些脚本运行了，它们也只能看到阻塞点之前的那部分文档。如果想看到<body>标签中正等待加载的那些好东西，就必须给像document.onreadys-tatechange这样的事件绑定一个事件处理器。</body></script\></head\></p>
+<p>基于上述原因，现在越来越流行把脚本放在页面\<body\>标签的尾部。这样，一方面用户可以更快地看到页面，另一方面脚本也可以主动亲密接触DOM而无需等待事件来触发自己。对大多数脚本而言，这次“搬家”是个巨大的进步。</body\></p>
+<p>但并非所有脚本都一样。在向下搬动脚本之前，请先问自己3个问题。</p>
+<ul>
+<li>该脚本是否有可能被\<body\>标签里的内联JavaScript直接调用？</body\></li>
+<li>该脚本是否支持老式浏览器识别HTML5元素？Modern-izr支持，也正因为这个原因，最佳实践项目的典范HTML5 Boilerplate直接在文档顶部包含了Modernizr。</li>
+<li>该脚本是否会影响已渲染页面的外观？Typekit宿主字体就是一个例子。如果把Typekit脚本放在文档末尾，那么页面文本就会渲染两次，即读取文档时即刻渲染，脚本运行时再次渲染。</li>
+</ul>
+<h3 id="脚本延迟执行"><a href="#脚本延迟执行" class="headerlink" title="脚本延迟执行"></a>脚本延迟执行</h3><p>理想情况下，脚本的加载应该与文档的加载同时进行，并且不影响DOM的渲染。这样，一旦文档就绪就可以运行脚本，因为已经按照\<script\>标签的次序加载了相应脚本。</script\></p>
+<p>如果大家已经读到这里了，那么一定会迫不及待地想写一个自定义Ajax脚本加载器以满足这样的需求！不过，大多数浏览器都支持一个更为简单的解决方案。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script defer src = <span class="string">"deferredScript.js"</span>&gt;</span><br></pre></td></tr></table></figure>
+<p>添加defer（延迟）属性相当于对浏览器说：“请马上开始加载这个脚本吧，但是，请等到文档就绪且所有此前具有defer属性的脚本都结束运行之后再运行它。”在文档\<head\>标签里放入延迟脚本，既能带来脚本置于\<body\>标签时的全部好处，又能让大文档的加载速度大幅提升！</body\></head\></p>
+<p>有什么不足？并非所有浏览器都支持defer。，甚至最新版的Opera都忽略了这个属性。<a href="https://caniuse.com/#search=defer" target="_blank" rel="noopener">参见</a></p>
+<p>如果想确保自己的延迟脚本能在文档加载后运行，就必须将所有延迟脚本的代码都封装在诸如jQuery之$(document).ready之类的结构中。这是值得的，因为差不多97%的访客都能享受到并行加载的好处，同时另外3%的访客仍然能使用功能完整的JavaScript。</p>
+<p>使用defer属性把bodyScript.js换成deferredScript.js，于是</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- metadata and stylesheets go here --&gt;</span> </span><br><span class="line">   <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"headScripts.js"</span>&gt;</span><span class="xml"><span class="tag">&lt;/<span class="name">scripts</span>&gt;</span></span></span><br><span class="line"><span class="xml">   <span class="tag">&lt;<span class="name">script</span> <span class="attr">defer</span> <span class="attr">src</span>=<span class="string">"deferredScripts.js"</span>&gt;</span></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">body</span>&gt;</span>  <span class="comment">&lt;!-- content goes here --&gt;</span><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>请记住deferredScripts的封装很重要，这样即使浏览器不支持defer，deferredScripts也会在文档就绪事件之后才运行。如果页面主体内容远远超过几千字节，那么付出这点代价是完全值得的。</p>
+<h3 id="脚本的完全并行化"><a href="#脚本的完全并行化" class="headerlink" title="脚本的完全并行化"></a>脚本的完全并行化</h3><p>如果你是斤斤计较到毫秒级页面加载时间的完美主义者，那么defer也许就像是淡而无味的薄盐酱油。你可不想一直等到此前所有的defer脚本都运行结束，当然也肯定不想等到文档就绪之后才运行这些脚本，更别提为了照顾Opera还使用什么$(doc-ument).ready了。你就是想尽快加载并且尽快运行这些脚本。</p>
+<p>这也正是现代浏览器提供了async（异步）属性的原因</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;script <span class="keyword">async</span> src = <span class="string">"speedyGonzales.js"</span>&gt;</span><br><span class="line">&lt;script <span class="keyword">async</span> src = <span class="string">"roadRunner.js"</span>&gt;</span><br></pre></td></tr></table></figure>
+<p>如果说defer让我们想到一种静静等待文档加载的有序排队场景，那么async就会让我们想到混乱的无政府状态。前面给出的那两个脚本会以任意次序运行，而且只要JavaScript引擎可用就会立即运行，而不论文档就绪与否。因此，抛开对速度的渴求，我们有什么理由用async呢？</p>
+<p>async不像defer那样得到广泛的支持，因此很少有用户会注意到性能的提升。同时，由于异步脚本会在任意时刻运行，它实在太容易引起海森堡蚁虫之灾了（脚本刚好结束加载时就会蚁虫四起）。</p>
+<p>但是，对那些一心一意搞独立的脚本来说，async确实是一次不大但很重要的胜利。获取一个负责添加反馈小部件的第三方脚本，再获取一个负责添加技术支持聊天框的第三方脚本，怎么样？页面没有它们也运行得很好，而且也不在乎它们谁先运行谁后运行。因此，对这些第三方脚本使用async属性，相当于一分钱没花就提升了它们的运行速度.</p>
+<p>“如果我对同一个脚本既用defer又用async，会怎么样呢？”答案是，在那些同时支持这两个属性的浏览器中，async会覆盖掉defer。由于defer有着更广泛的支持，而且具有async的主要优势（允许在下载脚本的同时进行DOM的渲染），因此我们建议尽量使用defer代替async。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- metadata and stylesheets go here --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"headScripts.js"</span>&gt;</span><span class="xml"><span class="tag">&lt;/<span class="name">scripts</span>&gt;</span></span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"deferredScripts.js"</span> <span class="attr">defer</span>&gt;</span></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span> </span><br><span class="line"><span class="comment">&lt;!-- content goes here --&gt;</span>  </span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">async</span> <span class="attr">defer</span> <span class="attr">src</span>=<span class="string">"feedbackWidget.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">async</span> <span class="attr">defer</span> <span class="attr">src</span>=<span class="string">"chatWidget.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="可编程的脚本加载"><a href="#可编程的脚本加载" class="headerlink" title="可编程的脚本加载"></a>可编程的脚本加载</h2><p>yepnope和Require.js。</p>
+<h3 id="直接加载脚本"><a href="#直接加载脚本" class="headerlink" title="直接加载脚本"></a>直接加载脚本</h3><p>在浏览器API层面，有两种合理的方法来抓取并运行服务器脚本。</p>
+<ul>
+<li>生成Ajax 请求bing用eval函数响应处理 </li>
+<li>向Dom 插入script标签</li>
+</ul>
+<p>后一种方法更好，因为浏览器会替我们操心生成HTTP请求这样的事。再者，eval也有一些实际问题：泄漏作用域，调试搞得一团糟，而且还可能降低性能。因此，要想加载名为feature.js的脚本，我们应该用类似下面这样的代码来插入\<script\>标签。</script\></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> head = <span class="built_in">document</span>.getElementsByTagName(<span class="string">'head'</span>)[<span class="number">0</span>];</span><br><span class="line"><span class="keyword">var</span> script = <span class="built_in">document</span>.createElement(<span class="string">'script'</span>);</span><br><span class="line">script.src = <span class="string">'/js/feature.js'</span>;</span><br><span class="line">head.appendChild(script);</span><br></pre></td></tr></table></figure>
+<p>我们如何才能知道脚本何时加载结束呢？我们可以给脚本本身添加一些代码以触发事件，但如果要为每个待加载脚本都添加这样的代码，那也太闹心了。或者是另外一种情况，即我们不可能给第三方服务器上的脚本添加这样的代码。</p>
+<p>HTML5规范定义了一个可以绑定回调的onload属性。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">script.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;</span><br></pre></td></tr></table></figure>
+<p>不过，IE8及更老的版本并不支持onload，它们支持的是onreadystatechange。某些浏览器在插入\<script\>标签时还会出现一些“灵异事件”。而且，这里甚至还没谈到错误处理呢！为了避免所有这些令人头疼的问题，笔者在此强烈建议使用脚本加载库。</script\></p>
+<h3 id="yepnope的条件加载"><a href="#yepnope的条件加载" class="headerlink" title="yepnope的条件加载"></a>yepnope的条件加载</h3><p><a href="http://yepnopejs.com/" target="_blank" rel="noopener">yepnope</a><br>yepnope是一个简单的、轻量级的脚本加载库（压缩后的精简版只有1.7KB），其设计目标就是真诚服务于最常见的动态脚本加载需求。yepnope可以独立使用，也可以作为Modernizr特性检测库的一部分。</p>
+<p>yepnope最简单的用法是，加载脚本并对脚本完成运行这一事件返回一个回调。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">yepnope(&#123;</span><br><span class="line">  load: <span class="string">'oompaLoompas.js'</span>,</span><br><span class="line">  callback: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'Oompa-Loompas ready!'</span>); </span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>下面我们要用yepnope来并行加载多个脚本并按给定次序运行它们。举个例子，假设我们想加载Back-bone.js，而这个脚本又依赖于Underscore.js。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yepnope(&#123; <span class="attr">load</span>: [<span class="string">'underscore.js'</span>, <span class="string">'backbone.js'</span>],</span><br><span class="line">    complete: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>请注意，这里使用了complete（完成）而不是callback（回调）。其差别在于，脚本加载列表中的每个资源均会运行call-back，而只有当所有脚本都加载完成后才会运行complete。</p>
+<p><strong> 条件加载</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">yepnope(&#123;</span><br><span class="line">    test: Modernizr.touch,</span><br><span class="line">    yep: [<span class="string">'touchStyles.css'</span>, <span class="string">'touchApplication.js'</span>],</span><br><span class="line">    nope: [<span class="string">'mouseStyles.css'</span>, <span class="string">'mouseApplication.js'</span>],</span><br><span class="line">    complete: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>yepnope的标志性特征是条件加载。给定test参数，yepnope会根据该参数值是否为真而加载不同的资源。举个例子，假设已经使用了Modernizr库，则可以以一定的准确度判断用户是否在用触摸屏设备，从而据此相应地加载不同的样式表及脚本。</p>
+<p>yepnope最常见的用法之一就是加载垫片脚本以弥补老式浏览器缺失的功能。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">yepnope(&#123;</span><br><span class="line">    test: <span class="built_in">window</span>.json,</span><br><span class="line">    nope: [<span class="string">'json2.js'</span>],</span><br><span class="line">    complete: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>页面使用了yepnope之后应该变成下面这种漂亮的标记结构：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- metadata and stylesheets go here --&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"headScripts.js"</span>&gt;</span><span class="xml"><span class="tag">&lt;/<span class="name">scripts</span>&gt;</span></span></span><br><span class="line"><span class="xml">     <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"deferredScripts.js"</span> <span class="attr">defer</span>&gt;</span></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- content goes here --&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="Require-js-AMD的智能加载"><a href="#Require-js-AMD的智能加载" class="headerlink" title="Require.js/AMD的智能加载"></a>Require.js/AMD的智能加载</h3><p>开发人员想通过脚本加载器让混乱不堪的富脚本应用变得更规整有序一些，而Require.js就是这样一种选择。Require.js这个强大的工具包能够自动和AMD技术一起捋顺哪怕最复杂的脚本依赖图。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">require</span>([<span class="string">'moment'</span>], <span class="function"><span class="keyword">function</span>(<span class="params">moment</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(moment().format(<span class="string">'dddd'</span>));</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>require函数接受一个由模块名称构成的数组，然后并行地加载所有这些脚本模块。与yepnope不同，Require.js不会保证按顺序运行目标脚本，只是保证它们的运行次序能满足各自的依赖性要求，但前提是这些脚本的定义遵守了AMD（AsynchronousModule Definition，异步模块定义）规范。</p>
+<p>AMD规范的宗旨是替浏览器做CommonJS标准已经替服务器做过的那些事。（Node.js模块即基于CommonJS标准。）AMD推行一个由Require.js负责提供的名叫define的全局函数，该函数有3个参数：一个模块名称，一个模块依赖性列表，以及一个在那些依赖性模块加载结束时触发的回调。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">define(<span class="string">'myApplication'</span> [<span class="string">'jquery'</span>], <span class="function"><span class="keyword">function</span> (<span class="params">$</span>) </span>&#123;</span><br><span class="line">    $(<span class="string">'&lt;body&gt;'</span>).append(<span class="string">'&lt;p&gt;Hello, async world!&lt;/p&gt;'</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>注意这里传递给回调的是jQuery对象$。实际上，define接受的这个回调参数一直对应着依赖性列表中的各个模块依赖项。大家也许奇怪：define怎样知道捕获jQuery对象呢？答案是jQuery自己的AMD定义通过其define回调返回了jQuery对象，借此声明“这是我的导出对象”。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">define( <span class="string">"jquery"</span>, [], <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; <span class="keyword">return</span> jQuery; &#125; );</span><br></pre></td></tr></table></figure>
+<p>AMD的奥妙不止于此，但这是精华所在。如果应用的每个脚本都添加了AMD定义，则意味着我们只要调用require就能保证其回调不被调用，除非既满足了应用对脚本的直接依赖性，又满足了脚本的依赖性和脚本所依赖的那些脚本的依赖性，并且所有脚本均按最大的并行性进行加载，而运行次序也和依赖图一致。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/12/15/javascript/async.js/" rel="next" title="javascript 异步编程-4.async.js工作流控制">
+                <i class="fa fa-chevron-left"></i> javascript 异步编程-4.async.js工作流控制
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/02/01/2017 总结/" rel="prev" title="迟到的2017年终总结">
+                迟到的2017年终总结 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      
+        <div id="gitment-container"></div>
+      
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/uploads/me.jpg" alt="刘少卿">
+            
+              <p class="site-author-name" itemprop="name">刘少卿</p>
+              <p class="site-description motion-element" itemprop="description">业精于勤,荒于嬉.行成于思,毁于随.</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/tonnyone" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i></a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:liushaoqing1@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i></a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#异步脚本加载"><span class="nav-number">1.</span> <span class="nav-text">异步脚本加载</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Script-标签再认识"><span class="nav-number">1.1.</span> <span class="nav-text">Script 标签再认识</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#阻塞型脚本"><span class="nav-number">1.1.1.</span> <span class="nav-text">阻塞型脚本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#脚本延迟执行"><span class="nav-number">1.1.2.</span> <span class="nav-text">脚本延迟执行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#脚本的完全并行化"><span class="nav-number">1.1.3.</span> <span class="nav-text">脚本的完全并行化</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#可编程的脚本加载"><span class="nav-number">1.2.</span> <span class="nav-text">可编程的脚本加载</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#直接加载脚本"><span class="nav-number">1.2.1.</span> <span class="nav-text">直接加载脚本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#yepnope的条件加载"><span class="nav-number">1.2.2.</span> <span class="nav-text">yepnope的条件加载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Require-js-AMD的智能加载"><span class="nav-number">1.2.3.</span> <span class="nav-text">Require.js/AMD的智能加载</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">刘少卿</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Gemini</a> v6.0.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.0.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.0.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.0.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.0.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.0.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.0.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.0.0"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+<!-- LOCAL: You can save these files to your site and update links -->
+    
+        
+        <link rel="stylesheet" href="https://aimingoo.github.io/gitmint/style/default.css">
+        <script src="https://aimingoo.github.io/gitmint/dist/gitmint.browser.js"></script>
+    
+<!-- END LOCAL -->
+
+    
+
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitmint({
+            id: window.location.pathname, 
+            owner: 'tonnyone',
+            repo: 'tonnyone.github.io',
+            
+            lang: "" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+            
+            oauth: {
+            
+            
+                client_secret: 'd27df47248351d770a8395dea042b7f3a52f4b9c',
+            
+                client_id: '5767d10518f40f363142'
+            }});
+        gitment.render('gitment-container');
+      }
+
+      
+      renderGitment();
+      
+      </script>
+    
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
